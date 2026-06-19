@@ -5,8 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>구매하기 | 개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?</title>
-  <meta name="description" content="『개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?』의 구매 링크를 확인하세요. YES24, 교보문고, 알라딘, Amazon Kindle 등 판매처를 안내합니다." />
+  <meta name="description" content="『개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?』 구매 링크입니다. 교보문고 POD 종이책, 교보문고 eBook, YES24 eBook 구매처와 추가 입점 예정 채널을 확인하세요." />
   <link rel="stylesheet" href="../../../assets/css/style.css" />
+
+  <style>
+    .buy-page-intro {
+      margin-bottom: 30px;
+      padding: 24px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+    }
+
+    .buy-page-intro p {
+      margin: 0;
+      color: #374151;
+      line-height: 1.8;
+    }
+
+    .buy-section {
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .buy-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .buy-section h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      color: #111827;
+    }
+
+    .buy-card-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .buy-card {
+      display: block;
+      padding: 18px 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: #ffffff;
+      text-decoration: none;
+      color: #111827;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .buy-card:hover {
+      background: #f9fafb;
+      border-color: #cbd5e1;
+    }
+
+    .buy-card-title {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #111827;
+      line-height: 1.45;
+    }
+
+    .buy-card-meta {
+      display: block;
+      color: #4b5563;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .buy-badge {
+      display: inline-block;
+      margin-right: 8px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #111827;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 800;
+      vertical-align: middle;
+    }
+
+    .buy-badge.ebook {
+      background: #0f3f8f;
+    }
+
+    .buy-badge.pending {
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    .buy-card.pending {
+      cursor: default;
+      background: #f9fafb;
+      color: #6b7280;
+    }
+
+    .buy-card.pending:hover {
+      border-color: #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .buy-note {
+      margin-top: 28px;
+      padding: 20px;
+      background: #f3f4f6;
+      border-radius: 14px;
+      color: #374151;
+      line-height: 1.8;
+    }
+
+    .buy-note strong {
+      color: #111827;
+    }
+
+    @media (max-width: 800px) {
+      .buy-page-intro {
+        padding: 20px;
+      }
+
+      .buy-card {
+        padding: 17px;
+      }
+
+      .buy-card-title {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -33,22 +163,116 @@
     </aside>
 
     <main class="content-card">
-      <h2>구매 링크</h2>
-      <p>
-        아래 판매처에서 책을 확인할 수 있습니다.
-        판매처 링크는 출간 상태에 따라 순차적으로 업데이트됩니다.
-      </p>
-
-      <div class="buy-links">
-        <a class="buy-link" href="#" target="_blank" rel="noopener">YES24</a>
-        <a class="buy-link" href="#" target="_blank" rel="noopener">교보문고</a>
-        <a class="buy-link" href="#" target="_blank" rel="noopener">알라딘</a>
-        <a class="buy-link" href="#" target="_blank" rel="noopener">Amazon Kindle</a>
-        <a class="buy-link" href="#" target="_blank" rel="noopener">Google Play Books</a>
+      <div class="buy-page-intro">
+        <p>
+          『개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?』는 현재
+          <strong>교보문고 POD 종이책</strong>, <strong>교보문고 eBook</strong>,
+          <strong>YES24 eBook</strong>으로 확인할 수 있습니다.
+          추가 판매 채널은 입점이 완료되는 대로 순차적으로 업데이트됩니다.
+        </p>
       </div>
 
-      <div class="notice">
-        아직 판매 링크가 열리지 않은 채널은 출간 후 업데이트됩니다.
+      <section class="buy-section">
+        <h2>바로 구매 가능한 채널</h2>
+
+        <div class="buy-card-list">
+          <a
+            class="buy-card"
+            href="https://product.kyobobook.co.kr/detail/S000220223253"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="buy-card-title">
+              <span class="buy-badge">POD 종이책</span>
+              교보문고
+            </span>
+            <span class="buy-card-meta">
+              『개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?』 POD 종이책 구매 페이지
+            </span>
+          </a>
+
+          <a
+            class="buy-card"
+            href="https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000013137992"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="buy-card-title">
+              <span class="buy-badge ebook">eBook</span>
+              교보문고
+            </span>
+            <span class="buy-card-meta">
+              『개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?』 교보문고 전자책 구매 페이지
+            </span>
+          </a>
+
+          <a
+            class="buy-card"
+            href="https://www.yes24.com/product/goods/191857952"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="buy-card-title">
+              <span class="buy-badge ebook">eBook</span>
+              YES24
+            </span>
+            <span class="buy-card-meta">
+              『개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?』 YES24 전자책 구매 페이지
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section class="buy-section">
+        <h2>입점 진행중인 채널</h2>
+
+        <div class="buy-card-list">
+          <div class="buy-card pending">
+            <span class="buy-card-title">
+              <span class="buy-badge pending">진행중</span>
+              알라딘
+            </span>
+            <span class="buy-card-meta">
+              판매 링크가 열리면 이 페이지에 업데이트됩니다.
+            </span>
+          </div>
+
+          <div class="buy-card pending">
+            <span class="buy-card-title">
+              <span class="buy-badge pending">진행중</span>
+              밀리의 서재
+            </span>
+            <span class="buy-card-meta">
+              입점 완료 후 확인 가능한 링크를 연결할 예정입니다.
+            </span>
+          </div>
+
+          <div class="buy-card pending">
+            <span class="buy-card-title">
+              <span class="buy-badge pending">진행중</span>
+              리디북
+            </span>
+            <span class="buy-card-meta">
+              판매 링크가 열리면 이 페이지에 업데이트됩니다.
+            </span>
+          </div>
+
+          <div class="buy-card pending">
+            <span class="buy-card-title">
+              <span class="buy-badge pending">진행중</span>
+              윌라
+            </span>
+            <span class="buy-card-meta">
+              입점 완료 후 확인 가능한 링크를 연결할 예정입니다.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <div class="buy-note">
+        <strong>구매 전 확인:</strong>
+        종이책은 POD 형식이며, 전자책은 판매 채널별 제공 형식과 뷰어 환경이 다를 수 있습니다.
+        구매 전 각 서점의 상품 페이지에서 가격, 제공 형식, 이용 가능 기기를 확인하세요.
       </div>
     </main>
   </div>
