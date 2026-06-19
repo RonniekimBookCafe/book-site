@@ -275,3 +275,72 @@ body {
     font-size: 28px;
   }
 }
+
+/* Mobile overflow fix for FAQ and long content */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.layout,
+.content-card,
+.book-sidebar,
+.faq-page,
+.faq-intro,
+.faq-item,
+.faq-final {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.content-card,
+.faq-item,
+.faq-intro,
+.faq-final {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.faq-table {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-x: hidden;
+  }
+
+  .content-card {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .faq-item {
+    width: 100%;
+    padding: 22px 18px;
+  }
+
+  .faq-item h3 {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+  }
+
+  .faq-table {
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
+  }
+
+  .faq-table th,
+  .faq-table td {
+    white-space: normal;
+    min-width: 140px;
+  }
+}
