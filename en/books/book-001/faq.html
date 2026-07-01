@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FAQ | How Long Will Developers Still Be Needed?</title>
+  <meta name="description" content="Frequently asked questions about How Long Will Developers Still Be Needed? Learn who this book is for, what it covers, how it helps developers navigate AI, career change, AX task forces, salary growth, and long-term market value." />
+
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link rel="canonical" href="https://ronniekimbooks.com/en/books/book-001/faq.html" />
+
+  <style>
+    .faq-page {
+      color: #111827;
+    }
+
+    .faq-intro {
+      margin-bottom: 42px;
+      padding: 28px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+    }
+
+    .faq-intro h2 {
+      margin: 0 0 14px;
+      color: #111827;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: 900;
+    }
+
+    .faq-intro p {
+      margin: 12px 0;
+      color: #374151;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .faq-quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .faq-quick-links a {
+      display: inline-block;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      color: #111827;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .faq-category {
+      margin-top: 52px;
+      padding-top: 38px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .faq-category:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .faq-category-title {
+      margin: 0 0 24px;
+      color: #0f3f8f;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: 900;
+    }
+
+    .faq-item {
+      margin: 0 0 22px;
+      padding: 26px 28px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 14px;
+      color: #111827;
+      font-size: 21px;
+      line-height: 1.45;
+      font-weight: 900;
+    }
+
+    .faq-item p {
+      margin: 12px 0;
+      color: #1f2937;
+      font-size: 16.5px;
+      line-height: 1.85;
+    }
+
+    .faq-item ul,
+    .faq-item ol {
+      margin: 16px 0 0;
+      padding-left: 22px;
+    }
+
+    .faq-item li {
+      margin: 8px 0;
+      color: #1f2937;
+      line-height: 1.75;
+    }
+
+    .faq-item li::marker {
+      color: #0f3f8f;
+      font-weight: 900;
+    }
+
+    .faq-point {
+      margin: 18px 0;
+      padding: 18px 20px;
+      background: #f9fafb;
+      border-left: 5px solid #0f3f8f;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .faq-point p {
+      margin: 0;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .faq-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 4px;
+      font-size: 15.5px;
+    }
+
+    .faq-table th,
+    .faq-table td {
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.65;
+    }
+
+    .faq-table th {
+      background: #f3f4f6;
+      color: #111827;
+      font-weight: 900;
+    }
+
+    .faq-table td {
+      color: #374151;
+    }
+
+    .faq-final {
+      margin-top: 50px;
+      padding: 32px;
+      background: #111827;
+      color: #ffffff;
+      border-radius: 20px;
+    }
+
+    .faq-final h2 {
+      margin: 0 0 16px;
+      color: #ffffff;
+      font-size: 26px;
+      line-height: 1.4;
+    }
+
+    .faq-final p {
+      margin: 12px 0;
+      color: #e5e7eb;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .faq-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .faq-cta a {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .faq-cta .primary {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .faq-cta .secondary {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    @media (max-width: 800px) {
+      .faq-intro {
+        padding: 22px;
+      }
+
+      .faq-intro h2 {
+        font-size: 24px;
+      }
+
+      .faq-category-title {
+        font-size: 23px;
+      }
+
+      .faq-item {
+        padding: 22px;
+      }
+
+      .faq-item h3 {
+        font-size: 19px;
+      }
+
+      .faq-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="book-header">
+    <div class="back">
+      <a href="../../../">← All Books</a>
+    </div>
+    <h1>Frequently Asked Questions</h1>
+    <p>How Long Will Developers Still Be Needed?</p>
+  </header>
+
+  <div class="layout">
+    <aside class="book-sidebar">
+      <h2>Book Menu</h2>
+      <nav>
+        <ul>
+          <li><a href="./">Book Overview</a></li>
+          <li><a href="./toc.html">Table of Contents</a></li>
+          <li><a href="./sample.html">Sample Chapter</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./buy.html">Buy the Book</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content-card faq-page">
+      <section class="faq-intro">
+        <h2>Questions readers are most likely to ask before buying</h2>
+        <p>
+          This FAQ is designed around the questions real readers may have before deciding whether this book is right for them.
+          It addresses the concerns of software developers, junior developers, senior developers, developers in their 40s,
+          product managers, planners, IT managers, AX task force members, and professionals preparing for a career move.
+        </p>
+        <p>
+          This is not a technical manual about AI models. It is a practical career strategy book about how AI is changing developer work,
+          evaluation standards, market value, job mobility, promotion paths, and long-term employability.
+        </p>
+
+        <div class="faq-quick-links">
+          <a href="#reader">Who Should Read It</a>
+          <a href="#content">Book Content</a>
+          <a href="#career">Career & Job Change</a>
+          <a href="#senior">Senior Developers</a>
+          <a href="#ai">AI & AX</a>
+          <a href="#purchase">Purchase & Format</a>
+        </div>
+      </section>
+
+      <section id="reader" class="faq-category">
+        <h2 class="faq-category-title">1. Who is this book for?</h2>
+
+        <section class="faq-item">
+          <h3>Q1. Is this book only for software developers?</h3>
+          <p>
+            The primary audience is software developers—especially those who are thinking seriously about how AI may affect their work,
+            role, salary, job mobility, and long-term value inside an organization.
+          </p>
+          <p>
+            That said, this book is not limited to developers. Product managers, planners, IT managers, AX task force members,
+            and development team leaders can also benefit from it. The book focuses less on how AI models work and more on how work is being broken down inside organizations,
+            how human roles are being reevaluated, and how professionals can stay valuable as expectations change.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q2. Should junior developers read this book?</h3>
+          <p>
+            Yes. In fact, this book is especially important for developers with 0 to 7 years of experience.
+            In the AI era, the volume of your portfolio may matter less than your ability to explain what you judged,
+            what you verified, and where you added value beyond AI-generated output.
+          </p>
+          <p>
+            The book explains how developers with 0 to 3 years of experience can use AI as a learning amplifier,
+            how developers with 4 to 7 years of experience can move from feature delivery to technical leadership,
+            and how small projects can be turned into marketable proof of value.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q3. Is this book useful for developers with 8+ years of experience or developers in their 40s?</h3>
+          <p>
+            Yes. This book contains particularly practical material for experienced developers and developers in their 40s.
+            It explains why years of experience do not automatically become market value,
+            how to convert experience into structures a team can use,
+            and how to turn knowledge into concrete outputs such as domain risk lists, system dependency maps, onboarding standards, and operational checklists.
+          </p>
+          <div class="faq-point">
+            <p>
+              The real strength of senior developers is not typing speed. It is judgment, risk detection, system-level thinking, and the ability to design team productivity.
+            </p>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q4. Can non-CS majors, new developers, or job seekers read this book?</h3>
+          <p>
+            Yes, but this is not a beginner programming book. It does not teach syntax, algorithms, or framework basics.
+            Instead, it explains how the role of developers is changing, how companies evaluate technical talent,
+            and what kinds of ability will need to be demonstrated going forward.
+          </p>
+          <p>
+            If you are preparing for your first developer role, this book can help you think beyond “what did I build?”
+            and start showing “what problem did I identify, what standard did I use, and how did I verify the result?”
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q5. Is this book worth reading for product managers, planners, or IT managers?</h3>
+          <p>
+            Yes. The changes caused by AI are not limited to software development.
+            Planning, development, operations, QA, and customer support are all being partially broken down and reshaped by AI.
+          </p>
+          <p>
+            For product managers or managers who work closely with development teams,
+            the book offers a useful framework for distinguishing between work that AI can reduce and work that humans must continue to own.
+          </p>
+        </section>
+      </section>
+
+      <section id="content" class="faq-category">
+        <h2 class="faq-category-title">2. What does this book cover?</h2>
+
+        <section class="faq-item">
+          <h3>Q6. What is the core message of the book?</h3>
+          <p>
+            The core message is simple: developers are not simply disappearing; they are being redefined.
+            But not every developer will remain valuable in the same way.
+          </p>
+          <p>
+            Roles built mainly around repetitive implementation may shrink.
+            Developers who can define problems, verify AI-generated output, understand system and customer context,
+            and reduce repetition across the team may become more valuable than before.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q7. Is this book saying that AI will replace developers?</h3>
+          <p>
+            No. This is not a fear-based book.
+            It also does not offer empty reassurance by saying that developers will never be affected.
+          </p>
+          <p>
+            The more realistic view is this: AI is unlikely to eliminate developer work all at once.
+            Instead, it breaks developer work into smaller parts.
+            Some parts can be drafted by AI, some must be verified by humans, and some must remain under human responsibility.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q8. What does the book mean by “developers who become more valuable”?</h3>
+          <p>
+            It does not simply mean developers with high salaries.
+            It refers to developers whose roles companies do not want to lose.
+          </p>
+          <ul>
+            <li>Developers who can detect risk in AI-generated output</li>
+            <li>Developers who can turn vague requirements into real customer problems</li>
+            <li>Developers who convert repetitive work into checklists and templates</li>
+            <li>Developers who understand system-wide impact and operational risk</li>
+            <li>Developers who leave behind standards that improve team productivity</li>
+          </ul>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q9. What does the book mean by “developers whose value may decline”?</h3>
+          <p>
+            This is not meant to label people. It refers to types of work that may become narrower or less defensible in the market.
+          </p>
+          <ul>
+            <li>Developers focused mainly on repetitive tasks</li>
+            <li>Developers who have stopped learning</li>
+            <li>Developers who only wait for instructions</li>
+            <li>Middle managers who only manage status</li>
+            <li>Experienced developers whose roles have become too narrow</li>
+          </ul>
+          <p>
+            The important point is that these are not fixed destinies.
+            If you diagnose your role early, you can change your direction.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q10. Is this book more practical or theoretical?</h3>
+          <p>
+            It is centered on practical examples and execution standards.
+            It discusses AX task forces, AI adoption, repetitive-work breakdown, test drafts, incident reports,
+            code review checklists, pre-release checklists, and PARR-style career statements in forms that can be used in real development organizations.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q11. The table of contents looks extensive. What is the best way to read the book?</h3>
+          <p>
+            If this is your first reading, reading from beginning to end is recommended.
+            But depending on your situation, you can start with the sections below.
+          </p>
+
+          <table class="faq-table">
+            <thead>
+              <tr>
+                <th>Your Situation</th>
+                <th>Where to Start</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>You feel anxious about your developer career because of AI</td>
+                <td>Part 1, Chapters 1–4</td>
+              </tr>
+              <tr>
+                <td>You want to increase your salary and market value</td>
+                <td>Part 2, Chapters 5–8</td>
+              </tr>
+              <tr>
+                <td>You are involved in an AX task force or AI transformation project</td>
+                <td>Chapter 9, Chapter 15, Appendix 4</td>
+              </tr>
+              <tr>
+                <td>You are preparing for a job change</td>
+                <td>Chapter 14, Appendix 7</td>
+              </tr>
+              <tr>
+                <td>You need an action plan right now</td>
+                <td>Chapter 13, Appendices 1–3</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section id="career" class="faq-category">
+        <h2 class="faq-category-title">3. Questions about career, job changes, and salary</h2>
+
+        <section class="faq-item">
+          <h3>Q12. Will this book help me prepare for a job change?</h3>
+          <p>
+            Yes. This book does not simply tell you to “use AI.”
+            It explains how to turn AI-related experience into career language that works on resumes and in interviews.
+          </p>
+          <p>
+            In particular, it introduces the PARR structure, which helps you organize your experience around the problem,
+            action, result, repeatability, and concrete output.
+          </p>
+          <div class="faq-point">
+            <p>
+              “I used AI” is weak. “I created a team standard for verifying AI-generated output” is much stronger.
+            </p>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q13. Is this book useful for developers who want a higher salary?</h3>
+          <p>
+            Yes. This book is not just about salary negotiation tactics.
+            It explains how to create the evidence that can support a stronger salary discussion.
+          </p>
+          <ul>
+            <li>Evidence that you reduced repetitive work</li>
+            <li>Outputs that improved team productivity</li>
+            <li>Standards for verifying AI-generated results</li>
+            <li>Experience reducing incident, release, permission, or operational risk</li>
+            <li>Market-value language that other companies can understand</li>
+          </ul>
+          <p>
+            Salary rarely increases through demands alone.
+            Negotiation power grows when you have concrete, provable outputs.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q14. I am valued inside my company, but I feel uncertain in the job market. Will this book help?</h3>
+          <p>
+            Yes. This book was written for exactly that kind of concern.
+            Being important inside your current company and being highly valued in the broader market are not always the same thing.
+          </p>
+          <p>
+            Inside a company, internal system names, old history, and specific customer context may carry weight.
+            In the market, however, what matters is what you reduced, what you improved, what structure you left behind,
+            and whether your value can be understood and repeated in another organization.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q15. Does this book rewrite resumes or interview answers directly?</h3>
+          <p>
+            It does not revise individual resumes line by line.
+            However, it gives you a clear standard for rewriting your resume and interview answers.
+            In particular, the PARR career conversion template in the appendix helps you transform weak statements into stronger ones.
+          </p>
+
+          <table class="faq-table">
+            <thead>
+              <tr>
+                <th>Weak Statement</th>
+                <th>Stronger Statement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>I used AI to write test code.</td>
+                <td>I created a checklist for verifying permission, duplicate-request, and rollback cases in AI-generated test drafts.</td>
+              </tr>
+              <tr>
+                <td>I wrote incident reports.</td>
+                <td>I created an incident report template that separates confirmed causes from assumptions and organizes recurrence-prevention standards.</td>
+              </tr>
+              <tr>
+                <td>I modified an internal operations tool.</td>
+                <td>I reduced repetitive requests by creating permission-change approval standards and an operational verification checklist.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section id="senior" class="faq-category">
+        <h2 class="faq-category-title">4. Questions for senior developers and developers in their 40s</h2>
+
+        <section class="faq-item">
+          <h3>Q16. Is this book realistically useful for developers in their 40s?</h3>
+          <p>
+            Yes. This book does not tell developers in their 40s to simply chase every new tool or framework.
+            Instead, it helps distinguish where experienced developers may be disadvantaged and where they can become stronger.
+          </p>
+          <p>
+            Competing only on coding speed, ticket volume, or speed of adopting the newest tool can be difficult.
+            But domain judgment, risk detection, system-level thinking, and team productivity design are areas where experienced developers can become more valuable.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q17. Why do I still feel anxious even though I have years of experience?</h3>
+          <p>
+            Because years of experience do not automatically become market value.
+            Inside a company, “only this person knows it” may look like strength.
+            In the market, however, “this person created a structure that helps others do the work better” is often more valuable.
+          </p>
+          <p>
+            This book shows how senior developers can convert personal experience into domain risk lists,
+            system dependency maps, onboarding standards, and incident-prevention checklists.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q18. Can engineering managers or team leads read this book?</h3>
+          <p>
+            Yes. It is useful for leaders who are thinking about team productivity, workforce structure,
+            role redesign, and AX task force operations after AI adoption.
+          </p>
+          <p>
+            Rather than simply asking the team to adopt AI tools,
+            managers can use the book to think about which work should be assigned to AI,
+            which work must be verified by humans, and which standards should remain as organizational assets.
+          </p>
+        </section>
+      </section>
+
+      <section id="ai" class="faq-category">
+        <h2 class="faq-category-title">5. Questions about AI use and AX task forces</h2>
+
+        <section class="faq-item">
+          <h3>Q19. Can I read this book even if I do not know much about AI?</h3>
+          <p>
+            Yes. This book does not explain the internal architecture or mathematical principles of AI models.
+            It explains how work is changing in the AI era and what kind of role developers need to claim.
+          </p>
+          <p>
+            You can read it even if you have not used tools such as ChatGPT, Copilot, or Claude deeply.
+            After reading, however, it is useful to separate your own work into tasks AI can reduce and tasks humans must verify or own.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q20. Does this book teach how to use a specific AI tool?</h3>
+          <p>
+            No. This is not a tool manual, and it is not a prompt collection.
+          </p>
+          <p>
+            Instead, it focuses on the judgment standards needed when AI enters development work.
+            For example, it discusses how to verify permissions, exceptions, logs, rollback cases, and data consistency in AI-generated code,
+            and how to separate decisions from discussions in AI-generated meeting notes.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q21. I am currently involved in an AX task force. Will this book help?</h3>
+          <p>
+            Yes. The book explains that an AX task force is not just a place to experiment with AI tools.
+            It can also be a place where the company redesigns work and evaluates workforce structure.
+          </p>
+          <p>
+            If you do not want to be consumed inside an AX task force, you should not remain only an automation executor.
+            You need to secure at least one of the following forms of authority: verification authority, design authority, or performance interpretation authority.
+          </p>
+
+          <table class="faq-table">
+            <thead>
+              <tr>
+                <th>Authority</th>
+                <th>Meaning</th>
+                <th>Example Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verification Authority</td>
+                <td>The authority to define the standard for approving AI-generated output</td>
+                <td>AI output verification checklist</td>
+              </tr>
+              <tr>
+                <td>Design Authority</td>
+                <td>The authority to divide workflow stages between AI and humans</td>
+                <td>AI work-flow map</td>
+              </tr>
+              <tr>
+                <td>Performance Interpretation Authority</td>
+                <td>The authority to propose where saved time should be reinvested</td>
+                <td>Time reinvestment plan</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q22. Is this book positive or negative about AI?</h3>
+          <p>
+            It is neither blindly optimistic nor blindly pessimistic.
+            AI can make developers more productive.
+            At the same time, it gives companies a reason to recalculate developer work.
+          </p>
+          <p>
+            The book’s position is clear: you should not only fear AI.
+            But you also should not use it casually as a convenient tool without thinking.
+            You need to verify AI-generated results, redesign work structures, and leave behind clear standards for the areas humans must continue to own.
+          </p>
+        </section>
+      </section>
+
+      <section class="faq-category">
+        <h2 class="faq-category-title">6. Questions about the action plan and how to use the book</h2>
+
+        <section class="faq-item">
+          <h3>Q23. What should I actually do after reading this book?</h3>
+          <p>
+            The first step is to write down your own work.
+            List ten tasks you have handled repeatedly over the past two weeks, then divide them into the four categories below.
+          </p>
+          <ul>
+            <li>A: Work that can be reduced by AI</li>
+            <li>B: Work that must be verified by humans</li>
+            <li>C: Work humans must remain responsible for until the end</li>
+            <li>D: Work that should be turned into a team standard</li>
+          </ul>
+          <p>
+            If you have too many items in A, that is a warning sign.
+            You need to increase B, C, and D.
+            In particular, it is important to leave behind at least one checklist, template, standard table, or workflow map that belongs in D.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q24. How is the 90-day action plan structured?</h3>
+          <p>
+            The 90-day plan does not mean changing everything at once.
+            It means changing the direction of one role in a concrete way.
+          </p>
+
+          <table class="faq-table">
+            <thead>
+              <tr>
+                <th>Period</th>
+                <th>Core Action</th>
+                <th>Output to Leave Behind</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Days 0–30</td>
+                <td>Write down repetitive work and divide it into A/B/C/D</td>
+                <td>Repetitive-work analysis table</td>
+              </tr>
+              <tr>
+                <td>Days 31–60</td>
+                <td>Create a verification standard or checklist</td>
+                <td>AI verification checklist, pre-release checklist</td>
+              </tr>
+              <tr>
+                <td>Days 61–90</td>
+                <td>Translate experience into market-value language</td>
+                <td>PARR career statements, role-transition outputs</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q25. Can I start with the appendices before reading the whole book?</h3>
+          <p>
+            Yes. If you want to take action immediately, you can start with the appendices.
+            However, reading the main chapters first will help you understand why those worksheets and templates matter.
+          </p>
+          <p>
+            If you have limited time, the following reading order is recommended.
+          </p>
+          <ol>
+            <li>Read the book overview and review the full table of contents</li>
+            <li>Read the sample chapter to understand the core problem</li>
+            <li>Start work breakdown with Chapter 13</li>
+            <li>Use Appendices 1–3 for self-diagnosis and a 90-day plan</li>
+            <li>Use Chapter 14 and Appendix 7 to rewrite resume and interview language</li>
+          </ol>
+        </section>
+      </section>
+
+      <section id="purchase" class="faq-category">
+        <h2 class="faq-category-title">7. Questions about purchase, format, and availability</h2>
+
+        <section class="faq-item">
+          <h3>Q26. Can I read the full book on this website?</h3>
+          <p>
+            No. This website provides the book overview, full table of contents, sample chapter, FAQ, and purchase links.
+            The full manuscript is available through the official published edition.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q27. Is this a paperback or an ebook?</h3>
+          <p>
+            The available formats may vary by sales channel.
+            Please check the purchase page for the currently available formats.
+          </p>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q28. Where can I buy the book?</h3>
+          <p>
+            Purchase links will be added as sales channels become available, including platforms such as Amazon Kindle and other online bookstores.
+            You can check the current purchase options on the purchase page below.
+          </p>
+          <div class="faq-cta">
+            <a class="primary" href="./buy.html">View Purchase Links</a>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q29. What should I read before buying?</h3>
+          <p>
+            Before buying, the following order is recommended.
+          </p>
+          <ol>
+            <li>Read the book overview to understand the core problem</li>
+            <li>Review the table of contents to see the full structure</li>
+            <li>Read the sample chapter to check the tone and depth</li>
+            <li>Use this FAQ to see whether the book fits your situation</li>
+            <li>Visit the purchase page to check available sales channels</li>
+          </ol>
+        </section>
+
+        <section class="faq-item">
+          <h3>Q30. Is this a book to read once and put away?</h3>
+          <p>
+            You can read it as a normal book, but the best way to use it is as an action guide.
+            The self-diagnosis tools, work-breakdown table, 90-day action plan, and PARR career conversion template in the appendices are most useful when you actually fill them out.
+          </p>
+          <div class="faq-point">
+            <p>
+              The purpose of this book is not to comfort anxiety. It is to turn anxiety into work diagnosis and a role-transition plan.
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <section class="faq-final">
+        <h2>If you are still unsure, start with the sample chapter</h2>
+        <p>
+          The best way to know whether this book fits your situation is to read the sample chapter.
+          Through the prologue and part of Chapter 01, you can see the core problem, tone, and practical direction of the book.
+        </p>
+        <p>
+          If you want to keep working as a developer in the AI era, the question is simple:
+          “What kind of developer must I become to remain needed?”
+        </p>
+
+        <div class="faq-cta">
+          <a class="primary" href="./sample.html">Read Sample Chapter</a>
+          <a class="secondary" href="./toc.html">View Full Table of Contents</a>
+          <a class="secondary" href="./buy.html">View Purchase Links</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
