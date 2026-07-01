@@ -3,52 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ronnie Kim Books | 공식 도서 허브</title>
-    <meta name="description" content="Ronnie Kim Books의 공식 도서 허브입니다. 출간 도서, 목차, 샘플 본문, FAQ, 구매 링크를 한곳에서 확인할 수 있습니다." />
 
-    <link rel="canonical" href="https://ronniekimbooks.com/" />
+  <title>Ronnie Kim Books | Official Book Collection</title>
+  <meta name="description" content="Ronnie Kim Books 공식 도서 허브입니다. 한국어와 영어로 출간 도서, 목차, 샘플 본문, FAQ, 구매 링크를 확인하세요." />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ronnie Kim Books | 공식 도서 허브" />
-    <meta property="og:description" content="출간 도서, 목차, 샘플 본문, FAQ, 구매 링크를 한곳에서 확인할 수 있는 공식 도서 허브입니다." />
-    <meta property="og:url" content="https://ronniekimbooks.com/" />
-    <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-001/og.webp" />
+  <link rel="canonical" href="https://ronniekimbooks.com/" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ronnie Kim Books | 공식 도서 허브" />
-    <meta name="twitter:description" content="출간 도서, 목차, 샘플 본문, FAQ, 구매 링크를 한곳에서 확인할 수 있는 공식 도서 허브입니다." />
-    <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-001/og.webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ronnie Kim Books | Official Book Collection" />
+  <meta property="og:description" content="한국어와 영어로 Ronnie Kim Books의 출간 도서, 목차, 샘플 본문, FAQ, 구매 링크를 확인하세요." />
+  <meta property="og:url" content="https://ronniekimbooks.com/" />
+  <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-001/og.webp" />
 
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ronnie Kim Books | Official Book Collection" />
+  <meta name="twitter:description" content="Explore Ronnie Kim Books in Korean and English, including book pages, sample chapters, FAQs, and purchase links." />
+  <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-001/og.webp" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <style>
+    .site-header {
+      position: relative;
+    }
+
+    .language-switch {
+      position: absolute;
+      top: 22px;
+      right: 28px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .language-switch a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 7px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+    }
+
+    .language-switch a:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .book-card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .book-card-actions a {
+      display: inline-block;
+      padding: 11px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .book-card-actions a.secondary {
+      background: #f3f4f6;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 800px) {
+      .language-switch {
+        position: static;
+        justify-content: center;
+        margin-top: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
+    <nav class="language-switch" aria-label="Language selection">
+      <a href="./ko/books/book-001/">한국어</a>
+      <a href="./en/books/book-001/">English</a>
+    </nav>
+
     <h1>Ronnie Kim Books</h1>
-    <p>출간 도서, 목차, 샘플 본문, FAQ, 구매 링크를 한곳에서 확인하세요.</p>
+    <p>출간 도서와 샘플 본문을 한국어와 영어로 확인하세요.</p>
+    <p>Explore books and sample chapters in Korean and English.</p>
   </header>
 
   <main class="home-main">
-    <h2 class="section-title">출간 도서</h2>
+    <h2 class="section-title">출간 도서 / Published Books</h2>
 
     <section class="book-grid">
-        <article class="book-card">
+      <article class="book-card">
         <img
-            class="book-cover-thumb"
-            src="./assets/images/books/book-001/cover-thumb.webp"
-            alt="개발자는 회사를 얼마나 더 오래 다닐 수 있을까요? 책 표지"
+          class="book-cover-thumb"
+          src="./assets/images/books/book-001/cover-thumb.webp"
+          alt="개발자는 회사를 얼마나 더 오래 다닐 수 있을까요? / How Long Will Developers Still Be Needed?"
         />
 
         <h3>개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?</h3>
+        <h3>How Long Will Developers Still Be Needed?</h3>
+
         <p>
-            AI 시대 개발자의 생존 전략과 시장가치 재설계를 다룬 책입니다.
+          AI 시대 개발자의 생존 전략과 시장가치 재설계를 다룬 책입니다.
         </p>
-        <a href="./ko/books/book-001/">책 보기</a>
-        </article>
+        <p>
+          A practical career survival guide for developers navigating AI, automation, and changing market value.
+        </p>
+
+        <div class="book-card-actions">
+          <a href="./ko/books/book-001/">한국어 보기</a>
+          <a class="secondary" href="./en/books/book-001/">View in English</a>
+        </div>
+      </article>
     </section>
   </main>
+
   <footer class="site-footer">
-   <p>© Ronnie Kim Books. All rights reserved.</p>
+    <p>© Ronnie Kim Books. All rights reserved.</p>
   </footer>
 </body>
 </html>
