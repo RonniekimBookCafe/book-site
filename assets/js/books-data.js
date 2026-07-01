@@ -1,6 +1,9 @@
 const booksData = [
   {
     id: "book-001",
+    category: "career",
+    publishedAt: "2026-06-12",
+    featured: 1,
     cover: "./assets/images/books/book-001/cover-thumb.webp",
     ko: {
       title: "개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?",

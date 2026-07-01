@@ -144,6 +144,63 @@
         font-size: 14px;
       }
     }
+    
+
+    .book-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 22px;
+    }
+
+    .book-search,
+    .book-select {
+      height: 44px;
+      padding: 0 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #111827;
+      font-size: 15px;
+    }
+
+    .book-search {
+      flex: 1 1 260px;
+    }
+
+    .book-select {
+      flex: 0 0 160px;
+    }
+
+    .book-count {
+      margin: 0 0 18px;
+      color: #6b7280;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .empty-message {
+      margin-top: 28px;
+      padding: 28px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      color: #374151;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    @media (max-width: 700px) {
+      .book-tools {
+        display: grid;
+      }
+
+      .book-search,
+      .book-select {
+        width: 100%;
+      }
+    }
+    
   </style>
 </head>
 
@@ -158,12 +215,42 @@
     <p id="site-subtitle">출간 도서와 샘플 본문을 한국어로 확인하세요.</p>
   </header>
 
-  <main class="home-main">
-    <h2 class="section-title" id="section-title">출간 도서</h2>
+<main class="home-main">
+  <h2 class="section-title" id="section-title">출간 도서</h2>
 
-    <section class="book-grid home-book-grid" id="book-grid">
-    </section>
-  </main>
+  <section class="book-tools" aria-label="Book search and filter tools">
+    <input
+      type="search"
+      id="book-search"
+      class="book-search"
+      placeholder="책 제목 또는 설명 검색"
+      aria-label="Search books"
+    />
+
+    <select id="book-category" class="book-select" aria-label="Filter by category">
+      <option value="all">전체 카테고리</option>
+      <option value="career">커리어</option>
+      <option value="education">교육</option>
+      <option value="essay">에세이</option>
+      <option value="tech">기술</option>
+    </select>
+
+    <select id="book-sort" class="book-select" aria-label="Sort books">
+      <option value="featured">추천순</option>
+      <option value="newest">최신순</option>
+      <option value="oldest">오래된순</option>
+      <option value="title">제목순</option>
+    </select>
+  </section>
+
+  <p id="book-count" class="book-count"></p>
+
+  <section class="book-grid home-book-grid" id="book-grid"></section>
+
+  <p id="empty-message" class="empty-message" hidden>
+    검색 결과가 없습니다.
+  </p>
+</main>
 
   <footer class="site-footer">
     <p>© Ronnie Kim Books. All rights reserved.</p>
