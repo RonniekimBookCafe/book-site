@@ -6,6 +6,7 @@ const pageText = {
     allCategory: "전체 카테고리",
     categories: {
       career: "커리어",
+      arduino: "아두이노",
       education: "교육",
       essay: "에세이",
       tech: "기술"
@@ -28,6 +29,7 @@ const pageText = {
     allCategory: "All Categories",
     categories: {
       career: "Career",
+      arduino: "Arduino",
       education: "Education",
       essay: "Essay",
       tech: "Technology"
@@ -61,13 +63,15 @@ const bookCount = document.getElementById("book-count");
 const emptyMessage = document.getElementById("empty-message");
 
 function updateToolText(lang) {
-  const text = pageText[lang];
+  const text = pageText[lang] || pageText.ko;
 
   bookSearch.placeholder = text.searchPlaceholder;
 
   bookCategory.innerHTML = `
     <option value="all">${text.allCategory}</option>
     <option value="career">${text.categories.career}</option>
+    <option value="arduino">${text.categories.arduino}<
+/option>
     <option value="education">${text.categories.education}</option>
     <option value="essay">${text.categories.essay}</option>
     <option value="tech">${text.categories.tech}</option>
@@ -90,6 +94,10 @@ function getFilteredBooks() {
 
   let result = booksData.filter((book) => {
     const data = book[currentLanguage];
+
+    if (!data) {
+      return false;
+    }
 
     const matchesKeyword =
       !keyword ||
@@ -126,7 +134,8 @@ function getFilteredBooks() {
 
 function renderBooks() {
   const books = getFilteredBooks();
-  const text = pageText[currentLanguage];
+  const text = pageText[currentLanguage] || pageText.ko
+;
 
   bookGrid.innerHTML = "";
   bookCount.textContent = text.countText(books.length);
@@ -142,7 +151,7 @@ function renderBooks() {
       <a class="book-cover-link" href="${data.link}">
         <img
           class="book-cover-thumb"
-          src="${book.cover}"
+          src="${data.cover}"
           alt="${data.alt}"
         />
       </a>
@@ -157,20 +166,23 @@ function renderBooks() {
 }
 
 function setLanguage(lang) {
-  currentLanguage = lang;
+  currentLanguage = pageText[lang] ? lang : "ko";
 
-  const selected = pageText[lang] || pageText.ko;
+  const selected = pageText[currentLanguage];
 
-  document.documentElement.lang = lang;
+  document.documentElement.lang = currentLanguage;
   siteSubtitle.textContent = selected.subtitle;
   sectionTitle.textContent = selected.sectionTitle;
 
-  koButton.classList.toggle("active", lang === "ko");
-  enButton.classList.toggle("active", lang === "en");
+  koButton.classList.toggle("active", currentLanguage =
+== "ko");
+  enButton.classList.toggle("active", currentLanguage =
+== "en");
 
-  localStorage.setItem("siteLanguage", lang);
+  localStorage.setItem("siteLanguage", currentLanguage)
+;
 
-  updateToolText(lang);
+  updateToolText(currentLanguage);
   renderBooks();
 }
 
