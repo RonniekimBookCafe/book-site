@@ -1,4 +1,4 @@
-const booksData = [
+window.booksData = [
   {
     id: "book-001",
     category: "career",

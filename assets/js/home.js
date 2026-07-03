@@ -92,7 +92,7 @@ function getFilteredBooks() {
   const category = bookCategory.value;
   const sort = bookSort.value;
 
-  let result = booksData.filter((book) => {
+  let result = window.booksData.filter((book) => {
     const data = book[currentLanguage];
 
     if (!data) {
@@ -174,10 +174,8 @@ function setLanguage(lang) {
   siteSubtitle.textContent = selected.subtitle;
   sectionTitle.textContent = selected.sectionTitle;
 
-  koButton.classList.toggle("active", currentLanguage =
-== "ko");
-  enButton.classList.toggle("active", currentLanguage =
-== "en");
+  koButton.classList.toggle("active", currentLanguage === "ko");
+  enButton.classList.toggle("active", currentLanguage === "en");
 
   localStorage.setItem("siteLanguage", currentLanguage)
 ;
