@@ -22,6 +22,7 @@ const pageText = {
     },
     empty: "검색 결과가 없습니다."
   },
+
   en: {
     subtitle: "Explore books and sample chapters in English.",
     sectionTitle: "Published Books",
@@ -62,6 +63,10 @@ const bookSort = document.getElementById("book-sort");
 const bookCount = document.getElementById("book-count");
 const emptyMessage = document.getElementById("empty-message");
 
+function getBooksData() {
+  return Array.isArray(window.booksData) ? window.booksData : [];
+}
+
 function updateToolText(lang) {
   const text = pageText[lang] || pageText.ko;
 
@@ -70,8 +75,7 @@ function updateToolText(lang) {
   bookCategory.innerHTML = `
     <option value="all">${text.allCategory}</option>
     <option value="career">${text.categories.career}</option>
-    <option value="arduino">${text.categories.arduino}<
-/option>
+    <option value="arduino">${text.categories.arduino}</option>
     <option value="education">${text.categories.education}</option>
     <option value="essay">${text.categories.essay}</option>
     <option value="tech">${text.categories.tech}</option>
@@ -92,7 +96,8 @@ function getFilteredBooks() {
   const category = bookCategory.value;
   const sort = bookSort.value;
 
-  let result = window.booksData.filter((book) => {
+  const result = getBooksData().filter(function (book) 
+{
     const data = book[currentLanguage];
 
     if (!data) {
@@ -110,7 +115,7 @@ function getFilteredBooks() {
     return matchesKeyword && matchesCategory;
   });
 
-  result.sort((a, b) => {
+  result.sort(function (a, b) {
     const titleA = a[currentLanguage].title;
     const titleB = b[currentLanguage].title;
 
@@ -134,14 +139,13 @@ function getFilteredBooks() {
 
 function renderBooks() {
   const books = getFilteredBooks();
-  const text = pageText[currentLanguage] || pageText.ko
-;
+  const text = pageText[currentLanguage] || pageText.ko;
 
   bookGrid.innerHTML = "";
   bookCount.textContent = text.countText(books.length);
   emptyMessage.hidden = books.length !== 0;
 
-  books.forEach((book) => {
+  books.forEach(function (book) {
     const data = book[currentLanguage];
 
     const article = document.createElement("article");
@@ -153,6 +157,7 @@ function renderBooks() {
           class="book-cover-thumb"
           src="${data.cover}"
           alt="${data.alt}"
+          loading="lazy"
         />
       </a>
 
@@ -177,8 +182,7 @@ function setLanguage(lang) {
   koButton.classList.toggle("active", currentLanguage === "ko");
   enButton.classList.toggle("active", currentLanguage === "en");
 
-  localStorage.setItem("siteLanguage", currentLanguage)
-;
+  localStorage.setItem("siteLanguage", currentLanguage);
 
   updateToolText(currentLanguage);
   renderBooks();

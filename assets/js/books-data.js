@@ -48,4 +48,21 @@ window.booksData = [
       alt: "Book cover of Arduino Environmental Sensors for Everyone"
     }
   }
+,
+
+  {
+    id: "book-003",
+    category: "education",
+    publishedAt: "2023-06-30",
+    featured: 3,
+
+    ko: {
+      title: "엔트리와 아두이노로 만나는 게임 학교",
+      description: "엔트리와 아두이노 조이스틱 실드로 12가지 게임을 만들며 블록 코딩과 게임 개발을 배우는 실습서입니다.",
+      cover: "./assets/images/books/book-003/cover-thumb-ko.webp",
+      link: "./ko/books/book-003/",
+      button: "책 보기",
+      alt: "엔트리와 아두이노로 만나는 게임 학교 책 표지"
+    }
+  }
 ];
