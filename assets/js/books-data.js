@@ -3,7 +3,7 @@ window.booksData = [
     id: "book-001",
     category: "career",
     publishedAt: "2026-06-12",
-    featured: 1,
+    featured: 2,
 
     ko: {
       title: "개발자는 회사를 얼마나 더 오래 다닐 수 있을까요?",
@@ -28,7 +28,7 @@ window.booksData = [
     id: "book-002",
     category: "arduino",
     publishedAt: "2021-02-28",
-    featured: 2,
+    featured: 3,
 
     ko: {
       title: "모두의 아두이노 환경 센서",
@@ -54,7 +54,7 @@ window.booksData = [
     id: "book-003",
     category: "education",
     publishedAt: "2023-06-30",
-    featured: 3,
+    featured: 4,
 
     ko: {
       title: "엔트리와 아두이노로 만나는 게임 학교",
@@ -63,6 +63,38 @@ window.booksData = [
       link: "./ko/books/book-003/",
       button: "책 보기",
       alt: "엔트리와 아두이노로 만나는 게임 학교 책 표지"
+    }
+  },
+
+  {
+    id: "book-004",
+    category: "education",
+    publishedAt: "2026-08-03",
+    featured: 1,
+
+    ko: {
+      title: "AI 시대, 우리 아이는 무엇을 배워야 할까요?",
+      description: "AI가 답을 내놓는 시대에 아이가 질문하고 판단하며 자기 삶의 
+방향을 찾도록 돕는 부모 교육서입니다.",
+      cover: "./assets/images/books/book-004/cover-thum
+b-ko.webp",
+      link: "./ko/books/book-004/",
+      button: "책 보기",
+      alt: "AI 시대, 우리 아이는 무엇을 배워야 할까요? 책 표지"
+    },
+
+    en: {
+      title: "What Should Our Children Learn in the Age
+ of AI?",
+      description: "A parenting guide to raising childr
+en who ask better questions, think for themselves, use 
+AI wisely, and make thoughtful choices.",
+      cover: "./assets/images/books/book-004/cover-thum
+b-en.webp",
+      link: "./en/books/book-004/",
+      button: "View Book",
+      alt: "Book cover of What Should Our Children Lear
+n in the Age of AI?"
     }
   }
 ];
