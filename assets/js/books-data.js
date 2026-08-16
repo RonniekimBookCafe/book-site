@@ -74,27 +74,20 @@ window.booksData = [
 
     ko: {
       title: "AI 시대, 우리 아이는 무엇을 배워야 할까요?",
-      description: "AI가 답을 내놓는 시대에 아이가 질문하고 판단하며 자기 삶의 
-방향을 찾도록 돕는 부모 교육서입니다.",
-      cover: "./assets/images/books/book-004/cover-thum
-b-ko.webp",
+      description: "AI가 답을 내놓는 시대에 아이가 질문하고 판단하며 자기 삶의 방향을 찾도록 돕는 부모 교육서입니다.",
+      cover: "./assets/images/books/book-004/cover-thumb-ko.webp",
       link: "./ko/books/book-004/",
       button: "책 보기",
       alt: "AI 시대, 우리 아이는 무엇을 배워야 할까요? 책 표지"
     },
 
     en: {
-      title: "What Should Our Children Learn in the Age
- of AI?",
-      description: "A parenting guide to raising childr
-en who ask better questions, think for themselves, use 
-AI wisely, and make thoughtful choices.",
-      cover: "./assets/images/books/book-004/cover-thum
-b-en.webp",
+      title: "What Should Our Children Learn in the Age of AI?",
+      description: "A parenting guide to raising children who ask better questions, think for themselves, use AI wisely, and make thoughtful choices.",
+      cover: "./assets/images/books/book-004/cover-thumb-en.webp",
       link: "./en/books/book-004/",
       button: "View Book",
-      alt: "Book cover of What Should Our Children Lear
-n in the Age of AI?"
+      alt: "Book cover of What Should Our Children Learn in the Age of AI?"
     }
   }
 ];
