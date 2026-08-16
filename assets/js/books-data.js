@@ -47,8 +47,7 @@ window.booksData = [
       button: "View Book",
       alt: "Book cover of Arduino Environmental Sensors for Everyone"
     }
-  }
-,
+  },
 
   {
     id: "book-003",
