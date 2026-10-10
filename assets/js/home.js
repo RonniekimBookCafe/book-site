@@ -49,8 +49,7 @@ const pageText = {
       return count + " book" + (count === 1 ? "" : "s");
     },
     upcomingTitle: "Coming soon · Physical AI with RoboCo series",
-    upcomingLead: "After CORE-01, five more volumes cover sensors, robot arms, quadruped walking, autonom
-ous AI, and mobile manipulation (Korean pages).",
+    upcomingLead: "After CORE-01, five more volumes cover sensors, robot arms, quadruped walking, autonomous AI, and mobile manipulation (Korean pages).",
     empty: "No books found."
   }
 };
@@ -165,10 +164,8 @@ function createCard(book) {
   const article = document.createElement("article");
   article.className = "book-card compact-book-card" + (book.status === "upcoming" ? " is-upcoming" : "");
 
-
   const badge = data.badge
-    ? `<span class="book-status-badge${book.status === "upcoming" ? "" : " is-new"}">${data.badge}</span>
-`
+    ? `<span class="book-status-badge${book.status === "upcoming" ? "" : " is-new"}">${data.badge}</span>`
     : "";
 
   article.innerHTML = `
