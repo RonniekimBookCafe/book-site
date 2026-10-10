@@ -92,6 +92,7 @@ window.booksData = [
   {
     id: "book-005",
     category: "robotics",
+    hidden: true,          // ← 추가 (전자책 출간 후 이 줄 삭제)
     publishedAt: "2026-10-08",
     featured: 0,
     series: "roboco",
