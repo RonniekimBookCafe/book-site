@@ -1440,3 +1440,28 @@ html[lang="en"] .rk-course.is-current .rk-course-title::after {
   padding: 0 18px;
   margin: 12px 0 0 !important;
 }
+
+/* ---------- v1.14: desktop reading width (PC only, ≥ 1024px) ----------
+   style.css caps .layout at 1100px but a later shared rule resets it to
+   max-width: 100%, so on wide monitors text, videos and figures stretched
+   across the whole window. Here the book pages get a centred 1280px frame:
+   240px sidebar + 32px gap + 960px content card (896px inside the padding).
+   A 16:9 video is then at most 896 × 504 and fits in one screen; lines of
+   body text stay around 55 Korean characters. The header uses the same
+   frame so its title lines up with the sidebar. Mobile/tablet (< 1024px)
+   keep the current layout unchanged. Scoped to series-roboco.css, which only
+   book-005–010 load, so book-001–004 are not affected. */
+@media (min-width: 1024px) {
+  .layout {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body:has(> .layout) .book-header .back,
+  body:has(> .layout) .book-header h1,
+  body:has(> .layout) .book-header > p,
+  body:has(> .layout) .book-header .series-line {
+    max-width: 1232px;
+  }
+}
