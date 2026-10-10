@@ -69,7 +69,7 @@ window.booksData = [
     id: "book-004",
     category: "education",
     publishedAt: "2026-08-03",
-    featured: 1,
+    featured: 0,
 
     ko: {
       title: "AI 시대, 우리 아이는 무엇을 배워야 할까요?",
@@ -87,6 +87,142 @@ window.booksData = [
       link: "./en/books/book-004/",
       button: "View Book",
       alt: "Book cover of What Should Our Children Learn in the Age of AI?"
+    }
+  },
+  {
+    id: "book-005",
+    category: "robotics",
+    publishedAt: "2026-10-08",
+    featured: 0,
+    series: "roboco",
+    seriesCode: "CORE-01",
+    seriesOrder: 1,
+
+    ko: {
+      title: "피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어",
+      description: "키보드 조종부터 스크립트 주행까지, 직접 움직이고 바꾸는 4륜 로봇. 로봇 키트 없이 RoboCo 가상 환경에서 조종하고 바꿔 보는 피지컬 AI 로봇 실
+습서입니다.",
+      cover: "./assets/images/books/book-005/cover-thumb-ko.webp",
+      link: "./ko/books/book-005/",
+      button: "책 보기",
+      badge: "신간",
+      alt: "피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어 책 표지"
+    },
+
+    en: {
+      title: "Physical AI with RoboCo · CORE-01",
+      description: "From keyboard driving to script control: a four-wheel robot you drive and change your
+self in RoboCo's virtual world. Korean edition.",
+      cover: "./assets/images/books/book-005/cover-thumb-en.webp",
+      link: "./en/books/book-005/",
+      button: "View Book",
+      badge: "New",
+      alt: "Cover of the Korean edition of Physical AI with RoboCo, CORE-01, with its text shown in Engli
+sh"
+    }
+  },
+  {
+    id: "book-006",
+    category: "robotics",
+    publishedAt: "",
+    status: "upcoming",
+    featured: 6,
+    series: "roboco",
+    seriesCode: "CORE-02",
+    seriesOrder: 2,
+
+    ko: {
+      title: "피지컬 AI로 배우는 RoboCo 센서 피드백과 로봇 제어",
+      description: "CORE-02 · SENSE / REACT — 물체를 찾아 멈추고, 집어 옮기는 센서 반응형 4륜 로봇. 피지컬 AI로 배우는 RoboCo 시리즈 출간 
+예정 도서입니다.",
+      cover: "./assets/images/books/book-006/cover-thumb-ko.webp",
+      link: "./ko/books/book-006/",
+      button: "미리 보기",
+      badge: "출간 예정",
+      alt: "피지컬 AI로 배우는 RoboCo 센서 피드백과 로봇 제어 표지 준비 중 이미지"
+    }
+  },
+  {
+    id: "book-007",
+    category: "robotics",
+    publishedAt: "",
+    status: "upcoming",
+    featured: 7,
+    series: "roboco",
+    seriesCode: "CORE-03",
+    seriesOrder: 3,
+
+    ko: {
+      title: "피지컬 AI로 배우는 RoboCo 로봇팔과 작업 제어",
+      description: "CORE-03 · MANIPULATE — 작업 위치까지 달려가 물체를 집고 옮겨 놓는 4륜 이동 로봇팔. 피지컬 AI로 배우는 RoboCo 시리즈 출간 
+예정 도서입니다.",
+      cover: "./assets/images/books/book-007/cover-thumb-ko.webp",
+      link: "./ko/books/book-007/",
+      button: "미리 보기",
+      badge: "출간 예정",
+      alt: "피지컬 AI로 배우는 RoboCo 로봇팔과 작업 제어 표지 준비 중 이미지"
+    }
+  },
+  {
+    id: "book-008",
+    category: "robotics",
+    publishedAt: "",
+    status: "upcoming",
+    featured: 8,
+    series: "roboco",
+    seriesCode: "QUAD-01",
+    seriesOrder: 4,
+
+    ko: {
+      title: "피지컬 AI로 배우는 4족 로봇 구조와 보행 제어",
+      description: "QUAD-01 · WALK — 일어서고, 걷고, 돌고, 멈추는 열두 관절 4족 로봇. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
+
+      cover: "./assets/images/books/book-008/cover-thumb-ko.webp",
+      link: "./ko/books/book-008/",
+      button: "미리 보기",
+      badge: "출간 예정",
+      alt: "피지컬 AI로 배우는 4족 로봇 구조와 보행 제어 표지 준비 중 이미지"
+    }
+  },
+  {
+    id: "book-009",
+    category: "robotics",
+    publishedAt: "",
+    status: "upcoming",
+    featured: 9,
+    series: "roboco",
+    seriesCode: "QUAD-02",
+    seriesOrder: 5,
+
+    ko: {
+      title: "피지컬 AI로 배우는 4족 로봇 자율보행과 AI",
+      description: "QUAD-02 · DECIDE — 장애물을 보고 스스로 길을 고르는 자율보행 4족 로봇. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.
+",
+      cover: "./assets/images/books/book-009/cover-thumb-ko.webp",
+      link: "./ko/books/book-009/",
+      button: "미리 보기",
+      badge: "출간 예정",
+      alt: "피지컬 AI로 배우는 4족 로봇 자율보행과 AI 표지 준비 중 이미지"
+    }
+  },
+  {
+    id: "book-010",
+    category: "robotics",
+    publishedAt: "",
+    status: "upcoming",
+    featured: 10,
+    series: "roboco",
+    seriesCode: "QUAD-03",
+    seriesOrder: 6,
+
+    ko: {
+      title: "피지컬 AI로 배우는 4족 로봇 이동 조작과 작업 자동화",
+      description: "QUAD-03 · WORK — 걸어가서 집고 옮겨 놓는 4족 로봇 이동 조작. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
+      cover: "./assets/images/books/book-010/cover-thumb-ko.webp",
+      link: "./ko/books/book-010/",
+      button: "미리 보기",
+      badge: "출간 예정",
+      alt: "피지컬 AI로 배우는 4족 로봇 이동 조작과 작업 자동화 표지 준비 중 이미지"
     }
   }
 ];

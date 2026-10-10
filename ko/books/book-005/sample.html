@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>샘플 본문 | 피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어</title>
+  <meta name="description" content="『피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어』의 프롤로그와 CHAPTER 01 앞부분 일부를 미리 읽어 보세요." />
+  <link rel="canonical" href="https://ronniekimbooks.com/ko/books/book-005/sample.html" />
+  <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-005/sample.html" />
+  <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-005/sample.html" />
+  <link rel="alternate" hreflang="x-default" href="https://ronniekimbooks.com/en/books/book-005/sample.html" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/css/book.css" />
+  <link rel="stylesheet" href="../../../assets/css/series-roboco.css" />
+  <meta property="og:type" content="book" />
+  <meta property="og:site_name" content="Ronnie Kim Books" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어" />
+  <meta property="og:description" content="로봇을 움직이는 순간부터 피지컬 AI는 시작됩니다." />
+  <meta property="og:url" content="https://ronniekimbooks.com/ko/books/book-005/sample.html" />
+  <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-ko.webp" />
+  <meta property="book:author" content="로니킴" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어" />
+  <meta name="twitter:description" content="로봇을 움직이는 순간부터 피지컬 AI는 시작됩니다." />
+  <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-ko.webp" />
+</head>
+<body>
+<header class="book-header">
+  <div class="back"><a href="../../../">← 전체 책 목록</a><a class="lang-link" href="../../../en/books/book-005/sample.html" hreflang="en" lang="en">English</a></div>
+  <h1>샘플 본문</h1>
+  <p>피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어</p>
+  
+</header>
+<div class="layout">
+  <aside class="book-sidebar">
+    <h2>책 메뉴</h2>
+    <nav aria-label="책 메뉴">
+      <ul>
+        <li><a href="./">책 소개</a></li><li><a href="./toc.html">목차</a></li><li><a href="./sample.html" aria-current="page">샘플 본문</a></li><li><a href="./course.html">책 조합·수업안</a></li><li><a href="./faq.html">자주 묻는 질문</a></li><li><a href="./downloads/">실습 파일 내려받기</a></li><li><a href="./buy.html">구매하기</a></li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-label">웹 영상 자료</p>
+      <ul>
+        <li><a href="./learn/" target="_blank" rel="noopener">영상·웹 자료<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (새 탭에서 열림)</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+<main class="content-card">
+  <section class="sample-hero">
+    <p class="sample-hero-label">SAMPLE · 본문 미리보기</p>
+    <h2 class="sample-hero-title">로봇을 움직이는 순간부터<br />피지컬 AI는 시작됩니다</h2>
+    <p class="sample-hero-subtitle">프롤로그와 CHAPTER 01 앞부분 일부를 옮겼습니다.</p>
+  </section>
+
+  <section class="sample-section sample-content">
+    <p class="sample-label">프롤로그</p>
+    <h2 class="sample-title">로봇을 움직이는 순간부터 피지컬 AI는 시작됩니다</h2>
+    <p>완성된 <strong>4륜 독립 구동·독립 조향 이동 로봇</strong>을 불러오고 W 키를 누르면 네 바퀴가 돌아가며 차체가 앞으로 움직입니다. Z나 C를 누르면 바퀴 방향이 바뀐 뒤 차체가 제자리에서 회전하고, Q나 E를 누르면 네 바퀴가 같은 대각선 방향으로 정렬됩니다. 1번 키를 누르면 차체에 접혀 있던 화면이 펼쳐집니다.</p>
+    <p>첫 장면에서는 <strong>키를 눌렀을 때 실제로 무엇이 움직였는지</strong>부터 봅니다. 긴 Python 코드는 뒤에서 필요한 만큼만 엽니다. 바퀴는 곧바로 돌았는지, 방향을 바꾸는 데 시간이 걸렸는지, 키를 놓았을 때 차체는 어떻게 멈추는지, 화면은 어떤 상태에서 어떤 정보를 보여 주는지를 먼저 관찰합니다.</p>
+    <h3 class="sample-subtitle">피지컬 AI란?</h3>
+    <p>피지컬 AI는 주변이나 사용자의 입력을 받아 현재 상태를 파악하고, 다음 행동을 정한 뒤, 그 결과를 모터·서보 같은 Actuator를 통해 실제 움직임으로 바꾸는 시스템을 다룹니다. 움직인 결과는 다시 환경과 입력에 영향을 주고, 다음 제어의 근거가 됩니다.</p>
+    <figure class="rk-figure">
+  <a class="rk-zoom" href="../../../assets/images/books/book-005/figures/C01-S01.svg" target="_blank" rel="noopener" aria-label="그림 C01-S01 — 새 탭에서 크게 보기">
+    <img src="../../../assets/images/books/book-005/figures/C01-S01.svg" alt="피지컬 AI의 세 단계. 감지 Sense(주변 정보를 센서로 받아들임) → 판단 Decide(상태를 정하고 다음 동작을 고름) → 행동 Act(Actuator로 실제 움직임). 위쪽 화살표는 움직인 결과를 다시 감지하는 피드백이다." width="1000" height="460" loading="lazy" decoding="async" />
+  </a>
+  <figcaption><strong>그림 C01-S01</strong> | 피지컬 AI의 감지·판단·행동과 피드백 고리<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/figures/C01-S01.svg" target="_blank" rel="noopener">확대 ↗<span class="sr-only"> (새 탭에서 크게 보기)</span></a></figcaption>
+</figure>
+    <p>CORE-01은 이 전체 고리를 한 번에 구현하는 책은 아닙니다. 환경을 스스로 감지하는 Sensor와 학습 기반 Decision을 앞세우기보다, <strong>입력 → 제어 → Actuator → 물리적 움직임 → 관찰과 LOG</strong>를 먼저 분리해 봅니다. 키보드 입력은 사람이 주는 입력이고, Script의 규칙은 미리 정한 제어입니다. 그래서 CORE-01의 로봇을 센서 기반 자율 AI 로봇처럼 과장하지 않습니다. 대신 이후 센서·상태·판단이 더해져도 그대로 남는 제어의 뼈대를 익힙니다.</p>
+    <div class="sample-quote">처음에는 움직임을 봅니다. 그다음에는 이유를 찾습니다. 마지막에는 스스로 바꿔 보고 결과를 비교합니다. 이 흐름이 CORE-01에서 익힐 가장 중요한 방법입니다.</div>
+  </section>
+
+  <section class="sample-section sample-content">
+    <p class="sample-label">PART 1 · EXPERIENCE</p>
+    <h2 class="sample-title">CHAPTER 01. Controls Mapping으로 로봇을 어떻게 움직일까</h2>
+    <p>첫 실습에서는 코드를 실행하지 않습니다. <code>Book-CORE-01-CONTROLS</code>에 준비된 Controls Mapping만으로 로봇을 움직입니다. 키를 누르면 차체가 바로 반응하고, 같은 입력이 어떤 방향 변화로 이어지는지 눈으로 확인합니다.</p>
+    <p>이 장에서 다루는 주행 키는 W·S·A·D·Z·C입니다. 1번 키는 접혀 있는 <strong>안내 화면판</strong>을 펼치거나 접는 <code>Toggle Screen</code>입니다. Q·E 대각선 이동은 CHAPTER 02에서 Script 로봇과 함께 처음 다룹니다.</p>
+    <div class="rk-table-wrap"><table class="faq-table">
+      <thead><tr><th>키</th><th>기대 동작</th><th>관찰 포인트</th><th>완료 기준</th></tr></thead>
+      <tbody>
+        <tr><th>W</th><td>전진</td><td>차체 앞쪽·진행 방향</td><td>전진 장면 확인</td></tr>
+        <tr><th>S</th><td>후진</td><td>W 반대 진행 방향</td><td>후진 장면 확인</td></tr>
+        <tr><th>A</th><td>왼쪽 방향 전환</td><td>차체 회전·이동 방식</td><td>Z와 차이 기록</td></tr>
+        <tr><th>D</th><td>오른쪽 방향 전환</td><td>차체 회전·이동 방식</td><td>C와 차이 기록</td></tr>
+        <tr><th>Z</th><td>제자리 좌회전</td><td>회전 중심·종료 위치</td><td>A와 차이 기록</td></tr>
+        <tr><th>C</th><td>제자리 우회전</td><td>회전 중심·종료 위치</td><td>D와 차이 기록</td></tr>
+        <tr><th>1</th><td>Toggle Screen</td><td>Folded·Deployed</td><td>전환 방식 확인</td></tr>
+      </tbody>
+    </table></div>
+    <h3 class="sample-subtitle">1.1 W·S 전진·후진 — 움직임과 정지</h3>
+    <p>차체의 앞쪽을 먼저 정한 뒤 W를 누릅니다. 로봇은 앞쪽으로 나가고, S를 누르면 반대 방향으로 물러납니다. 여기서는 얼마나 빨리 갔는지를 재지 않습니다. 차체가 어느 방향으로 움직였는지, 바퀴 네 개가 같은 흐름으로 돌았는지, 멈출 때 어떤 장면이 남는지를 먼저 확인합니다.</p>
+    <p>W를 누르는 동안에는 차체가 한쪽으로 치우치지 않는지, S에서는 같은 자리에서 반대 방향으로 움직이는지를 봅니다. 키를 놓은 뒤에는 차체가 곧바로 멈추는지, 조금 더 밀려 나가는지 기록합니다. 이 장면이 뒤에서 Script 로봇의 정지 동작과 비교할 기준이 됩니다.</p>
+  </section>
+
+  <section class="sample-section" id="rk-sample-gallery" hidden><h2>지면 미리보기</h2><p>실제 책 지면 일부를 이미지로 확인할 수 있습니다.</p><div class="rk-sample-grid" data-sample-grid></div></section>
+  <div class="sample-note"><p>더 많은 장면은 웹 자료 페이지의 실행 영상에서 볼 수 있습니다. 전체 설명과 실습은 책에서 이어집니다.</p></div>
+  <div class="sample-cta">
+    <a class="primary" href="./toc.html">전체 목차 보기</a>
+    <a class="secondary" href="./faq.html">자주 묻는 질문 보기</a>
+  </div>
+</main>
+</div>
+<footer class="site-footer">
+  <p>RoboCo 및 관련 명칭은 각 권리자의 상표입니다.</p>
+  <p>© Ronnie Kim Books. All rights reserved.</p>
+</footer>
+<script src="../../../assets/js/media/book-005.js"></script>
+<script src="../../../assets/js/book-media.js" data-book="book-005" data-root="../../../"></script>
+</body>
+</html>

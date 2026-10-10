@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CORE-01 Experiment &amp; Mission Record Sheets (printable) | Ronnie Kim Books</title>
+<meta name="description" content="Three A4 record sheets for the Part 4 experiments, the Part 5 mission, and the web challenge missions of Physical AI with RoboCo · CORE-01." />
+<link rel="canonical" href="https://ronniekimbooks.com/en/books/book-005/downloads/record-sheets/" />
+<link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-005/downloads/record-sheets/" />
+<link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-005/downloads/record-sheets/" />
+<style>
+:root { --ink:#111; --line:#8a8a8a; --soft:#f0f0f0; --mid:#555; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: #e5e7eb; color: var(--ink); font-family: "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif; font-size: 10.5pt; line-height: 1.4; }
+code { font-family: "Consolas", "D2Coding", "DejaVu Sans Mono", "Noto Sans Mono CJK KR", monospace; font-size: .92em; }
+.bar { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: center; padding: 10px 16px; background: #111827; color: #fff; font-size: 14px; }
+.bar a, .bar button { display: inline-block; padding: 7px 14px; border-radius: 8px; border: 1px solid #4b5563; background: #1f2937; color: #fff; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.bar a.primary { background: #ffd91a; color: #111; border-color: #ffd91a; }
+.bar span { color: #d1d5db; }
+.sheet { width: 210mm; max-width: calc(100% - 24px); margin: 18px auto; padding: 11mm 12mm 9mm; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.15); display: flex; flex-direction: column; }
+.top { display: grid; grid-template-columns: 1fr auto; gap: 2mm 6mm; align-items: end; border-bottom: 2px solid var(--ink); padding-bottom: 2.5mm; }
+.tag { font-size: 8.5pt; font-weight: 800; letter-spacing: .04em; }
+.tag b { display: inline-block; padding: .5mm 2mm; margin-right: 2mm; background: var(--ink); color: #fff; }
+h1 { margin: 1mm 0 0; font-size: 17pt; line-height: 1.2; }
+.who { display: grid; grid-template-columns: repeat(3, auto); gap: 0 4mm; font-size: 9pt; }
+.who span { display: inline-block; min-width: 22mm; border-bottom: 1px solid var(--ink); padding: 0 1mm 1mm; }
+.lead { margin: 2.5mm 0 1mm; font-size: 9.5pt; }
+.meta { display: flex; justify-content: space-between; gap: 4mm; font-size: 8.5pt; color: var(--mid); margin-bottom: 2mm; }
+h2 { margin: 4mm 0 1.5mm; font-size: 11.5pt; display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+h2 small { font-size: 8pt; font-weight: 600; color: var(--mid); }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+th, td { border: 1px solid var(--line); padding: 1.6mm 2mm; vertical-align: middle; text-align: left; }
+thead th { background: var(--soft); font-size: 9pt; }
+tbody th { background: #fafafa; font-weight: 700; font-size: 9.5pt; width: 46mm; }
+td { height: 9.0mm; font-size: 9.5pt; }
+html[lang=en] tbody th { font-size: 9pt; }
+.s3 td { height: 8.2mm; }
+td.tall { height: 15mm; }
+td.box span { display: inline-block; margin-right: 6mm; }
+.params { display: flex; flex-wrap: wrap; gap: 1mm 4mm; font-size: 9pt; }
+.num td, .num th { text-align: center; }
+.note { margin: 1.5mm 0 0; font-size: 8.5pt; color: var(--mid); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.grid9 { display: grid; grid-template-columns: repeat(9, 1fr); border-left: 1px solid var(--line); border-top: 1px solid var(--line); width: 100%; max-width: 92mm; }
+.grid9 i { display: block; aspect-ratio: 1 / 1; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.spacer { flex: 1; }
+.foot { display: flex; justify-content: space-between; gap: 4mm; border-top: 1px solid var(--line); margin-top: 4mm; padding-top: 1.5mm; font-size: 7.5pt; color: var(--mid); }
+@media screen and (max-width: 820px) {
+  .sheet { padding: 16px 12px; }
+  .top { grid-template-columns: 1fr; }
+  .two { grid-template-columns: 1fr; }
+  tbody th { width: 34%; }
+  th, td { padding: 6px; }
+  .num thead th, .num td, .num tbody th { padding: 4px 2px; font-size: 10px; overflow-wrap: anywhere; }
+}
+@page { size: A4; margin: 0; }
+@media print {
+  body { background: #fff; }
+  .bar { display: none; }
+  .sheet { width: 210mm; height: 297mm; max-width: none; margin: 0; box-shadow: none; page-break-after: always; break-after: page; overflow: hidden; }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+}
+</style>
+</head>
+<body>
+<div class="bar"><a href="../">← Practice files</a><button type="button" onclick="window.print()">Print</button><a class="primary" href="./CORE-01_record-sheets_en.pdf" download>Download PDF</a><span>3 A4 pages · black-and-white friendly · copy as many as you need.</span></div>
+<main>
+<section class="sheet" aria-label="Sheet 1 / 3 · Part 4">
+<div class="top"><div><p class="tag"><b>CORE-01</b>Sheet 1 / 3 · Part 4</p><h1>Setting comparison record</h1></div><div class="who"><label>Name <span></span></label><label>Date <span></span></label><label>Run # <span></span></label></div></div>
+<p class="lead">Change one value at a time. Write your prediction before you change it, then write what you actually saw.</p>
+<p class="meta"><span>Baseline: <code>Book_C01_Robot</code> v1.6.3 · RoboCo API 0.3.1</span><span>Appendix I · Table C01-I01-A</span></p>
+<table><colgroup><col style="width:30%"><col></colgroup><thead><tr><th>Item</th><th>Record</th></tr></thead><tbody><tr><th>Robot file</th><td class="box"><span>☐ Book-CORE-01-CONTROLS (Robot 1)</span><span>☐ Book-CORE-01-SCRIPT_PART (Robot 2)</span></td></tr><tr><th>Script/Library version</th><td class="box"><span>☐ v1.6.3</span><span>Other: ________</span></td></tr><tr><th>Controls Mapping checked</th><td class="box"><span>☐ Checked</span><span>Note: ____________________</span></td></tr><tr><th>Start position & heading</th><td></td></tr><tr><th>Screen at start</th><td class="box"><span>☐ Folded</span><span>☐ Open</span></td></tr><tr><th>Parameter tested</th><td><div class="params"><span>☐ RPM</span><span>☐ ACCEL</span><span>☐ BRAKE F</span><span>☐ BRAKE T</span><span>☐ Added item STAGGER/RETURN ____</span></div></td></tr><tr><th>Key used</th><td class="box"><span>2 / 3 / 4 / 0</span></td></tr><tr><th>Current level</th><td class="box"><span>LV ___ / 10</span></td></tr><tr><th>Baseline value</th><td></td></tr><tr><th>Value before</th><td></td></tr><tr><th>Value after</th><td></td></tr><tr><th>Prediction</th><td class="tall"></td></tr><tr><th>What you observed</th><td class="tall"></td></tr><tr><th>Failure or odd behavior</th><td class="tall"></td></tr><tr><th>One thing to change next</th><td></td></tr><tr><th>Baseline back after Reset All (0, or fold with 1)</th><td class="box"><span>☐ Yes</span><span>☐ No</span></td></tr></tbody></table>
+<h2>Motor baseline record <small>Appendix I · Table C01-I01-B</small></h2>
+<table class="num"><colgroup><col style="width:24%"><col><col><col><col><col><col style="width:22%"></colgroup><thead><tr><th>Run</th><th>RPM</th><th>ACCEL</th><th>BRAKE F</th><th>BRAKE T</th><th>TORQUE (fixed)</th><th>Note</th></tr></thead><tbody><tr><th>Robot file values</th><td></td><td></td><td></td><td></td><td></td><td style="font-size:7.5pt"><code>SETUP Motor (robot file) · Motor (fixed)</code></td></tr><tr><th>Values the script applied</th><td></td><td></td><td></td><td></td><td></td><td style="font-size:7.5pt"><code>SETUP Motor (script) · only when different</code></td></tr></tbody></table>
+<p class="note">Copy the numbers from the Console <code>SETUP</code> lines of that run. TORQUE is a fixed value the script never changes.</p>
+<div class="spacer"></div><div class="foot"><span>CORE-01 · Physical AI with RoboCo · ronniekimbooks.com/en/books/book-005/</span><span>1 / 3</span></div>
+</section>
+<section class="sheet" aria-label="Sheet 2 / 3 · Part 5">
+<div class="top"><div><p class="tag"><b>CORE-01</b>Sheet 2 / 3 · Part 5</p><h1>Mission check form</h1></div><div class="who"><label>Name <span></span></label><label>Date <span></span></label><label>Run # <span></span></label></div></div>
+<p class="lead">For each step, write the time you set next to the motion you actually saw. If a step fails, stop at that row and pick one cause.</p>
+<p class="meta"><span>Baseline: <code>Book_C01_Robot</code> v1.6.3 · RoboCo API 0.3.1</span><span>Appendix I · Table C01-I01-C</span></p>
+<table class="num"><colgroup><col style="width:13%"><col style="width:20%"><col style="width:13%"><col><col style="width:13%"><col style="width:16%"></colgroup>
+<thead><tr><th>Step</th><th>Action/State</th><th>Set time (s)</th><th>Observed</th><th>Done/Failed</th><th>Note</th></tr></thead><tbody><tr><th>1</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th>2</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th>3</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th>4</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th>5</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th>6</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th>GUIDE</th><td>Screen guide</td><td></td><td></td><td></td><td></td></tr><tr><th>RETURN</th><td>Return</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<p class="note">Use rows 4–6 if the route has more than three steps.</p>
+<table style="margin-top:3mm"><colgroup><col style="width:30%"><col></colgroup><tbody>
+<tr><th>Guide message</th><td></td></tr><tr><th>Gap between start and return positions</th><td></td></tr></tbody></table>
+<h2>Whole-mission check</h2>
+<table><colgroup><col><col style="width:38mm"></colgroup><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><th style="width:auto;font-weight:600">1. Recorded the start position?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">2. Did the route run without breaks?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">3. Did the screen open at the guide point?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">4. Was the guide message visible?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">5. Did the screen fold after guiding?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">6. Did RETURN run?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">7. Recorded the gap between start and return?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">8. Picked the single biggest cause of failure?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">9. Changed only one condition?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr><tr><th style="width:auto;font-weight:600">10. Recorded the re-run result?</th><td style="width:38mm">☐ Yes  ☐ No</td></tr></tbody></table>
+<div class="spacer"></div><div class="foot"><span>CORE-01 · Physical AI with RoboCo · ronniekimbooks.com/en/books/book-005/</span><span>2 / 3</span></div>
+</section>
+<section class="sheet s3" aria-label="Sheet 3 / 3 · Web only">
+<div class="top"><div><p class="tag"><b>CORE-01</b>Sheet 3 / 3 · Web only</p><h1>Challenge mission record</h1></div><div class="who"><label>Name <span></span></label><label>Date <span></span></label><label>Run # <span></span></label></div></div>
+<p class="lead">For challenges 1–3 on the web companion page. No solution code is provided; the concepts are in the chapters indicated.</p>
+<p class="meta"><span>Baseline: <code>Book_C01_Robot</code> v1.6.3 · RoboCo API 0.3.1</span><span>Web only · not in the book's appendix</span></p>
+<h2>Challenge 1 · Guide to a different place <small>CH22 · CH23</small></h2>
+<table class="num"><colgroup><col style="width:12%"><col style="width:30%"><col style="width:16%"><col></colgroup><thead><tr><th>Step</th><th>Action</th><th>Time (s)</th><th>Observed</th></tr></thead><tbody><tr><th>1</th><td></td><td></td><td></td></tr><tr><th>2</th><td></td><td></td><td></td></tr><tr><th>3</th><td></td><td></td><td></td></tr><tr><th>4</th><td></td><td></td><td></td></tr><tr><th>5</th><td></td><td></td><td></td></tr><tr><th>6</th><td></td><td></td><td></td></tr></tbody></table>
+<p class="note">Rule: at least four steps, at least one <code>pause</code> · Actions: <code>forward · backward · turn_left · turn_right · rotate_left · rotate_right · pause</code></p>
+<h2>Challenge 2 · Back to the same spot three times <small>CH24 · CH25</small></h2>
+<table><colgroup><col style="width:30%"><col><col></colgroup><tbody><tr><th>The one value changed</th><td>Before:</td><td>After:</td></tr></tbody></table>
+<table class="num" style="margin-top:2mm"><colgroup><col style="width:16%"><col><col></colgroup><thead><tr><th>Run</th><th>Before · return-position gap</th><th>After · return-position gap</th></tr></thead><tbody><tr><th>1</th><td></td><td></td></tr><tr><th>2</th><td></td><td></td></tr><tr><th>3</th><td></td><td></td></tr><tr><th>Average</th><td></td><td></td></tr></tbody></table>
+<p class="note">Also look at how much the three gaps vary.</p>
+<h2>Challenge 3 · A guide message readable at a glance <small>CH21</small></h2>
+<div class="two"><div><div class="grid9" role="img" aria-label="9 × 4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="note">Text Screen draft — 9 cells × 4 lines. One character per cell.</p></div>
+<table><tbody><tr><th style="width:auto">Why this wording</th></tr><tr><td class="tall" style="height:24mm"></td></tr>
+<tr><td class="box"><span>☐ Checked with a real screen capture</span></td></tr></tbody></table></div>
+<div class="spacer"></div><div class="foot"><span>CORE-01 · Physical AI with RoboCo · ronniekimbooks.com/en/books/book-005/</span><span>3 / 3</span></div>
+</section>
+</main>
+</body>
+</html>

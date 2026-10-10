@@ -1,0 +1,1442 @@
+/* =========================================================
+   Physical AI with RoboCo series (book-005 ~ book-010)
+   Loaded only by RoboCo series pages, after style.css + book.css.
+   Existing book-001 ~ book-004 pages do not load this file.
+========================================================= */
+
+:root {
+  --rk-charcoal: #171a1f;
+  --rk-yellow: #ffd91a;
+  --rk-yellow-soft: #fff7cc;
+  --rk-accent: #0f3f8f;
+  --rk-line: #e5e7eb;
+}
+
+/* ---------- header: language link + series line ---------- */
+.book-header .back {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 16px;
+  align-items: center;
+}
+
+.book-header .lang-link {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.book-header .lang-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.series-line {
+  max-width: 980px;
+  margin: 18px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.series-chip {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e5e7eb;
+}
+
+.series-chip.code {
+  background: var(--rk-yellow);
+  color: var(--rk-charcoal);
+}
+
+/* ---------- status badges ---------- */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  vertical-align: middle;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.status-badge.upcoming {
+  background: var(--rk-yellow-soft);
+  color: #6b5200;
+  border: 1px solid #f3d65c;
+}
+
+.status-badge.verified {
+  background: #e8f1ff;
+  color: var(--rk-accent);
+  border: 1px solid #c7dafc;
+}
+
+.status-badge.pending {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.intro-status {
+  margin: 0 0 14px;
+}
+
+/* ---------- sidebar extras ---------- */
+.book-sidebar .sidebar-divider {
+  margin: 16px 0 10px;
+  border-top: 1px solid var(--rk-line);
+}
+
+.book-sidebar .sidebar-label {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #6b7280;
+}
+
+.new-tab-mark {
+  font-size: 0.85em;
+  margin-left: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- figures (roboco-figure-style SVG) ---------- */
+.rk-figure {
+  margin: 26px 0;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid var(--rk-line);
+  border-radius: 14px;
+}
+
+.rk-figure a.rk-zoom {
+  display: block;
+  cursor: zoom-in;
+}
+
+.rk-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rk-figure figcaption {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.rk-figure figcaption strong {
+  color: #111827;
+}
+
+.rk-figure .rk-zoom-hint {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--rk-accent);
+  white-space: nowrap;
+}
+
+/* ---------- step flow chips ---------- */
+.rk-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rk-flow li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.rk-flow li span {
+  padding: 8px 12px;
+  background: #f9fafb;
+  border: 1px solid var(--rk-line);
+  border-radius: 10px;
+}
+
+.rk-flow li:not(:last-child)::after {
+  content: "→";
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.rk-flow li.is-key span {
+  background: var(--rk-yellow-soft);
+  border-color: #f3d65c;
+}
+
+/* ---------- tables ---------- */
+.rk-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 18px 0;
+}
+
+.rk-table-wrap .faq-table {
+  margin: 0;
+}
+
+/* wide tables (4+ columns of code-like values) scroll inside the wrapper on phones */
+.rk-table-wrap .faq-table.wide {
+  min-width: 600px;
+}
+
+.faq-table td code,
+.faq-table th code {
+  overflow-wrap: anywhere;
+}
+
+.rk-video-index td:last-child {
+  white-space: normal;
+}
+
+.faq-table tr.is-current th,
+.faq-table tr.is-current td {
+  background: var(--rk-yellow-soft);
+}
+
+/* ---------- code ---------- */
+.rk-code {
+  margin: 20px 0;
+  padding: 18px 20px;
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  font-family: "D2Coding", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.65;
+  tab-size: 4;
+}
+
+.rk-code code {
+  font-family: inherit;
+  white-space: pre;
+}
+
+.rk-code .c {
+  color: #9ca3af;
+}
+
+.content-card :not(pre) > code {
+  padding: 1px 6px;
+  background: #f3f4f6;
+  border-radius: 5px;
+  font-size: 0.92em;
+  font-family: "D2Coding", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.rk-code-caption {
+  margin-top: -8px !important;
+  font-size: 14px !important;
+  color: #6b7280 !important;
+}
+
+/* ---------- video ---------- */
+.rk-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 22px 0 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--rk-charcoal);
+}
+
+.rk-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.rk-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #e5e7eb;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.rk-video-placeholder .vid-id {
+  font-family: "D2Coding", "SFMono-Regular", Consolas, monospace;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--rk-yellow);
+}
+
+.rk-video-placeholder p {
+  margin: 0;
+  color: #d1d5db !important;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.rk-video-meta {
+  font-size: 14.5px;
+  color: #4b5563;
+}
+
+/* ---------- cards ---------- */
+.rk-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.rk-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid var(--rk-line);
+  border-radius: 14px;
+}
+
+.rk-card h3 {
+  margin: 0 0 8px !important;
+  font-size: 18px !important;
+  color: #111827;
+}
+
+.rk-card p {
+  margin: 6px 0 0 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #374151 !important;
+}
+
+.rk-card .rk-card-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: var(--rk-accent);
+}
+
+.rk-card.is-strong {
+  background: #f9fafb;
+}
+
+/* Digital Package items */
+.rk-package {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.rk-package-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 16px;
+  align-items: start;
+  padding: 16px 18px;
+  background: #f9fafb;
+  border: 1px solid var(--rk-line);
+  border-radius: 12px;
+}
+
+.rk-package-item h3 {
+  margin: 0 !important;
+  font-size: 17px !important;
+}
+
+.rk-package-item p {
+  grid-column: 1 / -1;
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+/* PART cards on the book page */
+.rk-parts {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rk-parts li {
+  display: grid;
+  grid-template-columns: 178px 1fr;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--rk-line);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.rk-parts .part-tag {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--rk-accent);
+}
+
+.rk-parts .part-tag span {
+  display: block;
+  font-size: 15px;
+  color: #111827;
+}
+
+.rk-parts p {
+  margin: 0 !important;
+  font-size: 15.5px !important;
+  line-height: 1.75 !important;
+}
+
+.rk-note {
+  margin: 22px 0;
+  padding: 16px 18px;
+  background: #f3f4f6;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.rk-note strong {
+  color: #111827;
+}
+
+/* in-page anchor list on hub */
+.rk-anchor-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rk-anchor-list li {
+  margin: 8px 0 !important;
+}
+
+.rk-anchor-list a {
+  font-weight: 700 !important;
+  font-size: 15px;
+}
+
+.rk-section-id {
+  scroll-margin-top: 20px;
+}
+
+/* Video index */
+.rk-video-index td:first-child {
+  white-space: nowrap;
+  font-family: "D2Coding", "SFMono-Regular", Consolas, monospace;
+  font-weight: 700;
+}
+
+/* Permanent video URL page (/v/{ID}/) */
+.vpage-main {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.vpage-lang {
+  margin-top: 26px;
+}
+
+.vpage-lang h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .rk-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-parts li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 800px) {
+  .rk-figure {
+    padding: 10px;
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+
+  .rk-code {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .rk-flow li {
+    font-size: 14px;
+  }
+
+  .rk-flow li span {
+    padding: 6px 10px;
+  }
+
+  .vpage-main {
+    padding: 0 16px;
+  }
+}
+
+/* book.css turns .faq-table into a nowrap block on mobile; inside the
+   scroll wrapper keep normal table layout so long cells can wrap. */
+@media (max-width: 800px) {
+  .rk-table-wrap .faq-table {
+    display: table;
+    white-space: normal;
+    overflow: visible;
+  }
+}
+
+/* ---------- v1.2: video-centric web companion ---------- */
+.rk-hub-hero {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.rk-hub-hero img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow-cover);
+}
+
+.rk-book-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: var(--rk-accent);
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.rk-book-link::before {
+  content: "📖 ";
+}
+
+.rk-vgrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.rk-vcard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rk-line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.rk-vthumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--rk-charcoal);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 10px;
+}
+
+.rk-vthumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--rk-yellow);
+}
+
+.rk-vthumb .vid-id {
+  font-family: "D2Coding", "SFMono-Regular", Consolas, monospace;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--rk-yellow);
+}
+
+.rk-vthumb .play {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.rk-vbody {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.rk-vbody h3 {
+  margin: 0 0 6px !important;
+  font-size: 17.5px !important;
+  line-height: 1.45 !important;
+  color: #111827 !important;
+}
+
+.rk-vbody p {
+  margin: 4px 0 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #374151 !important;
+}
+
+.rk-vbody .watch {
+  font-size: 13px !important;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--rk-accent) !important;
+  margin-top: 8px !important;
+}
+
+.rk-vbody .rk-book-link {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.rk-vbody .status-badge {
+  align-self: flex-start;
+  margin-bottom: 8px;
+}
+
+.rk-key-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.rk-key {
+  padding: 14px;
+  border: 1px solid var(--rk-line);
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.rk-key kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  margin-bottom: 8px;
+  border: 1px solid #9ca3af;
+  border-bottom-width: 3px;
+  border-radius: 7px;
+  background: #ffffff;
+  font-family: "D2Coding", "SFMono-Regular", Consolas, monospace;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.rk-key strong {
+  display: block;
+  font-size: 15px;
+  color: #111827;
+}
+
+.rk-key span {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.rk-challenge {
+  margin: 18px 0;
+  padding: 22px 24px;
+  border: 1px solid var(--rk-line);
+  border-left: 6px solid var(--rk-yellow);
+  border-radius: 0 14px 14px 0;
+  background: #ffffff;
+}
+
+.rk-challenge h3 {
+  margin: 0 0 8px !important;
+  font-size: 19px !important;
+}
+
+.rk-challenge dl {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 6px 12px;
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.rk-challenge dt {
+  font-weight: 900;
+  color: #111827;
+}
+
+.rk-challenge dd {
+  margin: 0;
+  color: #374151;
+}
+
+@media (max-width: 900px) {
+  .rk-vgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rk-key-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .rk-hub-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-hub-hero img {
+    max-width: 180px;
+  }
+
+  .rk-vgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-challenge dl {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .rk-challenge dd {
+    margin-bottom: 8px;
+  }
+}
+
+/* ---------- v1.4: published state, series tracks, course plans ---------- */
+.status-badge.new {
+  background: #111827;
+  color: #ffd91a;
+  border: 1px solid #111827;
+}
+
+.rk-vthumb iframe,
+.rk-video-card iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.rk-vthumb.is-live::after {
+  display: none;
+}
+
+.rk-video-card {
+  margin: 0;
+  border-radius: 0;
+}
+
+.rk-watch-link {
+  margin-top: 6px !important;
+}
+
+.rk-dl {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 9px;
+  background: #111827;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.rk-dl::before {
+  content: "⬇ ";
+}
+
+.rk-buy-hero {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.rk-buy-hero img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: var(--shadow-cover);
+}
+
+.rk-sample-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.rk-sample-grid img {
+  width: 100%;
+  border: 1px solid var(--rk-line);
+  border-radius: 8px;
+}
+
+.rk-bookchip {
+  display: inline-block;
+  margin: 2px 2px 2px 0;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border-left: 5px solid var(--chip, #e5e7eb);
+  background: #f3f4f6;
+  color: #111827 !important;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.rk-bookchip.is-upcoming {
+  opacity: 0.6;
+}
+
+.rk-bookchip.is-current {
+  background: var(--rk-yellow-soft);
+  outline: 1px solid #f3d65c;
+  opacity: 1;
+}
+
+.rk-track {
+  margin: 20px 0;
+}
+
+.rk-track h3 {
+  margin: 0 0 12px !important;
+  font-size: 18px !important;
+}
+
+.rk-track h3 small {
+  margin-left: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.rk-trackgrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rk-trackcard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--rk-line);
+  border-top: 6px solid var(--chip, #e5e7eb);
+  border-radius: 12px;
+  background: #ffffff;
+  color: #111827;
+  text-decoration: none;
+}
+
+.rk-trackcard:hover {
+  background: #f9fafb;
+}
+
+.rk-trackcard.is-current {
+  background: var(--rk-yellow-soft);
+}
+
+.rk-trackcard .code {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.rk-trackcard .cap {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+}
+
+.rk-trackcard .t {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #374151;
+}
+
+.rk-trackcard .status-badge {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.rk-chiprow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.rk-chiplink {
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--rk-line);
+  background: #ffffff;
+  color: #111827 !important;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.rk-chiplink.is-current {
+  background: var(--rk-yellow-soft);
+  border-color: #f3d65c;
+}
+
+.rk-course {
+  margin-top: 34px !important;
+  padding-top: 30px !important;
+}
+
+.rk-course-title {
+  margin: 0 0 14px !important;
+  font-size: 23px !important;
+}
+
+.rk-course.is-current .rk-course-title::after {
+  content: "이 책 포함";
+  margin-left: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--rk-yellow-soft);
+  border: 1px solid #f3d65c;
+  font-size: 12.5px;
+  vertical-align: middle;
+}
+
+html[lang="en"] .rk-course.is-current .rk-course-title::after {
+  content: "Includes this book";
+}
+
+.rk-schedule th:first-child {
+  width: 72px;
+  white-space: nowrap;
+}
+
+.rk-schedule td:last-child {
+  width: 34%;
+  color: #4b5563;
+  font-size: 14.5px;
+}
+
+.rk-launch {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid var(--rk-line);
+  border-left: 6px solid var(--rk-yellow);
+  border-radius: 0 16px 16px 0;
+  background: #fffdf2;
+}
+
+.rk-launch img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: var(--shadow-cover);
+}
+
+.rk-launch h3 {
+  margin: 4px 0 8px !important;
+}
+
+@media (max-width: 800px) {
+  .rk-trackgrid,
+  .rk-sample-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rk-launch {
+    grid-template-columns: 90px 1fr;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .rk-trackgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-buy-hero {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .rk-launch {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-launch img {
+    max-width: 120px;
+  }
+}
+
+/* ---------- v1.5: poster frames, robot previews ---------- */
+.rk-video .rk-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.rk-video.has-poster .rk-video-placeholder {
+  background: linear-gradient(180deg, rgba(23, 26, 31, 0.15), rgba(23, 26, 31, 0.75));
+}
+
+.rk-video-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin: 22px 0;
+}
+
+.rk-video-pair article h3 {
+  margin: 14px 0 6px !important;
+  font-size: 19px !important;
+}
+
+.rk-video-pair .rk-video {
+  margin: 0;
+}
+
+.rk-robots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.rk-robots figure {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--rk-line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f3f4f6, #ffffff);
+  text-align: center;
+}
+
+.rk-robots img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.rk-robots figcaption {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.rk-robots figcaption code {
+  font-size: 12.5px;
+}
+
+@media (max-width: 800px) {
+  .rk-video-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== v1.6 — Digital Package page, video links, record sheets ===== */
+.intro-cta a[hidden],
+[hidden] {
+  display: none !important;
+}
+
+.rk-vlinks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0 0;
+}
+
+.rk-vlinks a {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px;
+  border: 1px solid var(--rk-line);
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #111827;
+  text-decoration: none;
+}
+
+.rk-vlinks a:hover,
+.rk-vlinks a:focus-visible {
+  border-color: #111827;
+}
+
+.rk-vlinks .vid-id {
+  font-family: Consolas, Monaco, monospace;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--rk-accent);
+}
+
+.rk-vlinks small {
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.rk-vcount {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rk-vcount a {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--rk-line);
+  border-radius: 10px;
+  color: #111827;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.rk-steps {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rkstep;
+}
+
+.rk-steps li {
+  counter-increment: rkstep;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 4px 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--rk-line);
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.rk-steps li::before {
+  content: counter(rkstep);
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--rk-yellow);
+  color: var(--rk-charcoal);
+  font-weight: 800;
+}
+
+.rk-steps li span {
+  grid-column: 2 / -1;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.rk-dlcards {
+  display: grid;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.rk-dlcard {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid var(--rk-line);
+  border-radius: 14px;
+}
+
+.rk-dlcard img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #f3f4f6;
+}
+
+.rk-dlcard h3 {
+  margin: 0 0 4px !important;
+}
+
+.rk-dlcard p {
+  margin: 0 0 6px !important;
+}
+
+.rk-files,
+.rk-tree ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.rk-files li,
+.rk-tree li {
+  margin: 3px 0;
+  overflow-wrap: anywhere;
+}
+
+.rk-files small,
+.rk-tree small {
+  color: #6b7280;
+}
+
+.rk-tree {
+  margin: 14px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--rk-line);
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 15px;
+}
+
+.rk-tree > p {
+  margin: 0 !important;
+}
+
+.rk-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.rk-sheet-grid figure {
+  margin: 0;
+}
+
+.rk-sheet-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.08);
+}
+
+.rk-sheet-grid figcaption {
+  margin-top: 6px;
+  color: #374151;
+  font-size: 13px;
+  text-align: center;
+}
+
+.rk-hash {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 12px !important;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+@media (max-width: 760px) {
+  .rk-vlinks,
+  .rk-sheet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-sheet-grid img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .rk-dlcard {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-dlcard img {
+    max-width: 220px;
+  }
+
+  .rk-steps li {
+    grid-template-columns: 34px 1fr;
+  }
+
+  .rk-steps li .rk-dl {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+/* ===== v1.7 — web-only explanatory images (idea-generation techniques) ===== */
+.rk-webfig {
+  padding: 14px;
+}
+
+.rk-webfig img {
+  border-radius: 6px;
+}
+
+.rk-tech {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 9px;
+  border-radius: 999px;
+  background: var(--rk-yellow-soft);
+  border: 1px solid #efe39a;
+  color: #111827;
+  font-size: 12.5px;
+  font-weight: 800;
+  vertical-align: 1px;
+}
+
+@media (max-width: 760px) {
+  .rk-webfig {
+    padding: 8px;
+  }
+}
+
+/* ===== v1.8 — two comment editions of the start file + library ===== */
+.rk-editions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 10px;
+}
+
+.rk-edition {
+  padding: 14px 16px;
+  border: 1px solid var(--rk-line);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.rk-edition.is-primary {
+  border-color: #111827;
+  background: var(--rk-yellow-soft);
+}
+
+.rk-edition h3 {
+  margin: 0 0 8px !important;
+  font-size: 16px !important;
+}
+
+.rk-edition p {
+  margin: 0 0 6px !important;
+  font-size: 14.5px !important;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .rk-editions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* v1.9 — two code editions (_kr / _en) side by side in the practice-files card */
+.rk-dl-pair {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.rk-dl code {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---------- v1.13: live players inside comparison / failure cards ---------- */
+.rk-vcard > .rk-video {
+  margin: 0;
+  border-radius: 0;
+}
+
+.rk-vcard > .rk-watch-link {
+  padding: 0 18px;
+  margin: 12px 0 0 !important;
+}

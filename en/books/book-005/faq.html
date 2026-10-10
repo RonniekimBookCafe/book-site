@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Physical AI with RoboCo · CORE-01</title>
+  <meta name="description" content="Who CORE-01 is for, what you need, whether you need Python installed, how RoboCo differs from real hardware, and publication status." />
+  <link rel="canonical" href="https://ronniekimbooks.com/en/books/book-005/faq.html" />
+  <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-005/faq.html" />
+  <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-005/faq.html" />
+  <link rel="alternate" hreflang="x-default" href="https://ronniekimbooks.com/en/books/book-005/faq.html" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/css/book.css" />
+  <link rel="stylesheet" href="../../../assets/css/series-roboco.css" />
+  <meta property="og:type" content="book" />
+  <meta property="og:site_name" content="Ronnie Kim Books" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Physical AI with RoboCo · CORE-01" />
+  <meta property="og:description" content="Start by moving a finished robot — no coding required to begin." />
+  <meta property="og:url" content="https://ronniekimbooks.com/en/books/book-005/faq.html" />
+  <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-en.webp" />
+  <meta property="book:author" content="Ronnie Kim" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Physical AI with RoboCo · CORE-01" />
+  <meta name="twitter:description" content="Start by moving a finished robot — no coding required to begin." />
+  <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-en.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kind of book is this?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's a hands-on book about controlling robots, as a first step into physical AI. You start by driving a finished four-wheel robot with independent drive and steering in RoboCo, then follow a key press through each control layer until it becomes motion. It's CORE-01 in the Physical AI with RoboCo series, and it covers movement and control (MOVE / CONTROL)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I start without knowing how to code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Chapter 1 uses Controls Mapping and no code at all. In Chapter 2 you run the start file that comes with the book, and from Chapter 11 on, Python comes in a little at a time, always tied to an actual robot setting. This isn't a full Python course."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install Python separately?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not for the main exercises. CORE-01 scripts run on RoboCo's built-in Python. A code editor is handy for reading and editing the start file and library."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need for the exercises?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RoboCo from Steam, plus the CORE-01 practice files: two robot files, the start file c01_start.py, and the Educational Library C01_Lib. You'll find all of them, along with the record sheets, on the practice files page. Check RoboCo's Steam page for current OS support, system requirements, languages, and price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it cover real robot hardware?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. RoboCo is a robot sandbox game with a physics simulation. It doesn't model hardware problems like batteries, motor heat, wiring, or communication lag, so the book never treats its numbers as real hardware performance. What you learn instead is how to check a result: repeat the run under the same conditions and change one value at a time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I build an autonomous robot that decides on its own?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The CORE-01 final mission is a timed route: the robot runs a list of actions, each for a set time. Sensing and reacting come in CORE-02, and autonomous behavior built on state and decisions comes in QUAD-02. CORE-01 lays the groundwork those books build on: input, control, actuators, and observation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the RoboCo API different from the Educational Library?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DCMotor, ServoMotor, LED, TextScreen, and Input are RoboCo's official Python API. Names like Robot.forward() and Mission, which wrap several official calls into one action, come from the author's CORE-01 Educational Library. The book keeps the two clearly apart and uses that line to decide which layer to check when something goes wrong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to read another volume first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. CORE-01 stands on its own. Each book runs on its own robot files, start file, and library, and there's no required order for the six books."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where do the QR codes in the book lead?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not straight to YouTube. Each QR code points to a permanent address on this site for one video ID, such as ronniekimbooks.com/ko/books/book-005/v/C01-25-00/, so the printed codes keep working even if a video moves to a new address."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can schools and training programs use it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Everyone works from the same robot files, start file, and record sheets, which makes it easy to repeat runs under identical conditions and compare before and after. You can pick the parts and missions that fit your course length and goals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is on the web companion? Is it the same as the book?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, the website doesn't repeat the book. It holds what a printed page can't: full runs, side-by-side videos where only one value changes, failure clips, install walkthroughs, and web-only challenge missions, along with downloads, errata, and version notes. The matching chapter explains why a motion looks the way it does and how to change it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I buy it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Korean print edition and ebook are sold through online bookstores; the Buy page has the links. An English edition hasn't been announced yet."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="book-header">
+  <div class="back"><a href="../../../">← All Books</a><a class="lang-link" href="../../../ko/books/book-005/faq.html" hreflang="ko" lang="ko">Korean</a></div>
+  <h1>FAQ</h1>
+  <p>Physical AI with RoboCo · CORE-01</p>
+  
+</header>
+<div class="layout">
+  <aside class="book-sidebar">
+    <h2>Book Menu</h2>
+    <nav aria-label="Book Menu">
+      <ul>
+        <li><a href="./">Book Overview</a></li><li><a href="./toc.html">Table of Contents</a></li><li><a href="./sample.html">Sample Pages</a></li><li><a href="./course.html">Book Sets & Courses</a></li><li><a href="./faq.html" aria-current="page">FAQ</a></li><li><a href="./downloads/">Practice files</a></li><li><a href="./buy.html">Buy the Book</a></li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-label">Video companion</p>
+      <ul>
+        <li><a href="./learn/" target="_blank" rel="noopener">Videos & web extras<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+<main class="content-card">
+<h2>Frequently Asked Questions</h2>
+<figure class="rk-figure rk-webfig" id="c01-web-13"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-13-en.webp" target="_blank" rel="noopener" aria-label="C01-WEB-13 — Open full size in a new tab"><img src="../../../assets/images/books/book-005/web/C01-WEB-13-en.webp" alt="The twelve FAQs sorted into four groups — before buying, getting ready, how to learn, schools — with question numbers and short titles." width="1602" height="825" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Affinity diagram</span> A map of the questions. Find your group, then the numbered answer below.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-13-en.webp" target="_blank" rel="noopener">Enlarge ↗<span class="sr-only"> (Open full size in a new tab)</span></a></figcaption></figure>
+<div class="faq-intro"><p>Common questions to check before you pick up this book.</p></div>
+<section class="faq-item"><h3>Q1. What kind of book is this?</h3><p>It's a hands-on book about controlling robots, as a first step into physical AI. You start by driving a finished four-wheel robot with independent drive and steering in RoboCo, then follow a key press through each control layer until it becomes motion. It's CORE-01 in the Physical AI with RoboCo series, and it covers movement and control (MOVE / CONTROL).</p></section>
+<section class="faq-item"><h3>Q2. Can I start without knowing how to code?</h3><p>Yes. Chapter 1 uses Controls Mapping and no code at all. In Chapter 2 you run the start file that comes with the book, and from Chapter 11 on, Python comes in a little at a time, always tied to an actual robot setting. This isn't a full Python course.</p></section>
+<section class="faq-item"><h3>Q3. Do I need to install Python separately?</h3><p>Not for the main exercises. CORE-01 scripts run on RoboCo's built-in Python. A code editor is handy for reading and editing the start file and library.</p></section>
+<section class="faq-item"><h3>Q4. What do I need for the exercises?</h3><p>RoboCo from Steam, plus the CORE-01 practice files: two robot files, the start file <code>c01_start.py</code>, and the Educational Library <code>C01_Lib</code>. You'll find all of them, along with the record sheets, on the <a href='./downloads/'>practice files page</a>. Check RoboCo's Steam page for current OS support, system requirements, languages, and price.</p></section>
+<section class="faq-item"><h3>Q5. Does it cover real robot hardware?</h3><p>No. RoboCo is a robot sandbox game with a physics simulation. It doesn't model hardware problems like batteries, motor heat, wiring, or communication lag, so the book never treats its numbers as real hardware performance. What you learn instead is how to check a result: repeat the run under the same conditions and change one value at a time.</p></section>
+<section class="faq-item"><h3>Q6. Will I build an autonomous robot that decides on its own?</h3><p>No. The CORE-01 final mission is a timed route: the robot runs a list of actions, each for a set time. Sensing and reacting come in CORE-02, and autonomous behavior built on state and decisions comes in QUAD-02. CORE-01 lays the groundwork those books build on: input, control, actuators, and observation.</p></section>
+<section class="faq-item"><h3>Q7. How is the RoboCo API different from the Educational Library?</h3><p><code>DCMotor</code>, <code>ServoMotor</code>, <code>LED</code>, <code>TextScreen</code>, and <code>Input</code> are RoboCo's official Python API. Names like <code>Robot.forward()</code> and <code>Mission</code>, which wrap several official calls into one action, come from the author's CORE-01 Educational Library. The book keeps the two clearly apart and uses that line to decide which layer to check when something goes wrong.</p></section>
+<section class="faq-item"><h3>Q8. Do I need to read another volume first?</h3><p>No. CORE-01 stands on its own. Each book runs on its own robot files, start file, and library, and there's no required order for the six books.</p></section>
+<section class="faq-item"><h3>Q9. Where do the QR codes in the book lead?</h3><p>Not straight to YouTube. Each QR code points to a permanent address on this site for one video ID, such as <code>ronniekimbooks.com/ko/books/book-005/v/C01-25-00/</code>, so the printed codes keep working even if a video moves to a new address.</p></section>
+<section class="faq-item"><h3>Q10. Can schools and training programs use it?</h3><p>Yes. Everyone works from the same robot files, start file, and record sheets, which makes it easy to repeat runs under identical conditions and compare before and after. You can pick the parts and missions that fit your course length and goals.</p></section>
+<section class="faq-item"><h3>Q11. What is on the web companion? Is it the same as the book?</h3><p>No, the website doesn't repeat the book. It holds what a printed page can't: full runs, side-by-side videos where only one value changes, failure clips, install walkthroughs, and web-only challenge missions, along with downloads, errata, and version notes. The matching chapter explains why a motion looks the way it does and how to change it.</p></section>
+<section class="faq-item"><h3>Q12. Where can I buy it?</h3><p>The Korean print edition and ebook are sold through online bookstores; the Buy page has the links. An English edition hasn't been announced yet.</p></section>
+</main>
+</div>
+<footer class="site-footer">
+  <p>RoboCo and related names are trademarks of their respective owners.</p>
+  <p>© Ronnie Kim Books. All rights reserved.</p>
+</footer>
+</body>
+</html>

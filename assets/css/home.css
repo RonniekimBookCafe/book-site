@@ -89,6 +89,25 @@
   text-align: left;
 }
 
+.compact-book-card {
+  position: relative;
+}
+
+.book-status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #fff7cc;
+  border: 1px solid #f3d65c;
+  color: #6b5200;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
 .book-cover-link {
   display: block;
   text-align: center;
@@ -171,4 +190,29 @@
   .compact-book-card p {
     font-size: 14px;
   }
+}
+
+.book-status-badge.is-new {
+  background: #111827;
+  border-color: #111827;
+  color: #ffd91a;
+}
+
+.upcoming-section {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.upcoming-section .section-title {
+  margin-bottom: 8px;
+}
+
+.upcoming-lead {
+  margin: 0 0 22px;
+  color: #4b5563;
+}
+
+.compact-book-card.is-upcoming .book-cover-thumb {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }

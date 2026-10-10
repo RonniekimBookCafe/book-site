@@ -54,11 +54,12 @@
       <option value="education">교육</option>
       <option value="essay">에세이</option>
       <option value="tech">기술</option>
+      <option value="robotics">로봇·피지컬 AI</option>
     </select>
 
     <select id="book-sort" class="book-select" aria-label="Sort books">
-      <option value="featured">추천순</option>
       <option value="newest">최신순</option>
+      <option value="featured">추천순</option>
       <option value="oldest">오래된순</option>
       <option value="title">제목순</option>
     </select>
@@ -71,6 +72,12 @@
   <p id="empty-message" class="empty-message" hidden>
     검색 결과가 없습니다.
   </p>
+
+  <section id="upcoming-section" class="upcoming-section" aria-labelledby="upcoming-title" hidden>
+    <h2 class="section-title" id="upcoming-title">출간 예정 · 피지컬 AI로 배우는 RoboCo 시리즈</h2>
+    <p id="upcoming-lead" class="upcoming-lead"></p>
+    <div class="book-grid home-book-grid" id="upcoming-grid"></div>
+  </section>
 </main>
 
   <footer class="site-footer">

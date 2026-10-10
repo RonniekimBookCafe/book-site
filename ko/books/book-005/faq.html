@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자주 묻는 질문 | 피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어</title>
+  <meta name="description" content="『피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어』의 대상 독자, 필요한 준비물, Python 설치 여부, RoboCo와 실제 로봇의 차이, 출간 정보를 확인하세요." />
+  <link rel="canonical" href="https://ronniekimbooks.com/ko/books/book-005/faq.html" />
+  <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-005/faq.html" />
+  <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-005/faq.html" />
+  <link rel="alternate" hreflang="x-default" href="https://ronniekimbooks.com/en/books/book-005/faq.html" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/css/book.css" />
+  <link rel="stylesheet" href="../../../assets/css/series-roboco.css" />
+  <meta property="og:type" content="book" />
+  <meta property="og:site_name" content="Ronnie Kim Books" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어" />
+  <meta property="og:description" content="코딩을 몰라도, 완성된 로봇을 먼저 움직이며 시작합니다." />
+  <meta property="og:url" content="https://ronniekimbooks.com/ko/books/book-005/faq.html" />
+  <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-ko.webp" />
+  <meta property="book:author" content="로니킴" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어" />
+  <meta name="twitter:description" content="코딩을 몰라도, 완성된 로봇을 먼저 움직이며 시작합니다." />
+  <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-ko.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "이 책은 어떤 책인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RoboCo에서 완성된 4륜 독립 구동·독립 조향 로봇을 먼저 움직이고, 키 입력이 제어를 거쳐 실제 움직임이 되는 과정을 추적하는 피지컬 AI 로봇 제어 실습서입니다. 피지컬 AI로 배우는 RoboCo 시리즈의 CORE-01로, 이동과 제어(MOVE / CONTROL)를 다룹니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "코딩을 몰라도 시작할 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네. CHAPTER 01은 코드 없이 Controls Mapping으로 직접 조종합니다. Python은 CHAPTER 02부터 제공 시작 파일을 실행하는 데서 시작해, CHAPTER 11 이후 실제 로봇 설정과 연결해 필요한 만큼 다룹니다. 다만 Python 문법 전체를 가르치는 입문서는 아닙니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Python을 따로 설치해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "기본 실습에는 필요하지 않습니다. CORE-01 Script는 RoboCo 안의 Python 실행 환경에서 동작합니다. 시작 파일과 Library를 읽거나 수정할 코드 편집기는 있으면 편리합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실습에 무엇이 필요한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Steam용 RoboCo와 CORE-01 실습 파일(Robot File 2종, 시작 파일 c01_start.py, Educational Library C01_Lib)이 필요합니다. 로봇 파일·시작 파일·Library와 실험·미션 기록지는 실습 파일 페이지에서 내려받습니다. RoboCo의 지원 OS·사양·지원 언어·가격은 Steam에서 최신 정보를 확인하세요."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실제 로봇 하드웨어를 다루나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "아닙니다. RoboCo는 게임 기반 로봇 Sandbox이자 물리 시뮬레이션 환경입니다. 배터리, 모터 발열, 배선, 통신 지연 같은 하드웨어 문제를 그대로 재현하지 않으므로, 책의 수치를 실제 하드웨어 성능으로 해석하지 않습니다. 대신 같은 조건으로 반복 실행하고 값 하나만 바꿔 비교하는 검증 방법을 익힙니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AI가 스스로 판단하는 자율주행 로봇을 만드나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "아닙니다. CORE-01의 최종 미션은 정해 둔 동작과 시간을 순서대로 실행하는 시간 기반 경로입니다. 센서로 감지하고 반응하는 구조는 CORE-02, 상태와 판단을 이용한 자율 행동은 QUAD-02에서 이어집니다. CORE-01은 그 아래에 놓이는 입력·제어·Actuator·관찰의 뼈대를 다룹니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "RoboCo 공식 API와 Educational Library는 어떻게 다른가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DCMotor, ServoMotor, LED, TextScreen, Input은 RoboCo가 제공하는 공식 Python API입니다. Robot.forward(), Mission처럼 여러 공식 API 호출을 한 동작으로 묶은 것은 저자가 제공하는 CORE-01 Educational Library입니다. 책에서는 두 계층을 같은 API처럼 섞어 쓰지 않으며, 오류가 났을 때 어느 계층을 확인할지도 이 구분으로 정합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "다른 권을 먼저 읽어야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "아닙니다. CORE-01은 독립 입문 권입니다. 각 권은 해당 권의 Robot File·시작 파일·Library만으로 실행할 수 있도록 구성하며, 여섯 권을 반드시 순서대로 읽을 필요는 없습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "책의 QR 코드는 어디로 연결되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "QR 코드는 YouTube 주소를 직접 가리키지 않고 ronniekimbooks.com/ko/books/book-005/v/C01-25-00/처럼 영상 ID별 고정 주소로 연결됩니다. 영상 플랫폼의 주소가 바뀌어도 책에 인쇄된 QR은 그대로 사용할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "학교나 교육기관에서 활용할 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "같은 Robot File과 시작 파일, 실험 기록지를 사용하므로 같은 조건에서 반복 실행하고 변경 전후를 비교하는 실습을 운영하기 좋습니다. 기간과 목표에 따라 필요한 PART와 미션을 선택할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "웹 자료에는 무엇이 있나요? 책 내용과 같은가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "웹에는 책의 설명을 옮기지 않습니다. 종이에는 담을 수 없는 실행 영상, 같은 조건에서 값 하나만 바꾼 비교 영상, 실패 장면, 설치 화면 녹화, 웹 전용 도전 미션을 모으고, 실습 파일 다운로드와 정오표·Version 정보를 제공합니다. 영상에서 본 움직임이 왜 그렇게 나오는지와 어떻게 바꾸는지는 책의 해당 Chapter에서 다룹니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "어디서 구매할 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "종이책과 전자책을 온라인 서점에서 구매할 수 있습니다. 서점별 링크는 구매하기 페이지에 모아 두었습니다."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="book-header">
+  <div class="back"><a href="../../../">← 전체 책 목록</a><a class="lang-link" href="../../../en/books/book-005/faq.html" hreflang="en" lang="en">English</a></div>
+  <h1>자주 묻는 질문</h1>
+  <p>피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어</p>
+  
+</header>
+<div class="layout">
+  <aside class="book-sidebar">
+    <h2>책 메뉴</h2>
+    <nav aria-label="책 메뉴">
+      <ul>
+        <li><a href="./">책 소개</a></li><li><a href="./toc.html">목차</a></li><li><a href="./sample.html">샘플 본문</a></li><li><a href="./course.html">책 조합·수업안</a></li><li><a href="./faq.html" aria-current="page">자주 묻는 질문</a></li><li><a href="./downloads/">실습 파일 내려받기</a></li><li><a href="./buy.html">구매하기</a></li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-label">웹 영상 자료</p>
+      <ul>
+        <li><a href="./learn/" target="_blank" rel="noopener">영상·웹 자료<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (새 탭에서 열림)</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+<main class="content-card">
+<h2>자주 묻는 질문</h2>
+<figure class="rk-figure rk-webfig" id="c01-web-13"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-13-ko.webp" target="_blank" rel="noopener" aria-label="C01-WEB-13 — 새 탭에서 크게 보기"><img src="../../../assets/images/books/book-005/web/C01-WEB-13-ko.webp" alt="자주 묻는 질문 12개를 구매 전, 준비, 배우는 방법, 교육 기관의 네 묶음으로 나눈 그림. 묶음마다 질문 번호와 짧은 제목이 있다." width="1602" height="825" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">친화도법</span> 질문 지도 — 궁금한 묶음에서 번호를 찾아 아래 답을 보세요.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-13-ko.webp" target="_blank" rel="noopener">확대 ↗<span class="sr-only"> (새 탭에서 크게 보기)</span></a></figcaption></figure>
+<div class="faq-intro"><p>책을 선택하기 전에 확인하면 좋은 질문을 정리했습니다.</p></div>
+<section class="faq-item"><h3>Q1. 이 책은 어떤 책인가요?</h3><p>RoboCo에서 완성된 4륜 독립 구동·독립 조향 로봇을 먼저 움직이고, 키 입력이 제어를 거쳐 실제 움직임이 되는 과정을 추적하는 피지컬 AI 로봇 제어 실습서입니다. 피지컬 AI로 배우는 RoboCo 시리즈의 CORE-01로, 이동과 제어(MOVE / CONTROL)를 다룹니다.</p></section>
+<section class="faq-item"><h3>Q2. 코딩을 몰라도 시작할 수 있나요?</h3><p>네. CHAPTER 01은 코드 없이 Controls Mapping으로 직접 조종합니다. Python은 CHAPTER 02부터 제공 시작 파일을 실행하는 데서 시작해, CHAPTER 11 이후 실제 로봇 설정과 연결해 필요한 만큼 다룹니다. 다만 Python 문법 전체를 가르치는 입문서는 아닙니다.</p></section>
+<section class="faq-item"><h3>Q3. Python을 따로 설치해야 하나요?</h3><p>기본 실습에는 필요하지 않습니다. CORE-01 Script는 RoboCo 안의 Python 실행 환경에서 동작합니다. 시작 파일과 Library를 읽거나 수정할 코드 편집기는 있으면 편리합니다.</p></section>
+<section class="faq-item"><h3>Q4. 실습에 무엇이 필요한가요?</h3><p>Steam용 RoboCo와 CORE-01 실습 파일(Robot File 2종, 시작 파일 <code>c01_start.py</code>, Educational Library <code>C01_Lib</code>)이 필요합니다. 로봇 파일·시작 파일·Library와 실험·미션 기록지는 <a href='./downloads/'>실습 파일 페이지</a>에서 내려받습니다. RoboCo의 지원 OS·사양·지원 언어·가격은 Steam에서 최신 정보를 확인하세요.</p></section>
+<section class="faq-item"><h3>Q5. 실제 로봇 하드웨어를 다루나요?</h3><p>아닙니다. RoboCo는 게임 기반 로봇 Sandbox이자 물리 시뮬레이션 환경입니다. 배터리, 모터 발열, 배선, 통신 지연 같은 하드웨어 문제를 그대로 재현하지 않으므로, 책의 수치를 실제 하드웨어 성능으로 해석하지 않습니다. 대신 같은 조건으로 반복 실행하고 값 하나만 바꿔 비교하는 검증 방법을 익힙니다.</p></section>
+<section class="faq-item"><h3>Q6. AI가 스스로 판단하는 자율주행 로봇을 만드나요?</h3><p>아닙니다. CORE-01의 최종 미션은 정해 둔 동작과 시간을 순서대로 실행하는 시간 기반 경로입니다. 센서로 감지하고 반응하는 구조는 CORE-02, 상태와 판단을 이용한 자율 행동은 QUAD-02에서 이어집니다. CORE-01은 그 아래에 놓이는 입력·제어·Actuator·관찰의 뼈대를 다룹니다.</p></section>
+<section class="faq-item"><h3>Q7. RoboCo 공식 API와 Educational Library는 어떻게 다른가요?</h3><p><code>DCMotor</code>, <code>ServoMotor</code>, <code>LED</code>, <code>TextScreen</code>, <code>Input</code>은 RoboCo가 제공하는 공식 Python API입니다. <code>Robot.forward()</code>, <code>Mission</code>처럼 여러 공식 API 호출을 한 동작으로 묶은 것은 저자가 제공하는 CORE-01 Educational Library입니다. 책에서는 두 계층을 같은 API처럼 섞어 쓰지 않으며, 오류가 났을 때 어느 계층을 확인할지도 이 구분으로 정합니다.</p></section>
+<section class="faq-item"><h3>Q8. 다른 권을 먼저 읽어야 하나요?</h3><p>아닙니다. CORE-01은 독립 입문 권입니다. 각 권은 해당 권의 Robot File·시작 파일·Library만으로 실행할 수 있도록 구성하며, 여섯 권을 반드시 순서대로 읽을 필요는 없습니다.</p></section>
+<section class="faq-item"><h3>Q9. 책의 QR 코드는 어디로 연결되나요?</h3><p>QR 코드는 YouTube 주소를 직접 가리키지 않고 <code>ronniekimbooks.com/ko/books/book-005/v/C01-25-00/</code>처럼 영상 ID별 고정 주소로 연결됩니다. 영상 플랫폼의 주소가 바뀌어도 책에 인쇄된 QR은 그대로 사용할 수 있습니다.</p></section>
+<section class="faq-item"><h3>Q10. 학교나 교육기관에서 활용할 수 있나요?</h3><p>같은 Robot File과 시작 파일, 실험 기록지를 사용하므로 같은 조건에서 반복 실행하고 변경 전후를 비교하는 실습을 운영하기 좋습니다. 기간과 목표에 따라 필요한 PART와 미션을 선택할 수 있습니다.</p></section>
+<section class="faq-item"><h3>Q11. 웹 자료에는 무엇이 있나요? 책 내용과 같은가요?</h3><p>웹에는 책의 설명을 옮기지 않습니다. 종이에는 담을 수 없는 실행 영상, 같은 조건에서 값 하나만 바꾼 비교 영상, 실패 장면, 설치 화면 녹화, 웹 전용 도전 미션을 모으고, 실습 파일 다운로드와 정오표·Version 정보를 제공합니다. 영상에서 본 움직임이 왜 그렇게 나오는지와 어떻게 바꾸는지는 책의 해당 Chapter에서 다룹니다.</p></section>
+<section class="faq-item"><h3>Q12. 어디서 구매할 수 있나요?</h3><p>종이책과 전자책을 온라인 서점에서 구매할 수 있습니다. 서점별 링크는 구매하기 페이지에 모아 두었습니다.</p></section>
+</main>
+</div>
+<footer class="site-footer">
+  <p>RoboCo 및 관련 명칭은 각 권리자의 상표입니다.</p>
+  <p>© Ronnie Kim Books. All rights reserved.</p>
+</footer>
+</body>
+</html>

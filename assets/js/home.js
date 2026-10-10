@@ -9,17 +9,20 @@ const pageText = {
       arduino: "아두이노",
       education: "교육",
       essay: "에세이",
-      tech: "기술"
+      tech: "기술",
+      robotics: "로봇·피지컬 AI"
     },
     sort: {
-      featured: "추천순",
       newest: "최신순",
+      featured: "추천순",
       oldest: "오래된순",
       title: "제목순"
     },
     countText: function (count) {
       return "총 " + count + "권";
     },
+    upcomingTitle: "출간 예정 · 피지컬 AI로 배우는 RoboCo 시리즈",
+    upcomingLead: "CORE-01에 이어 센서, 로봇팔, 4족 보행, 자율보행 AI, 이동 조작으로 이어지는 다섯 권을 준비하고 있습니다.",
     empty: "검색 결과가 없습니다."
   },
 
@@ -33,17 +36,21 @@ const pageText = {
       arduino: "Arduino",
       education: "Education",
       essay: "Essay",
-      tech: "Technology"
+      tech: "Technology",
+      robotics: "Robotics & Physical AI"
     },
     sort: {
-      featured: "Featured",
       newest: "Newest",
+      featured: "Featured",
       oldest: "Oldest",
       title: "Title"
     },
     countText: function (count) {
       return count + " book" + (count === 1 ? "" : "s");
     },
+    upcomingTitle: "Coming soon · Physical AI with RoboCo series",
+    upcomingLead: "After CORE-01, five more volumes cover sensors, robot arms, quadruped walking, autonom
+ous AI, and mobile manipulation (Korean pages).",
     empty: "No books found."
   }
 };
@@ -56,6 +63,10 @@ const enButton = document.getElementById("lang-en");
 const siteSubtitle = document.getElementById("site-subtitle");
 const sectionTitle = document.getElementById("section-title");
 const bookGrid = document.getElementById("book-grid");
+const upcomingSection = document.getElementById("upcoming-section");
+const upcomingGrid = document.getElementById("upcoming-grid");
+const upcomingTitle = document.getElementById("upcoming-title");
+const upcomingLead = document.getElementById("upcoming-lead");
 
 const bookSearch = document.getElementById("book-search");
 const bookCategory = document.getElementById("book-category");
@@ -79,14 +90,19 @@ function updateToolText(lang) {
     <option value="education">${text.categories.education}</option>
     <option value="essay">${text.categories.essay}</option>
     <option value="tech">${text.categories.tech}</option>
+    <option value="robotics">${text.categories.robotics}</option>
   `;
 
+  const selectedSort = bookSort.value || "newest";
+
   bookSort.innerHTML = `
-    <option value="featured">${text.sort.featured}</option>
     <option value="newest">${text.sort.newest}</option>
+    <option value="featured">${text.sort.featured}</option>
     <option value="oldest">${text.sort.oldest}</option>
     <option value="title">${text.sort.title}</option>
   `;
+
+  bookSort.value = selectedSort;
 
   emptyMessage.textContent = text.empty;
 }
@@ -115,16 +131,22 @@ function getFilteredBooks() {
     return matchesKeyword && matchesCategory;
   });
 
+  // Upcoming books have no publishedAt yet; treat them as the newest.
+  function sortTime(book) {
+    const time = book.publishedAt ? new Date(book.publishedAt).getTime() : NaN;
+    return isNaN(time) ? Number.MAX_SAFE_INTEGER : time;
+  }
+
   result.sort(function (a, b) {
     const titleA = a[currentLanguage].title;
     const titleB = b[currentLanguage].title;
 
     if (sort === "newest") {
-      return new Date(b.publishedAt) - new Date(a.publishedAt);
+      return sortTime(b) - sortTime(a);
     }
 
     if (sort === "oldest") {
-      return new Date(a.publishedAt) - new Date(b.publishedAt);
+      return sortTime(a) - sortTime(b);
     }
 
     if (sort === "title") {
@@ -137,37 +159,72 @@ function getFilteredBooks() {
   return result;
 }
 
+function createCard(book) {
+  const data = book[currentLanguage];
+
+  const article = document.createElement("article");
+  article.className = "book-card compact-book-card" + (book.status === "upcoming" ? " is-upcoming" : "");
+
+
+  const badge = data.badge
+    ? `<span class="book-status-badge${book.status === "upcoming" ? "" : " is-new"}">${data.badge}</span>
+`
+    : "";
+
+  article.innerHTML = `
+    ${badge}
+    <a class="book-cover-link" href="${data.link}">
+      <img
+        class="book-cover-thumb"
+        src="${data.cover}"
+        alt="${data.alt}"
+        loading="lazy"
+      />
+    </a>
+
+    <h3>${data.title}</h3>
+    <p>${data.description}</p>
+    <a class="book-card-button" href="${data.link}">${data.button}</a>
+  `;
+
+  return article;
+}
+
 function renderBooks() {
   const books = getFilteredBooks();
   const text = pageText[currentLanguage] || pageText.ko;
 
+  const published = books.filter(function (book) {
+    return book.status !== "upcoming";
+  });
+
+  // Upcoming books keep series order (CORE-02 → QUAD-03) in their own row.
+  const upcoming = books
+    .filter(function (book) {
+      return book.status === "upcoming";
+    })
+    .sort(function (a, b) {
+      return (a.seriesOrder || 0) - (b.seriesOrder || 0);
+    });
+
   bookGrid.innerHTML = "";
-  bookCount.textContent = text.countText(books.length);
+  bookCount.textContent = text.countText(published.length);
   emptyMessage.hidden = books.length !== 0;
 
-  books.forEach(function (book) {
-    const data = book[currentLanguage];
-
-    const article = document.createElement("article");
-    article.className = "book-card compact-book-card";
-
-    article.innerHTML = `
-      <a class="book-cover-link" href="${data.link}">
-        <img
-          class="book-cover-thumb"
-          src="${data.cover}"
-          alt="${data.alt}"
-          loading="lazy"
-        />
-      </a>
-
-      <h3>${data.title}</h3>
-      <p>${data.description}</p>
-      <a class="book-card-button" href="${data.link}">${data.button}</a>
-    `;
-
-    bookGrid.appendChild(article);
+  published.forEach(function (book) {
+    bookGrid.appendChild(createCard(book));
   });
+
+  if (upcomingSection) {
+    upcomingGrid.innerHTML = "";
+    upcomingTitle.textContent = text.upcomingTitle;
+    upcomingLead.textContent = text.upcomingLead;
+    upcomingSection.hidden = upcoming.length === 0;
+
+    upcoming.forEach(function (book) {
+      upcomingGrid.appendChild(createCard(book));
+    });
+  }
 }
 
 function setLanguage(lang) {

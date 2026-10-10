@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physical AI with RoboCo · CORE-01 | Robot Structure and Python Control</title>
+  <meta name="description" content="A hands-on physical AI book: run a four-wheel independent drive and steering robot in RoboCo first, then trace how a key press travels through a Python script and the RoboCo API to the motors. CORE-01 · MOVE / CONTROL." />
+  <link rel="canonical" href="https://ronniekimbooks.com/en/books/book-005/" />
+  <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-005/" />
+  <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-005/" />
+  <link rel="alternate" hreflang="x-default" href="https://ronniekimbooks.com/en/books/book-005/" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/css/book.css" />
+  <link rel="stylesheet" href="../../../assets/css/series-roboco.css" />
+  <meta property="og:type" content="book" />
+  <meta property="og:site_name" content="Ronnie Kim Books" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Physical AI with RoboCo · CORE-01" />
+  <meta property="og:description" content="From one W key to four moving wheels — move it first, find the reason, change one value, and compare again." />
+  <meta property="og:url" content="https://ronniekimbooks.com/en/books/book-005/" />
+  <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-en.webp" />
+  <meta property="book:author" content="Ronnie Kim" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Physical AI with RoboCo · CORE-01" />
+  <meta name="twitter:description" content="From one W key to four moving wheels — move it first, find the reason, change one value, and compare again." />
+  <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-005/og-en.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Physical AI with RoboCo · CORE-01",
+    "author": {
+      "@type": "Person",
+      "name": "Ronnie Kim"
+    },
+    "inLanguage": "en",
+    "url": "https://ronniekimbooks.com/en/books/book-005/",
+    "image": "https://ronniekimbooks.com/assets/images/books/book-005/cover-large-en.webp",
+    "description": "A hands-on physical AI book: run a four-wheel independent drive and steering robot in RoboCo first, then trace how a key press travels through a Python script and the RoboCo API to the motors. CORE-01 · MOVE / CONTROL.",
+    "isPartOf": {
+      "@type": "BookSeries",
+      "name": "Physical AI with RoboCo"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PUBPLE"
+    },
+    "about": [
+      "Physical AI",
+      "RoboCo",
+      "Python",
+      "Robot control"
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="book-header">
+  <div class="back"><a href="../../../">← All Books</a><a class="lang-link" href="../../../ko/books/book-005/" hreflang="ko" lang="ko">Korean</a></div>
+  <h1>Physical AI with RoboCo · CORE-01</h1>
+  <p>From keyboard driving to script control: a four-wheel robot you drive and change yourself</p>
+  <div class="series-line"><span class="series-chip code">CORE-01</span><span class="series-chip">MOVE / CONTROL</span><span class="series-chip">Physical AI with RoboCo</span></div>
+</header>
+<div class="layout">
+  <aside class="book-sidebar">
+    <h2>Book Menu</h2>
+    <nav aria-label="Book Menu">
+      <ul>
+        <li><a href="./" aria-current="page">Book Overview</a></li><li><a href="./toc.html">Table of Contents</a></li><li><a href="./sample.html">Sample Pages</a></li><li><a href="./course.html">Book Sets & Courses</a></li><li><a href="./faq.html">FAQ</a></li><li><a href="./downloads/">Practice files</a></li><li><a href="./buy.html">Buy the Book</a></li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-label">Video companion</p>
+      <ul>
+        <li><a href="./learn/" target="_blank" rel="noopener">Videos & web extras<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content-card intro-page">
+    <section class="intro-hero">
+      <img class="intro-cover" src="../../../assets/images/books/book-005/cover-large-en.webp" alt="Cover of the Korean edition, with its text shown in English: CORE-01 MOVE / CONTROL and the yellow four-wheel robot" width="1000" height="1480" />
+      <div>
+        <p class="intro-status"><span class="status-badge new">New release</span> <span class="status-badge verified">Korean edition</span></p>
+        <p class="intro-kicker">Physical AI with RoboCo · CORE-01 · MOVE / CONTROL</p>
+        <h2 class="intro-title">From a single W key<br />to four moving wheels</h2>
+        <p class="intro-lead">You start by driving a finished four-wheel robot in RoboCo. Press W and all four wheels spin. Press Z and the wheels swing to a new angle before the body spins in place. Press 1 and a folded guide screen swings open.</p>
+        <p class="intro-lead">Then you work backward from that motion: how a key press travels through a Python script and the RoboCo API to the DC Motors and servos on each Port. You change one value and compare the result, and when something goes wrong, you track down the cause in the LOG.</p>
+        <div class="intro-highlight"><p>No robot kit required. You drive, modify, and test everything inside RoboCo's virtual world.</p></div>
+        <div class="intro-cta">
+          <a class="primary" href="./buy.html">Where to buy</a>
+          <a class="secondary" href="#video">Watch it first</a>
+          <a class="secondary" href="./downloads/">Practice files</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section rk-section-id" id="video">
+      <h2>Watch it first <span class="status-badge new">On YouTube</span></h2>
+      <p>Here is the book's final mission, run start to finish. One key press sends the robot to the guide point, where it opens its screen, folds it again, and drives the same route back. The 25 chapters explain the structure and settings behind every part of this run.</p>
+      <div class="rk-video is-live" data-video-id="C01-25-00"><iframe src="https://www.youtube-nocookie.com/embed/CD96tZ2EnUM" title="CORE-01 CH25 guide robot final mission [C01-25-00]" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="rk-video-meta rk-watch-link"><a href="https://youtu.be/CD96tZ2EnUM" target="_blank" rel="noopener">Watch on YouTube ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
+      <div class="rk-vlinks">
+        <a href="./v/C01-06-00/"><span class="vid-id">C01-06-00</span><strong>Robot structure and exploded view</strong><small>CH06 · each wheel has its own drive motor and steering servo</small></a>
+        <a href="./v/C01-07-00/"><span class="vid-id">C01-07-00</span><strong>Microcontroller Port connections</strong><small>CH07 · how the Port tells four identical motors apart</small></a>
+        <a href="./learn/"><span class="vid-id">WEB</span><strong>All videos and web extras</strong><small>Comparisons, failure clips, challenges</small></a>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Questions this book answers</h2>
+      <div class="intro-grid">
+        <div class="intro-card"><h3>How does one key press turn into motion?</h3><p>Follow the W key one step at a time as it travels from Input to Script to Educational Library to RoboCo API to DC Motor.</p></div>
+        <div class="intro-card"><h3>Same key, different path?</h3><p>Compare Robot 1, driven straight from Controls Mapping, with Robot 2, run by a Python script. Both use the exact same chassis.</p></div>
+        <div class="intro-card"><h3>What changes when one value changes?</h3><p>Use keys 2, 3, and 4 to step through Target RPM, acceleration time, brake force, and braking time. Then drive again under the same conditions and compare.</p></div>
+        <div class="intro-card"><h3>When something's off, where do you look first?</h3><p>Work through the robot file and version, the console LOG, the input, the Port, and then direction and settings. Fix one thing and run again.</p></div>
+      </div>
+      <figure class="rk-figure rk-webfig" id="c01-web-01"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-01-en.webp" target="_blank" rel="noopener" aria-label="C01-WEB-01 — Open full size in a new tab"><img src="../../../assets/images/books/book-005/web/C01-WEB-01-en.webp" alt="CORE-01 mind map. From CORE-01 MOVE / CONTROL in the center, six branches: robot, two ways to drive, observe, change values, final mission, and practice files, each with its key items." width="1602" height="834" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Mind map</span> CORE-01 at a glance: what the book covers, in six branches.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-01-en.webp" target="_blank" rel="noopener">Enlarge ↗<span class="sr-only"> (Open full size in a new tab)</span></a></figcaption></figure>
+    </section>
+
+    <section class="intro-section">
+      <h2>What you will be able to do</h2>
+      <ol class="intro-number-list">
+        <li><strong>Drive a robot two ways</strong>Drive it with keyboard mapping, then control the same robot with a Python script, and explain how the two differ.</li>
+        <li><strong>Change behavior by editing code</strong>Edit Target RPM, timing, and key assignments in the start file, and follow each value until it becomes a motor setting or command.</li>
+        <li><strong>Change one value and compare fairly</strong>Adjust the wheel motor settings (RPM, acceleration, and braking) one at a time, and record the results under the same conditions.</li>
+        <li><strong>Track down odd behavior</strong>Read the robot's state from the Text Screen and the console LOG, rule out causes in a fixed order, and fix one thing at a time.</li>
+        <li><strong>Finish a go–guide–return mission</strong>Design and refine a small service-robot mission using a route list and a state flow.</li>
+      </ol>
+      <figure class="rk-figure rk-webfig" id="c01-web-02"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-02-en.webp" target="_blank" rel="noopener" aria-label="C01-WEB-02 — Open full size in a new tab"><img src="../../../assets/images/books/book-005/web/C01-WEB-02-en.webp" alt="Mandal-art 3×3 grid. Around the center goal &#x27;from one W key to a go–guide–return mission&#x27;, eight numbered cells run clockwise: drive directly, script control, trace the structure, change values, read the LOG, compare one value, narrow the cause, design the mission, each with its part." width="1602" height="672" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Mandal-art</span> Eight things you&#x27;ll be able to do, numbered in the order the book covers them.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-02-en.webp" target="_blank" rel="noopener">Enlarge ↗<span class="sr-only"> (Open full size in a new tab)</span></a></figcaption></figure>
+    </section>
+
+    <section class="intro-section">
+      <h2>The robot: four-wheel independent drive and steering</h2>
+      <p>Every exercise in CORE-01 uses one robot. Each of the four wheels has its own DC Motor for driving and its own Steering Servo for changing direction. The body carries a fold-out guide screen and an LED that lights up with input. Forward driving, spinning in place, and diagonal moves aren't built-in features. Each one is a combination of the four wheels' steering angles and drive directions.</p>
+      <ul class="intro-list">
+        <li><strong>Four wheels, eight actuators</strong>: each wheel has its own drive DC Motor and its own Steering Servo.</li>
+        <li><strong>A fold-out guide screen</strong>: the Text Screen shows the current action, the status, and a guide message.</li>
+        <li>An <strong>LED that lights up with input</strong> and a <strong>Microcontroller</strong> that runs the Python script</li>
+        <li><strong>Eight keys, eight motions</strong>: forward, backward, left and right turns, spinning in place, and diagonal moves</li>
+      </ul>
+      <p>You work with the same chassis in two ways. First you drive it with keyboard mapping alone, no script. Then you run the same robot from a single Python start file that handles driving, experiments, and the mission. The first thing the book has you notice is how the same key travels a different path in each case.</p>
+      <div class="rk-robots">
+        <figure><img src="../../../assets/images/books/book-005/robot/robot-controls.webp" alt="Robot 1, Book-CORE-01-CONTROLS: a yellow four-wheel robot" width="512" height="512" loading="lazy" /><figcaption>Robot 1 · driven from the keyboard</figcaption></figure>
+        <figure><img src="../../../assets/images/books/book-005/robot/robot-script.webp" alt="Robot 2, Book-CORE-01-SCRIPT_PART: wheel modules and guide screen shown separated" width="512" height="512" loading="lazy" /><figcaption>Robot 2 · controlled by a Python script</figcaption></figure>
+      </div>
+      <div class="intro-cta"><a class="secondary" href="./learn/#structure" target="_blank" rel="noopener">Watch the exploded view and Port wiring<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a class="secondary" href="./learn/#motions" target="_blank" rel="noopener">Watch the eight motions<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+      <div class="rk-note"><strong>A note on RoboCo results:</strong> RoboCo is a robot sandbox game with a physics simulation. The times, speeds, and friction you see are observations under simulated conditions. The book doesn't treat them as real hardware performance; it uses them to practice checking how results change when you change an input or a setting.</div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Five parts, twenty-five chapters</h2>
+      <ol class="rk-flow" aria-label="CORE-01 learning flow">
+        <li class="is-key"><span>Run the finished robot</span></li><li><span>Observe</span></li><li><span>Trace the structure</span></li><li><span>Change a value or action</span></li><li><span>Compare under the same conditions</span></li><li><span>Check failures in the LOG</span></li><li class="is-key"><span>Complete the mission</span></li>
+      </ol>
+      <ul class="rk-parts">
+        <li><div class="part-tag">PART 1 · EXPERIENCE<span>Drive It First</span></div><p>Drive the robot with Controls Mapping, then move the same keys to the Script robot. Compare speed and terrain, read the Text Screen and LED, and complete a first guide mission by hand. <span class="status-badge pending">CH01–05</span></p></li><li><div class="part-tag">PART 2 · UNDERSTAND<span>Understand the Structure</span></div><p>Trace drive and steering axes, the Port numbers of FL/FR/RL/RR, the Controls path versus the Script path, and why a motor command differs from the actual motion. <span class="status-badge pending">CH06–10</span></p></li><li><div class="part-tag">PART 3 · CONTROL<span>Control Values and Actions</span></div><p>Edit values in the start file c01_start.py, then open the Educational Library one layer at a time: key handling, grouping four DC Motors, servo limits, and logging. <span class="status-badge pending">CH11–15</span></p></li><li><div class="part-tag">PART 4 · EXPERIMENT<span>Change One Condition, Compare</span></div><p>Use keys 2, 3, and 4 to step four wheel-motor settings (Target RPM, acceleration time, brake force, and braking time) through ten levels, and compare before and after under the same conditions. Results from manual driving and Script control are recorded side by side. <span class="status-badge pending">CH16–20</span></p></li><li><div class="part-tag">PART 5 · PROJECT<span>Complete and Improve the Mission</span></div><p>Write the route in MISSION_ROUTE and run a go–guide–return mission through the WAIT → MOVE → GUIDE → RETURN state flow. When the result is off, find the last good event in the LOG and change one condition only. <span class="status-badge pending">CH21–25</span></p></li>
+      </ul>
+      <figure class="rk-figure rk-webfig" id="c01-web-03"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-03-en.webp" target="_blank" rel="noopener" aria-label="C01-WEB-03 — Open full size in a new tab"><img src="../../../assets/images/books/book-005/web/C01-WEB-03-en.webp" alt="Six-scene storyboard. 1 Ready: robot file and c01_start.py. 2 Run: W key and the body moving forward. 3 Observe: the Text Screen lines FORWARD, KEY W, RPM 120, READY. 4 Change one thing: keys 2, 3, and 4 and the experiment screen RPM, LV 5/10, 200 rpm. 5 Compare: example stop points before and after. 6 Diagnose: Text Screen and Console LOG." width="1602" height="1032" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Storyboard</span> How a chapter flows: run, observe, change, compare, diagnose.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-03-en.webp" target="_blank" rel="noopener">Enlarge ↗<span class="sr-only"> (Open full size in a new tab)</span></a></figcaption></figure>
+      <div class="intro-cta"><a class="primary" href="./toc.html">See the full contents</a></div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Final mission: go → guide → return</h2>
+      <p>In the final mission, one key press sends the robot to a guide point. It opens its screen to show a message, folds it again, and drives the same route back. Part 5 is about designing that route, figuring out why a run went wrong, and fixing one thing at a time until it works.</p>
+      <div class="rk-note"><strong>One honest note:</strong> this isn't autonomous navigation. No position sensor decides when the robot has arrived; the robot runs a list of actions for set times. Sensing and decision-making come later in the series.</div>
+      <div class="intro-cta"><a class="primary" href="https://youtu.be/CD96tZ2EnUM" target="_blank" rel="noopener">Watch the final mission on YouTube<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a class="secondary" href="./learn/#mission" target="_blank" rel="noopener">Video and what to watch<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Who this book is for</h2>
+      <ul class="intro-list">
+        <li><strong>Complete beginners to robots or coding</strong>: Chapter 1 starts with keyboard driving and no code. Python shows up only when you need it, and always tied to something the robot does.</li>
+        <li><strong>Middle and high school students</strong>: see how a key press turns into wheel motion, and learn the basic loop of physical AI: input, control, actuator, observation.</li>
+        <li><strong>College students</strong>: sort out how Port, Reference, the RoboCo API, and the Educational Library fit together, and practice one-variable experiments.</li>
+        <li><strong>Makers and developers</strong>: if you already know Python, you can move quickly through the code tracing in Part 3 and the parameter experiments in Part 4.</li>
+        <li><strong>Teachers and schools</strong>: run repeatable labs and before-and-after comparisons with the same robot files and record sheets.</li>
+      </ul>
+      <figure class="rk-figure rk-webfig" id="c01-web-06"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-06-en.webp" target="_blank" rel="noopener" aria-label="C01-WEB-06 — Open full size in a new tab"><img src="../../../assets/images/books/book-005/web/C01-WEB-06-en.webp" alt="Where to start by reader type: new to robots and code → Part 1 from Chapter 1; used Python → focus on Parts 3 and 4; want to watch first → web extras and the final mission video; teaching → course plans and record sheets." width="1602" height="834" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Rolestorming</span> Where to start, depending on what kind of reader you are.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-06-en.webp" target="_blank" rel="noopener">Enlarge ↗<span class="sr-only"> (Open full size in a new tab)</span></a></figcaption></figure>
+    </section>
+
+    <section class="intro-section">
+      <h2>Book + practice files + video companion</h2>
+      <div class="rk-card-grid">
+        <div class="rk-card is-strong"><span class="rk-card-label">BOOK</span><h3>The book</h3><p>The concepts that won't go out of date, the shortest path through install and first run, and 25 chapters of observing, controlling, experimenting, and verifying. Reference appendices cover keys, Ports, the API, the LOG, and troubleshooting order.</p></div>
+        <div class="rk-card"><span class="rk-card-label">DIGITAL PACKAGE</span><h3>Practice files</h3><p>Get the two robot files, the start file <code>c01_start.py</code>, the Educational Library <code>C01_Lib</code>, and the record sheets (PDF) on the <a href="./downloads/">practice files page</a>. Every file lists its version and checksum.</p></div>
+        <div class="rk-card"><span class="rk-card-label">WEB</span><h3>Video companion</h3><p>What a printed page can't show: full runs, side-by-side comparisons, failure clips, install walkthroughs, and web-only challenge missions. Errata and version updates live here too.</p></div>
+      </div>
+      <p>The website doesn't repeat the book. The videos show what moves; the matching chapter explains why it moves that way and how to change it. QR codes in the book point to permanent addresses such as <code>ronniekimbooks.com/ko/books/book-005/v/C01-25-00/</code>, so they keep working even if a video moves.</p>
+      <figure class="rk-figure rk-webfig" id="c01-web-04"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-04-en.webp" target="_blank" rel="noopener" aria-label="C01-WEB-04 — Open full size in a new tab"><img src="../../../assets/images/books/book-005/web/C01-WEB-04-en.webp" alt="Customer journey map. Eight stages in two rows — discover, buy, get ready, first run, understand, experiment, mission, go further — each with the task and the web page used. Stage 3, get ready, is highlighted." width="1602" height="816" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Customer journey map</span> Using the book and the website together, with the web page for each stage.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-04-en.webp" target="_blank" rel="noopener">Enlarge ↗<span class="sr-only"> (Open full size in a new tab)</span></a></figcaption></figure>
+      <div class="intro-cta"><a class="primary" href="./learn/" target="_blank" rel="noopener">Open the video companion<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+    </section>
+
+    <section class="intro-section">
+      <h2>What you need</h2>
+      <div class="rk-table-wrap"><table class="faq-table">
+        <thead><tr><th></th><th>Item</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><th>Required</th><td>RoboCo on Steam</td><td>You load and run the robots in Sandbox mode.</td></tr>
+          <tr><th>Required</th><td>Two robot files</td><td><code>Book-CORE-01-CONTROLS</code>, <code>Book-CORE-01-SCRIPT_PART</code> — on the <a href="./downloads/#robots">practice files page</a></td></tr>
+          <tr><th>Required</th><td>Start file and library</td><td><code>Book_C01_Robot/c01_start.py</code> and <code>C01_Lib</code> — on the <a href="./downloads/#code">practice files page</a></td></tr>
+          <tr><th>Recommended</th><td>Record sheets</td><td>Three A4 pages for Parts 4 and 5 and the challenges (<a href="./downloads/#sheets">PDF</a>)</td></tr>
+          <tr><th>Not needed</th><td>A system Python install</td><td>Scripts run on RoboCo's built-in Python.</td></tr>
+          <tr><th>Optional</th><td>A code editor</td><td>Handy for reading and editing the start file and library.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Before you buy, check RoboCo's Steam page for current OS support, system requirements, languages, and price. The environment the book was tested in and the latest compatibility notes are in the Versions section of the web companion.</p>
+    </section>
+
+    <section class="intro-section rk-section-id" id="series">
+      <h2>Where CORE-01 fits in the series</h2>
+      <p>CORE-01 stands on its own; you don't need another book first. The series has two tracks: CORE widens the foundation (MOVE → SENSE/REACT → MANIPULATE), and QUAD builds up a four-legged robot (WALK → DECIDE → WORK). There's no required order for the six books.</p>
+      <div class="rk-table-wrap"><table class="faq-table">
+        <thead><tr><th>Volume</th><th>Capability</th><th>Focus</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="is-current"><th>CORE-01</th><td>MOVE / CONTROL</td><td>Moving a four-wheel independent drive and steering robot</td><td><strong>This book</strong> · Published</td></tr><tr><th>CORE-02</th><td>SENSE / REACT</td><td>Sensor input, state change, reaction, and feedback</td><td>Coming soon</td></tr><tr><th>CORE-03</th><td>MANIPULATE</td><td>Picking, carrying, and placing with a mobile robot arm</td><td>Coming soon</td></tr><tr><th>QUAD-01</th><td>WALK</td><td>Joints, posture, and gait of a 12-DOF (3 DOF × 4 legs) quadruped</td><td>Coming soon</td></tr><tr><th>QUAD-02</th><td>DECIDE</td><td>Choosing actions from sensors and state; rule-based versus learning-based</td><td>Coming soon</td></tr><tr><th>QUAD-03</th><td>WORK</td><td>Walking to an object, picking it up, and placing it</td><td>Coming soon</td></tr>
+        </tbody>
+      </table></div>
+      <p>After CORE-01, follow your interest: sensing and reacting in CORE-02, picking things up with a robot arm in CORE-03, or walking on four legs in QUAD-01. The table shows how the topics connect, not the order of publication.</p>
+      <figure class="rk-figure rk-webfig" id="c01-web-17"><a class="rk-zoom" href="../../../assets/images/books/book-005/web/C01-WEB-17-en.webp" target="_blank" rel="noopener" aria-label="C01-WEB-17 — Open full size in a new tab"><img src="../../../assets/images/books/book-005/web/C01-WEB-17-en.webp" alt="Series map. Top row, CORE track: CORE-01 (published, highlighted), CORE-02, CORE-03. Bottom row, QUAD track: QUAD-01, QUAD-02, QUAD-03 (coming). Books in the same column are paired by dashed lines." width="1602" height="714" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Scenario map</span> Where to go after CORE-01, based on what you want the robot to do next.<a class="rk-zoom-hint" href="../../../assets/images/books/book-005/web/C01-WEB-17-en.webp" target="_blank" rel="noopener">Enlarge ↗<span class="sr-only"> (Open full size in a new tab)</span></a></figcaption></figure>
+      <div class="intro-cta"><a class="primary" href="./course.html">Book sets and course plans for every level</a></div>
+    </section>
+
+    <section class="intro-section">
+      <div class="intro-author">
+        <h2>About the author: Ronnie Kim</h2>
+        <p>Ronnie Kim is a full-stack software engineer and senior SW/HW architect with more than twenty years in software development. He has designed and built systems on both the back end and the front end, and he leads technical reviews, new feature design, project-level technical decisions, and AI transformation work.</p>
+        <p>Robots have been his other field for just as long. He has placed in robot competitions, and for more than twenty years he has studied how robots are built and controlled: sensors, motors, actuators, and the way software meets hardware. Today he studies physical AI and robot systems end to end, from input and sensors through state, decisions, control, and actuators back to feedback, and turns that work into hands-on learning material.</p>
+        <p>When he teaches robotics, he would rather have learners <strong>run a finished robot, watch it, change its control values, and compare the results</strong> than start with long stretches of theory or code.</p>
+        <p>Other books: <a href="../../../en/books/book-004/">What Should Our Children Learn in the Age of AI?</a>, <a href="../../../en/books/book-001/">How Long Will Developers Still Be Needed?</a>, <a href="../../../en/books/book-002/">Arduino Environmental Sensors for Everyone</a></p>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Book information</h2>
+      <div class="rk-table-wrap"><table class="faq-table compact"><tbody>
+        <tr><th>Language</th><td>Korean. The Korean title and subtitle are on the <a href="../../../ko/books/book-005/" hreflang="ko">Korean page</a>.</td></tr>
+        <tr><th>Publisher</th><td>PUBPLE</td></tr>
+        <tr><th>English title</th><td>Not set yet. &ldquo;Robot Structure and Python Control&rdquo; on this site is a working translation of the Korean title, and the cover shown on English pages has its text translated. The printed cover is in Korean.</td></tr>
+        <tr><th>Series</th><td>Physical AI with RoboCo · CORE-01 (MOVE / CONTROL)</td></tr>
+        <tr><th>Author</th><td>Ronnie Kim</td></tr>
+        <tr><th>Practice environment</th><td>RoboCo (Steam)</td></tr>
+        <tr><th>Technical baseline</th><td><code>Book_C01_Robot</code> release v1.6.3 · RoboCo API 0.3.1</td></tr>
+        <tr><th>Editions</th><td>Korean print and ebook (<a href="./buy.html">where to buy</a>). English edition: to be announced.</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="intro-final">
+      <h2>From one W key to a go–guide–return mission</h2>
+      <p>First you watch it move. Then you find out why. Then you change a value yourself and compare the results under the same conditions. The same approach carries over to sensor experiments, robot arms, and four-legged walking.</p>
+      <div class="intro-cta">
+        <a class="primary" href="./buy.html">Where to buy</a>
+        <a class="secondary" href="./sample.html">Read a sample</a>
+        <a class="secondary" href="./toc.html">Table of contents</a>
+      </div>
+    </section>
+  </main>
+</div>
+<footer class="site-footer">
+  <p>RoboCo and related names are trademarks of their respective owners.</p>
+  <p>© Ronnie Kim Books. All rights reserved.</p>
+</footer>
+</body>
+</html>
