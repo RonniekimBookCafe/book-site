@@ -94,19 +94,23 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
-- **v1.14 (2026-10-10)**
-  - Desktop reading width (series-roboco.css, `@media (min-width: 1024px)` only). On wide monitors the bo
-ok pages
-    filled the whole window because a shared rule in style.css resets `.layout` to `max-width: 100%`. Boo
-k-005–010
-    pages now sit in a centred 1280px frame (240px sidebar + 32px gap + 960px content card). At 1920px th
-e main
-    video went from 1534 × 863 to 894 × 503 and fits on one screen; figures render at 864px. Header text 
-uses the
-    same 1232px line so the title lines up with the sidebar (`body:has(> .layout)`; /v/ pages keep their 
-980px column).
-  - Mobile and tablet (< 1024px) unchanged. style.css/book.css untouched, so book-001–004 are unaffected.
+- **v1.15 (2026-10-14)**
+  - CORE-01 (book-005): add permanent QR landing pages for `C01-W02`–`C01-W07` in both Korean and English
+ (12 HTML pages).
+  - Link to each landing page from the existing videos in Korean/English `learn/index.html` without chang
+ing YouTube IDs.
+  - Extend `sitemaps/books/book-005.xml` with the 12 new URLs.
+  - Print QR images should encode the permalink `/ko/books/book-005/v/<VIDEO_ID>/`, not YouTube directly.
+ Verify deployment and mobile scanning before printing.
 
+
+- **v1.14 (2026-10-10)**
+  - Desktop reading width (series-roboco.css, `@media (min-width: 1024px)` only). On wide monitors the book pages
+    filled the whole window because a shared rule in style.css resets `.layout` to `max-width: 100%`. Book-005–010
+    pages now sit in a centred 1280px frame (240px sidebar + 32px gap + 960px content card). At 1920px the main
+    video went from 1534 × 863 to 894 × 503 and fits on one screen; figures render at 864px. Header text uses the
+    same 1232px line so the title lines up with the sidebar (`body:has(> .layout)`; /v/ pages keep their 980px column).
+  - Mobile and tablet (< 1024px) unchanged. style.css/book.css untouched, so book-001–004 are unaffected.
 
 - **v1.13 (2026-10-10)**
   - Six web-only videos published on YouTube (series_data.YOUTUBE → assets/js/media/book-005.js and the

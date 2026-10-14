@@ -74,7 +74,7 @@ const bookCount = document.getElementById("book-count");
 const emptyMessage = document.getElementById("empty-message");
 
 function getBooksData() {
-  return (Array.isArray(window.booksData) ? window.booksData : []).filter(function (book) { return !book.hidden; });
+  return Array.isArray(window.booksData) ? window.booksData : [];
 }
 
 function updateToolText(lang) {
