@@ -24,7 +24,13 @@ const pageText = {
     upcomingTitle: "출간 예정 · 피지컬 AI로 배우는 RoboCo 시리즈",
     channelsLabel: "공식 채널",
     youtube: "공식 YouTube",
+    youtubeDesc: "실습 실행 영상 · 책 QR 영상",
     blog: "공식 네이버 블로그",
+    blogDesc: "집필 노트 · 업데이트 · 정오표 소식",
+    spotlightBadge: "신간",
+    spotlightView: "책 보기",
+    spotlightBuy: "구매하기",
+    spotlightVideo: "걷는 영상 보기",
     upcomingLead: "CORE-01과 QUAD-01에 이어 센서, 로봇팔, 자율보행 AI, 이동 조작으로 이어지는 네 권을 준비하고 있습니다.",
     empty: "검색 결과가 없습니다."
   },
@@ -54,7 +60,13 @@ const pageText = {
     upcomingTitle: "Coming soon · Physical AI with RoboCo series",
     channelsLabel: "Official channels",
     youtube: "YouTube",
+    youtubeDesc: "Practice run videos · videos from the book's QR codes",
     blog: "Naver Blog (Korean)",
+    blogDesc: "Writing notes, updates, and errata news",
+    spotlightBadge: "New release",
+    spotlightView: "View book",
+    spotlightBuy: "Buy",
+    spotlightVideo: "Watch it walk",
     upcomingLead: "After CORE-01 and QUAD-01, four more volumes cover sensors, robot arms, autonomous AI, and mobile manipulation (Korean pages).",
     empty: "No books found."
   }
@@ -230,6 +242,39 @@ function renderBooks() {
   }
 }
 
+
+// New-release spotlight: books with `spotlight` data are shown first, above the book grid.
+function renderSpotlight() {
+  const section = document.getElementById("spotlight");
+  if (!section) return;
+  const text = pageText[currentLanguage] || pageText.ko;
+  const book = getBooksData().find(function (b) {
+    return b.spotlight && b[currentLanguage];
+  });
+  if (!book) {
+    section.hidden = true;
+    return;
+  }
+  const data = book[currentLanguage];
+  const extra = book.spotlight[currentLanguage] || {};
+  section.style.setProperty("--spot", book.spotlight.color || "#ff8a34");
+  section.innerHTML = `
+    <a class="spotlight-cover" href="${data.link}"><img src="${data.coverLarge || data.cover}" alt="${data.alt}" width="420" height="622" /></a>
+    <div>
+      <p class="spotlight-badges"><span class="is-new">${text.spotlightBadge}</span><span class="is-code">${book.seriesCode} · ${extra.capability || ""}</span></p>
+      <h2 id="spotlight-title">${extra.title || data.title}</h2>
+      <p class="spotlight-lead">${extra.lead || ""}</p>
+      <p class="spotlight-desc">${data.description}</p>
+      <div class="spotlight-cta">
+        <a class="primary" href="${data.link}buy.html">${text.spotlightBuy}</a>
+        <a href="${data.link}">${text.spotlightView}</a>
+        <a href="${data.link}learn/">${text.spotlightVideo} ↗</a>
+      </div>
+    </div>
+  `;
+  section.hidden = false;
+}
+
 function setLanguage(lang) {
   currentLanguage = pageText[lang] ? lang : "ko";
 
@@ -241,8 +286,10 @@ function setLanguage(lang) {
   const channelsLabel = document.getElementById("channels-label");
   if (channelsLabel) {
     channelsLabel.textContent = selected.channelsLabel;
-    document.getElementById("channel-youtube").textContent = selected.youtube + " ↗";
-    document.getElementById("channel-blog").textContent = selected.blog + " ↗";
+    document.getElementById("channel-youtube").textContent = selected.youtube;
+    document.getElementById("channel-youtube-desc").textContent = selected.youtubeDesc;
+    document.getElementById("channel-blog").textContent = selected.blog;
+    document.getElementById("channel-blog-desc").textContent = selected.blogDesc;
   }
   sectionTitle.textContent = selected.sectionTitle;
 
@@ -252,6 +299,7 @@ function setLanguage(lang) {
   localStorage.setItem("siteLanguage", currentLanguage);
 
   updateToolText(currentLanguage);
+  renderSpotlight();
   renderBooks();
 }
 

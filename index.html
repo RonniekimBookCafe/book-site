@@ -20,8 +20,8 @@
   <meta name="twitter:description" content="Explore Ronnie Kim Books in Korean and English, including book pages, sample chapters, FAQs, and purchase links." />
   <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-001/og-ko.webp" />
 
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/home.css" />
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.17" />
+  <link rel="stylesheet" href="./assets/css/home.css?v=1.17" />
 </head>
 
 <body>
@@ -35,13 +35,10 @@
     <p id="site-subtitle">출간 도서와 샘플 본문을 한국어로 확인하세요.</p>
   </header>
 
-  <nav class="channel-bar" aria-label="Official channels">
-    <span id="channels-label">공식 채널</span>
-    <a id="channel-youtube" href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">공식 YouTube ↗</a>
-    <a id="channel-blog" href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">공식 네이버 블로그 ↗</a>
-  </nav>
 
 <main class="home-main">
+  <section id="spotlight" class="spotlight" aria-labelledby="spotlight-title" hidden></section>
+
   <h2 class="section-title" id="section-title">출간 도서</h2>
 
   <section class="book-tools" aria-label="Book search and filter tools">
@@ -87,10 +84,25 @@
 </main>
 
   <footer class="site-footer">
-    <p>© Ronnie Kim Books. All rights reserved.</p>
+    <section class="footer-channels" aria-labelledby="channels-label">
+      <p class="footer-channels-title" id="channels-label">공식 채널</p>
+      <div class="footer-channel-list">
+        <a class="footer-channel is-video" href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">
+          <span class="fc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg></span>
+          <span class="fc-text"><strong id="channel-youtube">공식 YouTube</strong><small id="channel-youtube-desc">실습 실행 영상 · 책 QR 영상</small></span>
+          <span class="fc-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="footer-channel is-blog" href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">
+          <span class="fc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 4h10l4 4v12H5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 11h8M8 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <span class="fc-text"><strong id="channel-blog">공식 네이버 블로그</strong><small id="channel-blog-desc">집필 노트 · 업데이트 · 정오표 소식</small></span>
+          <span class="fc-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <p class="footer-copy">© Ronnie Kim Books. All rights reserved.</p>
   </footer>
 
-  <script src="./assets/js/books-data.js"></script>
-  <script src="./assets/js/home.js"></script>
+  <script src="./assets/js/books-data.js?v=1.17"></script>
+  <script src="./assets/js/home.js?v=1.17"></script>
 </body>
 </html>

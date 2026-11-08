@@ -101,7 +101,7 @@ window.booksData = [
     ko: {
       title: "피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어",
       description: "키보드 조종부터 스크립트 주행까지, 직접 움직이고 바꾸는 4륜 로봇. 로봇 키트 없이 RoboCo 가상 환경에서 조종하고 바꿔 보는 피지컬 AI 로봇 실습서입니다.",
-      cover: "./assets/images/books/book-005/cover-thumb-ko.webp",
+      cover: "./assets/images/books/book-005/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-005/",
       button: "책 보기",
       badge: "신간",
@@ -111,7 +111,7 @@ window.booksData = [
     en: {
       title: "Physical AI with RoboCo · CORE-01",
       description: "From keyboard driving to script control: a four-wheel robot you drive and change yourself in RoboCo's virtual world. Korean edition.",
-      cover: "./assets/images/books/book-005/cover-thumb-en.webp",
+      cover: "./assets/images/books/book-005/cover-thumb-en.webp?v=1.17",
       link: "./en/books/book-005/",
       button: "View Book",
       badge: "New",
@@ -129,19 +129,19 @@ window.booksData = [
     seriesOrder: 2,
 
     ko: {
-      title: "피지컬 AI로 배우는 RoboCo 센서 피드백과 로봇 제어",
-      description: "CORE-02 · SENSE / REACT — 물체를 찾아 멈추고, 집어 옮기는 센서 반응형 4륜 로봇. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
-      cover: "./assets/images/books/book-006/cover-thumb-ko.webp",
+      title: "피지컬 AI로 배우는 RoboCo 센서와 로봇 제어",
+      description: "CORE-02 · SENSE / REACT — 물체를 찾아 멈추고 집어 옮기며 익히는 센서 반응과 피드백. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
+      cover: "./assets/images/books/book-006/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-006/",
       button: "미리 보기",
       badge: "출간 예정",
-      alt: "피지컬 AI로 배우는 RoboCo 센서 피드백과 로봇 제어 표지 준비 중 이미지"
+      alt: "피지컬 AI로 배우는 RoboCo 센서와 로봇 제어 책 표지"
     },
 
     en: {
       title: "Physical AI with RoboCo · CORE-02",
       description: "CORE-02 · SENSE / REACT: a four-wheel robot that finds an object, stops, and picks it up. Coming soon (Korean page).",
-      cover: "./assets/images/books/book-006/cover-thumb-ko.webp",
+      cover: "./assets/images/books/book-006/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-006/",
       button: "Preview (Korean)",
       badge: "Coming soon",
@@ -160,18 +160,18 @@ window.booksData = [
 
     ko: {
       title: "피지컬 AI로 배우는 RoboCo 로봇팔과 작업 제어",
-      description: "CORE-03 · MANIPULATE — 작업 위치까지 달려가 물체를 집고 옮겨 놓는 4륜 이동 로봇팔. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
-      cover: "./assets/images/books/book-007/cover-thumb-ko.webp",
+      description: "CORE-03 · MANIPULATE — 4륜 이동 로봇팔로 물체를 집고 놓으며 익히는 관절 움직임과 작업 순서. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
+      cover: "./assets/images/books/book-007/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-007/",
       button: "미리 보기",
       badge: "출간 예정",
-      alt: "피지컬 AI로 배우는 RoboCo 로봇팔과 작업 제어 표지 준비 중 이미지"
+      alt: "피지컬 AI로 배우는 RoboCo 로봇팔과 작업 제어 책 표지"
     },
 
     en: {
       title: "Physical AI with RoboCo · CORE-03",
       description: "CORE-03 · MANIPULATE: a four-wheel mobile robot arm that drives to the work spot and picks and places. Coming soon (Korean page).",
-      cover: "./assets/images/books/book-007/cover-thumb-ko.webp",
+      cover: "./assets/images/books/book-007/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-007/",
       button: "Preview (Korean)",
       badge: "Coming soon",
@@ -186,11 +186,17 @@ window.booksData = [
     series: "roboco",
     seriesCode: "QUAD-01",
     seriesOrder: 4,
+    spotlight: {
+      color: "#ff8a34",
+      ko: { capability: "WALK", lead: "W 키 하나가 열두 관절의 한 걸음이 되기까지" },
+      en: { capability: "WALK", title: "Learning Physical AI with RoboCo: Robot Structure and Gait Control", lead: "From one W key press to a twelve-joint step" }
+    },
 
     ko: {
       title: "피지컬 AI로 배우는 RoboCo 구조와 보행 제어",
       description: "W 키 하나가 열두 관절의 한 걸음이 되기까지. 4족 로봇을 먼저 걷게 하고 관절·IK·자세·걸음을 한 층씩 바꿔 보는 피지컬 AI 보행 실습서입니다.",
-      cover: "./assets/images/books/book-008/cover-thumb-ko.webp",
+      cover: "./assets/images/books/book-008/cover-thumb-ko.webp?v=1.17",
+      coverLarge: "./assets/images/books/book-008/cover-large-ko.webp?v=1.17",
       link: "./ko/books/book-008/",
       button: "책 보기",
       badge: "신간",
@@ -200,7 +206,8 @@ window.booksData = [
     en: {
       title: "Physical AI with RoboCo · QUAD-01",
       description: "From one W key press to a twelve-joint step: walk a quadruped in RoboCo, then change joints, foot targets, IK, posture, and gait one layer at a time. Korean edition.",
-      cover: "./assets/images/books/book-008/cover-thumb-en.webp",
+      cover: "./assets/images/books/book-008/cover-thumb-en.webp?v=1.17",
+      coverLarge: "./assets/images/books/book-008/cover-large-en.webp?v=1.17",
       link: "./en/books/book-008/",
       button: "View Book",
       badge: "New",
@@ -219,18 +226,18 @@ window.booksData = [
 
     ko: {
       title: "피지컬 AI로 배우는 4족 로봇 자율보행과 AI",
-      description: "QUAD-02 · DECIDE — 장애물을 보고 스스로 길을 고르는 자율보행 4족 로봇. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
-      cover: "./assets/images/books/book-009/cover-thumb-ko.webp",
+      description: "QUAD-02 · DECIDE — RoboCo 장애물 코스에서 규칙과 강화학습에 따른 로봇의 행동 비교. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
+      cover: "./assets/images/books/book-009/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-009/",
       button: "미리 보기",
       badge: "출간 예정",
-      alt: "피지컬 AI로 배우는 4족 로봇 자율보행과 AI 표지 준비 중 이미지"
+      alt: "피지컬 AI로 배우는 4족 로봇 자율보행과 AI 책 표지"
     },
 
     en: {
       title: "Physical AI with RoboCo · QUAD-02",
-      description: "QUAD-02 · DECIDE: a quadruped that sees obstacles and chooses its own way. Coming soon (Korean page).",
-      cover: "./assets/images/books/book-009/cover-thumb-ko.webp",
+      description: "QUAD-02 · DECIDE: on a RoboCo obstacle course, compare how a quadruped behaves under rules and under reinforcement learning. Coming soon (Korean page).",
+      cover: "./assets/images/books/book-009/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-009/",
       button: "Preview (Korean)",
       badge: "Coming soon",
@@ -248,19 +255,19 @@ window.booksData = [
     seriesOrder: 6,
 
     ko: {
-      title: "피지컬 AI로 배우는 4족 로봇 이동 조작과 작업 자동화",
-      description: "QUAD-03 · WORK — 걸어가서 집고 옮겨 놓는 4족 로봇 이동 조작. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
-      cover: "./assets/images/books/book-010/cover-thumb-ko.webp",
+      title: "피지컬 AI로 배우는 4족 로봇의 로봇팔과 작업 자동화",
+      description: "QUAD-03 · WORK — 걸어가 작업 자세를 잡고 물체를 집어 옮겨 놓는 네 다리 로봇. 피지컬 AI로 배우는 RoboCo 시리즈 출간 예정 도서입니다.",
+      cover: "./assets/images/books/book-010/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-010/",
       button: "미리 보기",
       badge: "출간 예정",
-      alt: "피지컬 AI로 배우는 4족 로봇 이동 조작과 작업 자동화 표지 준비 중 이미지"
+      alt: "피지컬 AI로 배우는 4족 로봇의 로봇팔과 작업 자동화 책 표지"
     },
 
     en: {
       title: "Physical AI with RoboCo · QUAD-03",
-      description: "QUAD-03 · WORK: a quadruped that walks over, picks things up, and puts them in place. Coming soon (Korean page).",
-      cover: "./assets/images/books/book-010/cover-thumb-ko.webp",
+      description: "QUAD-03 · WORK: a quadruped with a robot arm that walks over, takes a working pose, and picks and places objects. Coming soon (Korean page).",
+      cover: "./assets/images/books/book-010/cover-thumb-ko.webp?v=1.17",
       link: "./ko/books/book-010/",
       button: "Preview (Korean)",
       badge: "Coming soon",

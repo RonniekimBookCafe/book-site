@@ -26,14 +26,14 @@ sitemaps/books/book-NNN.xml        Per-book sitemap, listed in sitemap.xml
 | Series code | Site Book ID | Video ID prefix | Status |
 |---|---|---|---|
 | CORE-01 | book-005 | C01 | Published (ko + en pages) |
-| CORE-02 | book-006 | C02 | Upcoming — Korean placeholder pages |
-| CORE-03 | book-007 | C03 | Upcoming — Korean placeholder pages |
+| CORE-02 | book-006 | C02 | Upcoming — Korean pages, approved cover |
+| CORE-03 | book-007 | C03 | Upcoming — Korean pages, approved cover |
 | QUAD-01 | book-008 | Q01 | Published (ko + en pages) |
-| QUAD-02 | book-009 | Q02 | Upcoming — Korean placeholder pages |
-| QUAD-03 | book-010 | Q03 | Upcoming — Korean placeholder pages |
+| QUAD-02 | book-009 | Q02 | Upcoming — Korean pages, approved cover |
+| QUAD-03 | book-010 | Q03 | Upcoming — Korean pages, approved cover |
 
-Upcoming covers are placeholders ("표지 준비 중"); replace `cover-large-ko.webp`, `cover-thumb-ko.webp`,
-`og-ko.webp` in each `assets/images/books/book-NNN/` folder. The CORE-03 accent `#7DC242` is provisional.
+All six RoboCo books use their approved covers (v1.17). Cover/OG URLs carry `?v=1.17`; bump the query when an
+image is replaced under the same file name so browsers and social previews refresh. The CORE-03 accent `#7DC242` is provisional.
 
 Later Physical AI series (robot hand, face robot, robot arm, drone, hexapod, biped …) continue from book-011.
 In `books-data.js`, RoboCo books carry `series: "roboco"`, `seriesCode`, `category: "robotics"`, and,
@@ -93,6 +93,24 @@ When a video goes public: set its ID in `assets/js/media/book-005.js` (live imme
 site, also set it in `series_data.YOUTUBE` so the player is rendered statically and the `noindex` tag is dropped.
 
 ## Changelog
+
+- **v1.17 (2026-11-08)** — Covers, channels, and QUAD-01 as the new release.
+  - Approved covers applied to CORE-02, CORE-03, QUAD-02, QUAD-03 (`cover-large-ko`, `cover-thumb-ko`, new `og-ko`
+    built from the cover). Every page that showed a placeholder now shows the cover: "표지 준비 중" alt text and
+    "가제" badges removed, header subtitles and a 부제 row taken from each cover.
+  - Titles synced to the covers site-wide: CORE-02 『피지컬 AI로 배우는 RoboCo 센서와 로봇 제어』, QUAD-03
+    『피지컬 AI로 배우는 4족 로봇의 로봇팔과 작업 자동화』, QUAD-01 『피지컬 AI로 배우는 RoboCo 구조와 보행 제어』
+    (also on CORE-01 and the other upcoming books' pages and course plans).
+  - QUAD-01 shown as published on every page: series tables, track cards, and book chips (book-005…010, ko/en);
+    QUAD-02/03 pages gain a "QUAD 트랙 첫 권 · 신간" card linking to QUAD-01; English CORE-01 pages now link to
+    `/en/books/book-008/`.
+  - Home: a new-release spotlight for QUAD-01 above "출간 도서" (cover, title, buy / view / video buttons;
+    driven by `spotlight` in `books-data.js`). The official YouTube and Naver blog links moved from under the header
+    to the footer, above the copyright, as two icon cards (generic icons, no brand logos), ko/en labels.
+  - Cache busting: `index.html` loads `style.css`, `home.css`, `books-data.js`, `home.js` with `?v=1.17`, and all
+    RoboCo cover/OG image URLs carry `?v=1.17`, so the update shows without a hard refresh.
+  - Not changed: C01-WEB-17 (CORE-01 series map image) still draws QUAD-01 as upcoming; redraw from the CORE-01
+    figure sources if needed.
 
 - **v1.16 (2026-11-08)** — QUAD-01 (book-008) published, Korean and English pages.
   - Book: 『피지컬 AI로 배우는 RoboCo 구조와 보행 제어』 / *Learning Physical AI with RoboCo: Robot Structure and Gait Control*
