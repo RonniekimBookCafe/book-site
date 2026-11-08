@@ -32,7 +32,7 @@ sitemaps/books/book-NNN.xml        Per-book sitemap, listed in sitemap.xml
 | QUAD-02 | book-009 | Q02 | Upcoming — Korean pages, approved cover |
 | QUAD-03 | book-010 | Q03 | Upcoming — Korean pages, approved cover |
 
-All six RoboCo books use their approved covers (v1.17). Cover/OG URLs carry `?v=1.17`; bump the query when an
+All six RoboCo books use their approved covers (v1.17). Cover/OG and CSS URLs carry `?v=1.18`; bump the query when an
 image is replaced under the same file name so browsers and social previews refresh. The CORE-03 accent `#7DC242` is provisional.
 
 Later Physical AI series (robot hand, face robot, robot arm, drone, hexapod, biped …) continue from book-011.
@@ -93,6 +93,16 @@ When a video goes public: set its ID in `assets/js/media/book-005.js` (live imme
 site, also set it in `series_data.YOUTUBE` so the player is rendered statically and the `noindex` tag is dropped.
 
 ## Changelog
+
+- **v1.18 (2026-11-08)** — Approved covers on every RoboCo book and every page that shows them.
+  - Covers for CORE-01, CORE-02, CORE-03, QUAD-02, QUAD-03 (and QUAD-01) re-encoded from the author's approved
+    originals (`cover-large-ko`, `cover-thumb-ko`). CORE-02/03 and QUAD-02/03 OG images are built from these covers.
+  - Course pages of all six RoboCo books (ko + en) now show each book's cover in the series track cards
+    (`.rk-trackcover` in `series-roboco.css`).
+  - Cache-busting version raised to `?v=1.18` on every cover/OG image, on `series-roboco.css`/`book.css`/
+    `style.css`/`book-008.css` in RoboCo pages, and on the home page's CSS/JS, so deployed changes show at once.
+  - Note: a page that still shows "표지 준비 중" or the title "센서 피드백과 로봇 제어" is serving files from v1.16 or
+    earlier; deploy this package in full (including `assets/`).
 
 - **v1.17 (2026-11-08)** — Covers, channels, and QUAD-01 as the new release.
   - Approved covers applied to CORE-02, CORE-03, QUAD-02, QUAD-03 (`cover-large-ko`, `cover-thumb-ko`, new `og-ko`

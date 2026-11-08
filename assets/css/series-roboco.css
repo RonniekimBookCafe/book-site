@@ -1465,3 +1465,14 @@ html[lang="en"] .rk-course.is-current .rk-course-title::after {
     max-width: 1232px;
   }
 }
+
+/* v1.18: cover thumbnails in the series track cards */
+.rk-trackcard .rk-trackcover {
+  display: block;
+  width: 100%;
+  max-width: 132px;
+  height: auto;
+  margin: 0 0 8px;
+  border-radius: 6px;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.14);
+}
