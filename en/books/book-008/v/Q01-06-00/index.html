@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Q01-06-00 · QUAD-01 CH06 LEG1: three joints, one at a time | Ronnie Kim Books</title>
-  <meta name="description" content="The robot on a viewing stand, moving one leg&#x27;s three joints (HX, HY, KN) one key at a time. The robot&#x27;s screen shows the input, motor angles, and Port numbers together." />
+  <title>Q01-06-00 · QUAD-01 CH06 How far can one leg move? (three degrees of freedom) (LEG1) | Ronnie Kim Books</title>
+  <meta name="description" content="A full run of LEG1, controlling the quadruped&#x27;s three joints (HX, HY, KN) one at a time in RoboCo on Steam. It shows the three-degree-of-freedom structure of one leg and moves the forward/back, side-to-side, and knee joints separately." />
   <link rel="canonical" href="https://ronniekimbooks.com/en/books/book-008/v/Q01-06-00/" />
   <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-008/v/Q01-06-00/" />
   <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-008/v/Q01-06-00/" />
@@ -15,20 +15,20 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ronnie Kim Books" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="QUAD-01 CH06 LEG1: three joints, one at a time [Q01-06-00]" />
-  <meta property="og:description" content="The robot on a viewing stand, moving one leg&#x27;s three joints (HX, HY, KN) one key at a time. The robot&#x27;s screen shows the input, motor angles, and Port numbers together." />
+  <meta property="og:title" content="QUAD-01 CH06 How far can one leg move? (three degrees of freedom) (LEG1) [Q01-06-00]" />
+  <meta property="og:description" content="A full run of LEG1, controlling the quadruped&#x27;s three joints (HX, HY, KN) one at a time in RoboCo on Steam. It shows the three-degree-of-freedom structure of one leg and moves the forward/back, side-to-side, and knee joints separately." />
   <meta property="og:url" content="https://ronniekimbooks.com/en/books/book-008/v/Q01-06-00/" />
   <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp?v=1.18" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="QUAD-01 CH06 LEG1: three joints, one at a time [Q01-06-00]" />
-  <meta name="twitter:description" content="The robot on a viewing stand, moving one leg&#x27;s three joints (HX, HY, KN) one key at a time. The robot&#x27;s screen shows the input, motor angles, and Port numbers together." />
+  <meta name="twitter:title" content="QUAD-01 CH06 How far can one leg move? (three degrees of freedom) (LEG1) [Q01-06-00]" />
+  <meta name="twitter:description" content="A full run of LEG1, controlling the quadruped&#x27;s three joints (HX, HY, KN) one at a time in RoboCo on Steam. It shows the three-degree-of-freedom structure of one leg and moves the forward/back, side-to-side, and knee joints separately." />
   <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp?v=1.18" />
 </head>
 <body>
 <header class="book-header">
   <div class="back"><a href="../../">← Book overview</a><a class="lang-link" href="../../../../../ko/books/book-008/v/Q01-06-00/" hreflang="ko" lang="ko">Korean</a></div>
-  <h1>QUAD-01 CH06 LEG1: three joints, one at a time</h1>
-  <p>Run video · permanent address page</p>
+  <h1>QUAD-01 CH06 How far can one leg move? (three degrees of freedom) (LEG1)</h1>
+  <p>Run video · Q01-06-00</p>
   <div class="series-line"><span class="series-chip code" style="background:#FF8A34;color:#2b1300">QUAD-01</span><span class="series-chip">WALK</span><span class="series-chip">Physical AI with RoboCo</span></div>
 </header>
 <main class="vpage-main">
@@ -36,12 +36,29 @@
     <div class="rk-video is-live" data-video-id="Q01-06-00"><iframe src="https://www.youtube-nocookie.com/embed/LNMvi4Upy6s" title="QUAD-01 CH06 LEG1: three joints, one at a time [Q01-06-00]" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="rk-video-meta rk-watch-link"><a href="https://youtu.be/LNMvi4Upy6s" target="_blank" rel="noopener">Watch on YouTube ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
     <section class="vpage-lang">
       <h2>About this video</h2>
+      <p>A full run of LEG1, controlling the quadruped's three joints (HX, HY, KN) one at a time in RoboCo on Steam.</p><p>It shows the three-degree-of-freedom structure of one leg and moves the forward/back, side-to-side, and knee joints separately.</p><p>Selecting each of the FL, FR, HL, and HR legs compares the joints' turning directions, and automatic tests check each leg's motion and left-right symmetry.</p>
+    </section>
+    <section class="vpage-lang">
+      <h2>Keys in this exercise</h2>
+      <div class="rk-table-wrap"><table class="faq-table compact"><thead><tr><th>Key</th><th>Action</th></tr></thead><tbody><tr><th><kbd>W / S</kbd></th><td>HY joint forward / back</td></tr><tr><th><kbd>A / D</kbd></th><td>HX joint left / right</td></tr><tr><th><kbd>E / Q</kbd></th><td>KN joint bend / extend</td></tr><tr><th><kbd>U / O / J / L</kbd></th><td>Select leg FL / FR / HL / HR</td></tr><tr><th><kbd>K</kbd></th><td>Move the selected leg's joints to 90°</td></tr><tr><th><kbd>1~4</kbd></th><td>Automatic joint test per leg</td></tr><tr><th><kbd>5</kbd></th><td>Spread HX on all four legs</td></tr><tr><th><kbd>6</kbd></th><td>Pose sweep with joint combinations</td></tr><tr><th><kbd>0</kbd></th><td>Joint zero pose</td></tr><tr><th><kbd>F1</kbd></th><td>Key help</td></tr><tr><th><kbd>F2</kbd></th><td>Back to the stand pose</td></tr><tr><th><kbd>F3</kbd></th><td>Stop the automatic test</td></tr></tbody></table></div>
+      <p>In LEG1, key 0 is the joint zero pose, which moves every joint to 90°. It's a different state from the standing pose you get with F2.</p>
+      
+      <h3>What to watch</h3><ul class="intro-list"><li>Which way HX, HY, and KN each turn</li><li>A left leg and a right leg looking mirrored on the same key</li><li>How the Port number on screen pairs with the joint that moved</li></ul>
+    </section>
+    <section class="vpage-lang">
+      <h2>Exercise details</h2>
       <div class="rk-table-wrap"><table class="faq-table compact"><tbody>
-        <tr><th>Series</th><td>Physical AI with RoboCo</td></tr><tr><th>Book</th><td>QUAD-01 · WALK</td></tr><tr><th>Part</th><td>PART 2 · UNDERSTAND</td></tr><tr><th>Chapter</th><td>CHAPTER 06</td></tr><tr><th>Model</th><td><code>Book-QUAD-01-LEG1</code></td></tr><tr><th>Video ID</th><td><code>Q01-06-00</code></td></tr><tr><th>YouTube</th><td><a href="https://youtu.be/LNMvi4Upy6s" target="_blank" rel="noopener">youtu.be/LNMvi4Upy6s<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
+        <tr><th>Book</th><td>Learning Physical AI with RoboCo: Robot Structure and Gait Control (Korean edition)</td></tr>
+        <tr><th>Series</th><td>Physical AI with RoboCo · QUAD-01 (WALK)</td></tr>
+        <tr><th>Chapter</th><td>PART 2 · UNDERSTAND · CHAPTER 06</td></tr>
+        <tr><th>Related chapters</th><td>CH06·07·08·09</td></tr>
+        <tr><th>Practice model</th><td><code>Book-QUAD-01-LEG1</code></td></tr>
+        <tr><th>Python start file</th><td><code>q01_leg1_joint_start.py</code></td></tr>
+        <tr><th>Practice files version</th><td>v3.5.0 — <a href="../../downloads/">download</a></td></tr>
+        <tr><th>Video ID</th><td><code>Q01-06-00</code></td></tr>
+        <tr><th>YouTube</th><td><a href="https://youtu.be/LNMvi4Upy6s" target="_blank" rel="noopener">youtu.be/LNMvi4Upy6s<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
       </tbody></table></div>
-      <p>The robot on a viewing stand, moving one leg's three joints (HX, HY, KN) one key at a time. The robot's screen shows the input, motor angles, and Port numbers together.</p>
-      <h3>What to watch</h3>
-      <ul class="intro-list"><li>Which way HX, HY, and KN each turn</li><li>A left leg and a right leg looking mirrored on the same key</li><li>How the Port number on screen pairs with the joint that moved</li></ul>
+      <a class="rk-book-link" href="../../toc.html#part-2">Continue in the book · PART 2 · UNDERSTAND · CH06</a>
     </section>
     <section class="vpage-lang">
       <h2>Book and web</h2>
@@ -49,9 +66,9 @@
         <li><a href="../../">Learning Physical AI with RoboCo: Robot Structure and Gait Control — book overview</a></li>
         <li><a href="../../buy.html">Buy the book</a></li>
         <li><a href="../../learn/">Videos & web extras (7 videos)</a></li>
-        <li><a href="../../downloads/">Practice files</a></li>
         <li><a href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">Official YouTube</a> · <a href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">Official Naver Blog (Korean)</a></li>
       </ul>
+      <p class="rk-video-meta">RoboCo is a robot building and programming simulation game developed by Filament Games. This video and the practice files are the author's teaching materials, not official RoboCo content.</p>
     </section>
   </div>
 </main>

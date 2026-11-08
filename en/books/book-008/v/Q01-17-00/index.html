@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Q01-17-00 · QUAD-01 CH17 BALANCE: IMU and PID balance | Ronnie Kim Books</title>
-  <meta name="description" content="A tilting test platform rocks while the robot reads its body tilt with an IMU and corrects with its legs through PID. The same platform motion runs with balance off, then on." />
+  <title>Q01-17-00 · QUAD-01 CH17 Comparing body tilt and turn (BALANCE) | Ronnie Kim Books</title>
+  <meta name="description" content="A full run of BALANCE: the quadruped uses its IMU and PID control to correct its balance on a tilting test platform in RoboCo on Steam. The three-axis platform changes roll, pitch, and yaw, and the robot computes correction angles from the attitude its IMU measures." />
   <link rel="canonical" href="https://ronniekimbooks.com/en/books/book-008/v/Q01-17-00/" />
   <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-008/v/Q01-17-00/" />
   <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-008/v/Q01-17-00/" />
@@ -15,20 +15,20 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ronnie Kim Books" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="QUAD-01 CH17 BALANCE: IMU and PID balance [Q01-17-00]" />
-  <meta property="og:description" content="A tilting test platform rocks while the robot reads its body tilt with an IMU and corrects with its legs through PID. The same platform motion runs with balance off, then on." />
+  <meta property="og:title" content="QUAD-01 CH17 Comparing body tilt and turn (BALANCE) [Q01-17-00]" />
+  <meta property="og:description" content="A full run of BALANCE: the quadruped uses its IMU and PID control to correct its balance on a tilting test platform in RoboCo on Steam. The three-axis platform changes roll, pitch, and yaw, and the robot computes correction angles from the attitude its IMU measures." />
   <meta property="og:url" content="https://ronniekimbooks.com/en/books/book-008/v/Q01-17-00/" />
   <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp?v=1.18" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="QUAD-01 CH17 BALANCE: IMU and PID balance [Q01-17-00]" />
-  <meta name="twitter:description" content="A tilting test platform rocks while the robot reads its body tilt with an IMU and corrects with its legs through PID. The same platform motion runs with balance off, then on." />
+  <meta name="twitter:title" content="QUAD-01 CH17 Comparing body tilt and turn (BALANCE) [Q01-17-00]" />
+  <meta name="twitter:description" content="A full run of BALANCE: the quadruped uses its IMU and PID control to correct its balance on a tilting test platform in RoboCo on Steam. The three-axis platform changes roll, pitch, and yaw, and the robot computes correction angles from the attitude its IMU measures." />
   <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp?v=1.18" />
 </head>
 <body>
 <header class="book-header">
   <div class="back"><a href="../../">← Book overview</a><a class="lang-link" href="../../../../../ko/books/book-008/v/Q01-17-00/" hreflang="ko" lang="ko">Korean</a></div>
-  <h1>QUAD-01 CH17 BALANCE: IMU and PID balance</h1>
-  <p>Run video · permanent address page</p>
+  <h1>QUAD-01 CH17 Comparing body tilt and turn (BALANCE)</h1>
+  <p>Run video · Q01-17-00</p>
   <div class="series-line"><span class="series-chip code" style="background:#FF8A34;color:#2b1300">QUAD-01</span><span class="series-chip">WALK</span><span class="series-chip">Physical AI with RoboCo</span></div>
 </header>
 <main class="vpage-main">
@@ -36,12 +36,29 @@
     <div class="rk-video is-live" data-video-id="Q01-17-00"><iframe src="https://www.youtube-nocookie.com/embed/9OVq32vbYC0" title="QUAD-01 CH17 BALANCE: IMU and PID balance [Q01-17-00]" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="rk-video-meta rk-watch-link"><a href="https://youtu.be/9OVq32vbYC0" target="_blank" rel="noopener">Watch on YouTube ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
     <section class="vpage-lang">
       <h2>About this video</h2>
+      <p>A full run of BALANCE: the quadruped uses its IMU and PID control to correct its balance on a tilting test platform in RoboCo on Steam.</p><p>The three-axis platform changes roll, pitch, and yaw, and the robot computes correction angles from the attitude its IMU measures.</p><p>It compares balance correction off and on, and changes the PID gains KP, KI, and KD to show how the control response differs.</p>
+    </section>
+    <section class="vpage-lang">
+      <h2>Keys in this exercise</h2>
+      <div class="rk-table-wrap"><table class="faq-table compact"><thead><tr><th>Key</th><th>Action</th></tr></thead><tbody><tr><th><kbd>W / S</kbd></th><td>Platform pitch up / down</td></tr><tr><th><kbd>A / D</kbd></th><td>Platform roll down / up</td></tr><tr><th><kbd>Q / E</kbd></th><td>Platform yaw up / down</td></tr><tr><th><kbd>1</kbd></th><td>Direction check: platform and robot IMU</td></tr><tr><th><kbd>2</kbd></th><td>Balance test</td></tr><tr><th><kbd>3</kbd></th><td>Compare balance off / on</td></tr><tr><th><kbd>4</kbd></th><td>Balance control on / off</td></tr><tr><th><kbd>5</kbd></th><td>Level the platform</td></tr><tr><th><kbd>6 / 7</kbd></th><td>Platform speed down / up</td></tr><tr><th><kbd>8</kbd></th><td>Sway test</td></tr><tr><th><kbd>U / J</kbd></th><td>KP up / down</td></tr><tr><th><kbd>I / K</kbd></th><td>KI up / down</td></tr><tr><th><kbd>O / L</kbd></th><td>KD up / down</td></tr><tr><th><kbd>F1</kbd></th><td>Key help</td></tr><tr><th><kbd>F2</kbd></th><td>Back to the stand pose and zero</td></tr><tr><th><kbd>F3</kbd></th><td>Stop the test</td></tr></tbody></table></div>
+      <p>BALANCE uses two Microcontrollers. The robot's joints and sensors and the platform's servos are run by separate Python scripts.</p>
+      <h3>Control structure</h3><ol class="rk-flow" aria-label="Control structure"><li class="is-key"><span>Platform tilt</span></li><li><span>IMU reading</span></li><li><span>Filtering</span></li><li><span>PID correction</span></li><li><span>New joint targets</span></li><li class="is-key"><span>Posture response</span></li></ol>
+      <h3>What to watch</h3><ul class="intro-list"><li>How far the body tilts with balance off versus on</li><li>How quickly the body levels out after the platform stops</li><li>What the console logs when KP, KI, and KD change</li></ul>
+    </section>
+    <section class="vpage-lang">
+      <h2>Exercise details</h2>
       <div class="rk-table-wrap"><table class="faq-table compact"><tbody>
-        <tr><th>Series</th><td>Physical AI with RoboCo</td></tr><tr><th>Book</th><td>QUAD-01 · WALK</td></tr><tr><th>Part</th><td>PART 4 · EXPERIMENT</td></tr><tr><th>Chapter</th><td>CHAPTER 17</td></tr><tr><th>Model</th><td><code>Book-QUAD-01-BALANCE</code></td></tr><tr><th>Video ID</th><td><code>Q01-17-00</code></td></tr><tr><th>YouTube</th><td><a href="https://youtu.be/9OVq32vbYC0" target="_blank" rel="noopener">youtu.be/9OVq32vbYC0<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
+        <tr><th>Book</th><td>Learning Physical AI with RoboCo: Robot Structure and Gait Control (Korean edition)</td></tr>
+        <tr><th>Series</th><td>Physical AI with RoboCo · QUAD-01 (WALK)</td></tr>
+        <tr><th>Chapter</th><td>PART 4 · EXPERIMENT · CHAPTER 17</td></tr>
+        <tr><th>Related chapters</th><td>CH17·20·24</td></tr>
+        <tr><th>Practice model</th><td><code>Book-QUAD-01-BALANCE</code></td></tr>
+        <tr><th>Robot start file</th><td><code>q01_balance_test_start.py</code></td></tr><tr><th>Platform start file</th><td><code>q01_balance_test_platform_start.py</code></td></tr>
+        <tr><th>Practice files version</th><td>v3.5.0 — <a href="../../downloads/">download</a></td></tr>
+        <tr><th>Video ID</th><td><code>Q01-17-00</code></td></tr>
+        <tr><th>YouTube</th><td><a href="https://youtu.be/9OVq32vbYC0" target="_blank" rel="noopener">youtu.be/9OVq32vbYC0<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
       </tbody></table></div>
-      <p>A tilting test platform rocks while the robot reads its body tilt with an IMU and corrects with its legs through PID. The same platform motion runs with balance off, then on.</p>
-      <h3>What to watch</h3>
-      <ul class="intro-list"><li>How far the body tilts with balance off versus on</li><li>How quickly the body levels out after the platform stops</li><li>What the console logs when KP, KI, and KD change</li></ul>
+      <a class="rk-book-link" href="../../toc.html#part-4">Continue in the book · PART 4 · EXPERIMENT · CH17</a>
     </section>
     <section class="vpage-lang">
       <h2>Book and web</h2>
@@ -49,9 +66,9 @@
         <li><a href="../../">Learning Physical AI with RoboCo: Robot Structure and Gait Control — book overview</a></li>
         <li><a href="../../buy.html">Buy the book</a></li>
         <li><a href="../../learn/">Videos & web extras (7 videos)</a></li>
-        <li><a href="../../downloads/">Practice files</a></li>
         <li><a href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">Official YouTube</a> · <a href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">Official Naver Blog (Korean)</a></li>
       </ul>
+      <p class="rk-video-meta">RoboCo is a robot building and programming simulation game developed by Filament Games. This video and the practice files are the author's teaching materials, not official RoboCo content.</p>
     </section>
   </div>
 </main>

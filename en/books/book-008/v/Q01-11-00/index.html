@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Q01-11-00 · QUAD-01 CH11 LEG2: inverse kinematics (IK) | Ronnie Kim Books</title>
-  <meta name="description" content="Moving a foot target in x·y·z with the keys while IK works out the three joint angles. In the circle test the foot follows a preset circle." />
+  <title>Q01-11-00 · QUAD-01 CH11 Changing foot targets (LEG2) | Ronnie Kim Books</title>
+  <meta name="description" content="A full run of LEG2: changing the quadruped&#x27;s foot target coordinates and computing joint angles with inverse kinematics (IK) in RoboCo on Steam. When you set a foot target as x·y·z coordinates, the author&#x27;s Python library computes the IK and sends the resulting joint angles to RoboCo&#x27;s ServoMotors." />
   <link rel="canonical" href="https://ronniekimbooks.com/en/books/book-008/v/Q01-11-00/" />
   <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-008/v/Q01-11-00/" />
   <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-008/v/Q01-11-00/" />
@@ -15,20 +15,20 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ronnie Kim Books" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="QUAD-01 CH11 LEG2: inverse kinematics (IK) [Q01-11-00]" />
-  <meta property="og:description" content="Moving a foot target in x·y·z with the keys while IK works out the three joint angles. In the circle test the foot follows a preset circle." />
+  <meta property="og:title" content="QUAD-01 CH11 Changing foot targets (LEG2) [Q01-11-00]" />
+  <meta property="og:description" content="A full run of LEG2: changing the quadruped&#x27;s foot target coordinates and computing joint angles with inverse kinematics (IK) in RoboCo on Steam. When you set a foot target as x·y·z coordinates, the author&#x27;s Python library computes the IK and sends the resulting joint angles to RoboCo&#x27;s ServoMotors." />
   <meta property="og:url" content="https://ronniekimbooks.com/en/books/book-008/v/Q01-11-00/" />
   <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp?v=1.18" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="QUAD-01 CH11 LEG2: inverse kinematics (IK) [Q01-11-00]" />
-  <meta name="twitter:description" content="Moving a foot target in x·y·z with the keys while IK works out the three joint angles. In the circle test the foot follows a preset circle." />
+  <meta name="twitter:title" content="QUAD-01 CH11 Changing foot targets (LEG2) [Q01-11-00]" />
+  <meta name="twitter:description" content="A full run of LEG2: changing the quadruped&#x27;s foot target coordinates and computing joint angles with inverse kinematics (IK) in RoboCo on Steam. When you set a foot target as x·y·z coordinates, the author&#x27;s Python library computes the IK and sends the resulting joint angles to RoboCo&#x27;s ServoMotors." />
   <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp?v=1.18" />
 </head>
 <body>
 <header class="book-header">
   <div class="back"><a href="../../">← Book overview</a><a class="lang-link" href="../../../../../ko/books/book-008/v/Q01-11-00/" hreflang="ko" lang="ko">Korean</a></div>
-  <h1>QUAD-01 CH11 LEG2: inverse kinematics (IK)</h1>
-  <p>Run video · permanent address page</p>
+  <h1>QUAD-01 CH11 Changing foot targets (LEG2)</h1>
+  <p>Run video · Q01-11-00</p>
   <div class="series-line"><span class="series-chip code" style="background:#FF8A34;color:#2b1300">QUAD-01</span><span class="series-chip">WALK</span><span class="series-chip">Physical AI with RoboCo</span></div>
 </header>
 <main class="vpage-main">
@@ -36,12 +36,29 @@
     <div class="rk-video is-live" data-video-id="Q01-11-00"><iframe src="https://www.youtube-nocookie.com/embed/GdoPi8bZAd0" title="QUAD-01 CH11 LEG2: inverse kinematics (IK) [Q01-11-00]" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="rk-video-meta rk-watch-link"><a href="https://youtu.be/GdoPi8bZAd0" target="_blank" rel="noopener">Watch on YouTube ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
     <section class="vpage-lang">
       <h2>About this video</h2>
+      <p>A full run of LEG2: changing the quadruped's foot target coordinates and computing joint angles with inverse kinematics (IK) in RoboCo on Steam.</p><p>When you set a foot target as x·y·z coordinates, the author's Python library computes the IK and sends the resulting joint angles to RoboCo's ServoMotors.</p><p>The selected leg's foot moves forward/back, left/right, and up/down, then follows a circular path, showing how foot position relates to joint angles.</p>
+    </section>
+    <section class="vpage-lang">
+      <h2>Keys in this exercise</h2>
+      <div class="rk-table-wrap"><table class="faq-table compact"><thead><tr><th>Key</th><th>Action</th></tr></thead><tbody><tr><th><kbd>W / S</kbd></th><td>Foot x up / down</td></tr><tr><th><kbd>A / D</kbd></th><td>Foot y up / down</td></tr><tr><th><kbd>E / Q</kbd></th><td>Foot z up / down</td></tr><tr><th><kbd>U / O / J / L</kbd></th><td>Select leg FL / FR / HL / HR</td></tr><tr><th><kbd>I</kbd></th><td>Automatic foot-circle test</td></tr><tr><th><kbd>K</kbd></th><td>Selected leg to the stand pose</td></tr><tr><th><kbd>F1</kbd></th><td>Key help</td></tr><tr><th><kbd>F2</kbd></th><td>All four legs to the stand pose</td></tr><tr><th><kbd>F3</kbd></th><td>Stop the circle</td></tr></tbody></table></div>
+      <p>The FK error on screen is the difference between the target and the position computed back from the joint angles. It isn't a separate measurement of where the foot actually is.</p>
+      <h3>The calculation chain on screen</h3><ol class="rk-flow" aria-label="The calculation chain on screen"><li class="is-key"><span>Foot target</span></li><li><span>IK</span></li><li><span>HX · HY · KN angles</span></li><li><span>Servo targets</span></li><li class="is-key"><span>Compare with FK</span></li></ol>
+      <h3>What to watch</h3><ul class="intro-list"><li>All three joints moving together when the target changes</li><li>The IK angles and the angles sent to the servos being different numbers</li><li>The path the foot traces in the circle test</li></ul>
+    </section>
+    <section class="vpage-lang">
+      <h2>Exercise details</h2>
       <div class="rk-table-wrap"><table class="faq-table compact"><tbody>
-        <tr><th>Series</th><td>Physical AI with RoboCo</td></tr><tr><th>Book</th><td>QUAD-01 · WALK</td></tr><tr><th>Part</th><td>PART 3 · CONTROL</td></tr><tr><th>Chapter</th><td>CHAPTER 11</td></tr><tr><th>Model</th><td><code>Book-QUAD-01-LEG2</code></td></tr><tr><th>Video ID</th><td><code>Q01-11-00</code></td></tr><tr><th>YouTube</th><td><a href="https://youtu.be/GdoPi8bZAd0" target="_blank" rel="noopener">youtu.be/GdoPi8bZAd0<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
+        <tr><th>Book</th><td>Learning Physical AI with RoboCo: Robot Structure and Gait Control (Korean edition)</td></tr>
+        <tr><th>Series</th><td>Physical AI with RoboCo · QUAD-01 (WALK)</td></tr>
+        <tr><th>Chapter</th><td>PART 3 · CONTROL · CHAPTER 11</td></tr>
+        <tr><th>Related chapters</th><td>CH10·11·12·13</td></tr>
+        <tr><th>Practice model</th><td><code>Book-QUAD-01-LEG2</code></td></tr>
+        <tr><th>Python start file</th><td><code>q01_leg2_ik_start.py</code></td></tr>
+        <tr><th>Practice files version</th><td>v3.5.0 — <a href="../../downloads/">download</a></td></tr>
+        <tr><th>Video ID</th><td><code>Q01-11-00</code></td></tr>
+        <tr><th>YouTube</th><td><a href="https://youtu.be/GdoPi8bZAd0" target="_blank" rel="noopener">youtu.be/GdoPi8bZAd0<span class="sr-only"> (opens in a new tab)</span></a></td></tr>
       </tbody></table></div>
-      <p>Moving a foot target in x·y·z with the keys while IK works out the three joint angles. In the circle test the foot follows a preset circle.</p>
-      <h3>What to watch</h3>
-      <ul class="intro-list"><li>All three joints moving together when the target changes</li><li>The IK angles and the angles sent to the servos being different numbers</li><li>The path the foot traces in the circle test</li></ul>
+      <a class="rk-book-link" href="../../toc.html#part-3">Continue in the book · PART 3 · CONTROL · CH11</a>
     </section>
     <section class="vpage-lang">
       <h2>Book and web</h2>
@@ -49,9 +66,9 @@
         <li><a href="../../">Learning Physical AI with RoboCo: Robot Structure and Gait Control — book overview</a></li>
         <li><a href="../../buy.html">Buy the book</a></li>
         <li><a href="../../learn/">Videos & web extras (7 videos)</a></li>
-        <li><a href="../../downloads/">Practice files</a></li>
         <li><a href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">Official YouTube</a> · <a href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">Official Naver Blog (Korean)</a></li>
       </ul>
+      <p class="rk-video-meta">RoboCo is a robot building and programming simulation game developed by Filament Games. This video and the practice files are the author's teaching materials, not official RoboCo content.</p>
     </section>
   </div>
 </main>

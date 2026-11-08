@@ -94,6 +94,19 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.19 (2026-11-08)** — QUAD-01 video pages (`/ko|en/books/book-008/v/`) rewritten from the author's YouTube
+  upload text (QUAD-01 v2.9, seven videos).
+  - Page titles follow the chapter titles, e.g. "Q01-01-00 · QUAD-01 CH01 네 다리 로봇을 첫걸음부터 걷게 하기 (WALK)".
+  - Each page: video, 영상 소개 (three paragraphs), 주요 실습 내용 (full key table + notes), calculation/control flow
+    where the text has one (LEG2, BALANCE), what to watch, 실습 정보 (book, chapter, related chapters, model, start
+    file(s), v3.5.0, video ID, YouTube link and upload title), book/web links, and the Filament Games note.
+    English pages carry a translation.
+  - Q01-25-00 (final mission): same layout with the mission keys and sequence; video pending, still `noindex`.
+  - Related-chapter lists synced to the upload text: WALK CH01·03·04·16·19~25, LEG3 CH07·09·13·14·19·21,
+    BALANCE CH17·20·24 (also on the book page cards and the downloads table).
+  - The site uses the published title 『피지컬 AI로 배우는 RoboCo 구조와 보행 제어』; the upload text still says
+    "4족 로봇 구조와 보행 제어" and "Roonie Kim Books".
+
 - **v1.18 (2026-11-08)** — Approved covers on every RoboCo book and every page that shows them.
   - Covers for CORE-01, CORE-02, CORE-03, QUAD-02, QUAD-03 (and QUAD-01) re-encoded from the author's approved
     originals (`cover-large-ko`, `cover-thumb-ko`). CORE-02/03 and QUAD-02/03 OG images are built from these covers.
