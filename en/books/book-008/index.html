@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Physical AI with RoboCo: Robot Structure and Gait Control | QUAD-01 · Quadruped gait control</title>
+  <meta name="description" content="Walk a twelve-joint quadruped in RoboCo first, then change joints, foot targets, IK, body posture, and gait one layer at a time. QUAD-01 · WALK. Korean edition." />
+  <link rel="canonical" href="https://ronniekimbooks.com/en/books/book-008/" />
+  <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/books/book-008/" />
+  <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/books/book-008/" />
+  <link rel="alternate" hreflang="x-default" href="https://ronniekimbooks.com/en/books/book-008/" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/css/book.css" />
+  <link rel="stylesheet" href="../../../assets/css/series-roboco.css" />
+  <link rel="stylesheet" href="../../../assets/css/book-008.css" />
+  <meta property="og:type" content="book" />
+  <meta property="og:site_name" content="Ronnie Kim Books" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Learning Physical AI with RoboCo: Robot Structure and Gait Control | QUAD-01 · Quadruped gait control" />
+  <meta property="og:description" content="From one W key press to a twelve-joint step: walk first, look inside one layer at a time, change one value and compare." />
+  <meta property="og:url" content="https://ronniekimbooks.com/en/books/book-008/" />
+  <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learning Physical AI with RoboCo: Robot Structure and Gait Control | QUAD-01 · Quadruped gait control" />
+  <meta name="twitter:description" content="From one W key press to a twelve-joint step: walk first, look inside one layer at a time, change one value and compare." />
+  <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-en.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Learning Physical AI with RoboCo: Robot Structure and Gait Control",
+    "alternateName": "Change a four-legged robot's gait and posture in RoboCo and see how walking works",
+    "author": {"@type": "Person", "name": "Ronnie Kim"},
+    "inLanguage": "ko",
+    "url": "https://ronniekimbooks.com/en/books/book-008/",
+    "image": "https://ronniekimbooks.com/assets/images/books/book-008/cover-large-en.webp",
+    "description": "A hands-on physical AI book: walk a twelve-joint quadruped in RoboCo first, then change joints, foot targets, IK, body posture, and gait one layer at a time. QUAD-01 · WALK. Korean edition.",
+    "isPartOf": {"@type": "BookSeries", "name": "Physical AI with RoboCo"},
+    "publisher": {"@type": "Organization", "name": "PUBPLE"},
+    "about": ["Physical AI", "RoboCo", "Quadruped robot", "Inverse kinematics", "Gait control"]
+  }
+  </script>
+</head>
+<body>
+<header class="book-header">
+  <div class="back"><a href="../../../">← All Books</a><a class="lang-link" href="../../../ko/books/book-008/" hreflang="ko" lang="ko">Korean</a></div>
+  <h1>Learning Physical AI with RoboCo: Robot Structure and Gait Control</h1>
+  <p>Change a four-legged robot's gait and posture in RoboCo and see how walking works</p>
+  <div class="series-line"><span class="series-chip code" style="background:#FF8A34;color:#2b1300">QUAD-01</span><span class="series-chip">WALK</span><span class="series-chip">Physical AI with RoboCo</span></div>
+</header>
+<div class="layout">
+  <aside class="book-sidebar">
+    <h2>Home</h2>
+    <ul class="q01-home-links">
+      <li><a href="../../../">All books</a></li>
+      <li><a href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">Official YouTube<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li><a href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">Official Naver Blog (Korean)<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <p class="sidebar-label">Book Menu</p>
+    <nav aria-label="Book Menu">
+      <ul>
+        <li><a href="./" aria-current="page">Book Overview</a></li><li><a href="./toc.html">Table of Contents</a></li><li><a href="./sample.html">Sample Pages</a></li><li><a href="./course.html">Book Sets & Courses</a></li><li><a href="./faq.html">FAQ</a></li><li><a href="./downloads/">Practice files</a></li><li><a href="./buy.html">Buy the Book</a></li>
+      </ul>
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-label">Video companion</p>
+      <ul>
+        <li><a href="./learn/" target="_blank" rel="noopener">Videos & web extras<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content-card intro-page">
+    <section class="intro-hero">
+      <img class="intro-cover" src="../../../assets/images/books/book-008/cover-large-en.webp" alt="Cover of the Korean edition of Learning Physical AI with RoboCo: Robot Structure and Gait Control, shown with English text. A yellow-and-black four-legged robot and the QUAD-01 WALK tag." width="1000" height="1480" />
+      <div>
+        <p class="intro-status"><span class="status-badge new">New</span> <span class="status-badge verified">Print · ebook (Korean edition)</span></p>
+        <p class="intro-kicker">Physical AI with RoboCo · QUAD-01 · WALK</p>
+        <h2 class="intro-title">From one W key press<br />to a twelve-joint step</h2>
+        <p class="intro-lead">A yellow body on four black legs. While you hold <code>W</code>, the quadruped in RoboCo lifts its diagonal legs in turn and walks forward; let go, and it settles back onto all four feet. Press a number key and the same robot sits and waves, stretches, or holds a handstand.</p>
+        <p class="intro-lead">The book has you walk the robot first, then trace that step back one layer at a time: the gait sets a foot target for each leg, IK turns each target into three joint angles, and twelve ServoMotors make the motion. You change one value, walk again under the same conditions, and when the robot falls, you narrow down which layer to check, in order.</p>
+        <div class="intro-highlight"><p>Hands-on quadruped practice in RoboCo's virtual world, no robot kit needed</p></div>
+        <div class="intro-cta">
+          <a class="primary" href="./buy.html">Buy the book</a>
+          <a class="secondary" href="#video">Watch it walk</a>
+          <a class="secondary" href="./downloads/">Practice files</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section rk-section-id" id="video">
+      <h2>See it walk first <span class="status-badge new">On YouTube</span></h2>
+      <p>A real run of the WALK model you start in Chapter 1. It walks while a key is held, turns, side-steps, and stops when you let go. The book spends 25 chapters on the structure and values behind that single step.</p>
+      <div class="rk-video is-live" data-video-id="Q01-01-00"><iframe src="https://www.youtube-nocookie.com/embed/4-5uGHX3k2E" title="QUAD-01 CH01 WALK: the full walking run [Q01-01-00]" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="rk-video-meta rk-watch-link"><a href="https://youtu.be/4-5uGHX3k2E" target="_blank" rel="noopener">Watch on YouTube ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
+      <div class="rk-vlinks">
+        <a href="./v/Q01-02-00/"><span class="vid-id">Q01-02-00</span><strong>ACTION performances</strong><small>CH02 · nine moves from the same twelve joints</small></a>
+        <a href="./v/Q01-11-00/"><span class="vid-id">Q01-11-00</span><strong>LEG2 inverse kinematics</strong><small>CH11 · a foot target becoming three joint angles</small></a>
+        <a href="./learn/"><span class="vid-id">WEB</span><strong>All seven videos</strong><small>Every practice model, up to BALANCE</small></a>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Questions this book answers</h2>
+      <div class="intro-grid">
+        <div class="intro-card"><h3>What does walking on legs need that wheels don't?</h3><p>Which foot lifts first, where it lands, and how the other feet hold up the body. The book starts from three questions a wheeled robot never has to ask.</p></div>
+        <div class="intro-card"><h3>How does one W key become twelve joints?</h3><p>Walk key → gait → foot path per leg → IK → joint angles → ServoMotor. You read a single step as five layers.</p></div>
+        <div class="intro-card"><h3>Same angle, so why do the left and right legs move differently?</h3><p>You check joint axes, turning direction, and left-right mirroring on one leg mounted on a stand, then fix a leg that turns the wrong way.</p></div>
+        <div class="intro-card"><h3>When it falls, where do you look first?</h3><p>Model and start file → Port → joint direction → coordinates → IK and joint limits → foot path. You use the console log to narrow it down, fix one condition, and walk again.</p></div>
+      </div>
+      <figure class="rk-figure rk-webfig" id="q01-web-01"><a class="rk-zoom" href="../../../assets/images/books/book-008/web/Q01-WEB-01-en.webp" target="_blank" rel="noopener" aria-label="Q01-WEB-01 — open larger in a new tab"><img src="../../../assets/images/books/book-008/web/Q01-WEB-01-en.webp" alt="Flow diagram. Bold arrows run from the W key to Gait (pattern) → Foot path (per leg) → IK (x·y·z → angles) → 12 joints (HX · HY · KN) → ServoMotor (→ one step). In a gray panel below, each column holds the practice model that shows that layer: WALK, LEG3, LEG2, LEG1, with chapter numbers." width="1602" height="561" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Flow diagram</span> From one W key press to one step, with the practice model that shows each layer in the same column.<a class="rk-zoom-hint" href="../../../assets/images/books/book-008/web/Q01-WEB-01-en.webp" target="_blank" rel="noopener">Zoom ↗<span class="sr-only"> (open larger in a new tab)</span></a></figcaption></figure>
+    </section>
+
+    <section class="intro-section rk-section-id" id="practice">
+      <h2>The eight exercises in this book</h2>
+      <p>There is one robot: a quadruped with three joints per leg, twelve ServoMotors in all. It is set up as seven practice models: standing on the floor, hung on a viewing stand, or placed on a tilting test platform. There are eight start files in total (BALANCE needs one for the robot and one for the platform).</p>
+      <div class="q01-models"><article class="q01-model"><a class="q01-shot" href="../../../assets/images/books/book-008/models/walk.webp" target="_blank" rel="noopener"><img src="../../../assets/images/books/book-008/models/walk-thumb.webp" alt="RoboCo play screen — the Book-QUAD-01-WALK model" width="800" height="450" loading="lazy" decoding="async" /></a><div class="q01-model-body"><span class="q01-ch">CH01 · 03~05 · 16 · 19~25</span><h3>WALK</h3><p>The walking model: hold a key to walk. Forward, back, turn in place, side-step, and auto modes 1–3</p><p class="rk-video-meta"><code>q01_walk_start.py</code></p></div></article><article class="q01-model"><a class="q01-shot" href="../../../assets/images/books/book-008/models/action.webp" target="_blank" rel="noopener"><img src="../../../assets/images/books/book-008/models/action-thumb.webp" alt="RoboCo play screen — the Book-QUAD-01-ACTION model" width="800" height="450" loading="lazy" decoding="async" /></a><div class="q01-model-body"><span class="q01-ch">CH02 · 05 · 18</span><h3>ACTION</h3><p>One number key, one performance: from a greeting and a stretch to a handstand and a tap dance</p><p class="rk-video-meta"><code>q01_action_start.py</code></p></div></article><article class="q01-model"><a class="q01-shot" href="../../../assets/images/books/book-008/models/leg1.webp" target="_blank" rel="noopener"><img src="../../../assets/images/books/book-008/models/leg1-thumb.webp" alt="RoboCo play screen — the Book-QUAD-01-LEG1 model" width="800" height="450" loading="lazy" decoding="async" /></a><div class="q01-model-body"><span class="q01-ch">CH06~09</span><h3>LEG1</h3><p>Robot on a stand, one joint at a time. See the HX, HY and KN axes and their Ports on screen</p><p class="rk-video-meta"><code>q01_leg1_joint_start.py</code></p></div></article><article class="q01-model"><a class="q01-shot" href="../../../assets/images/books/book-008/models/leg2.webp" target="_blank" rel="noopener"><img src="../../../assets/images/books/book-008/models/leg2-thumb.webp" alt="RoboCo play screen — the Book-QUAD-01-LEG2 model" width="800" height="450" loading="lazy" decoding="async" /></a><div class="q01-model-body"><span class="q01-ch">CH10~13</span><h3>LEG2</h3><p>Move a foot target in x·y·z and IK works out three joint angles; FK checks the result</p><p class="rk-video-meta"><code>q01_leg2_ik_start.py</code></p></div></article><article class="q01-model"><a class="q01-shot" href="../../../assets/images/books/book-008/models/leg3.webp" target="_blank" rel="noopener"><img src="../../../assets/images/books/book-008/models/leg3-thumb.webp" alt="RoboCo play screen — the Book-QUAD-01-LEG3 model" width="800" height="450" loading="lazy" decoding="async" /></a><div class="q01-model-body"><span class="q01-ch">CH07 · 13 · 14 · 19 · 21</span><h3>LEG3</h3><p>All four legs together: reach, joint limits, lifting one leg, diagonal pairs, a three-leg stance</p><p class="rk-video-meta"><code>q01_leg3_combined_start.py</code></p></div></article><article class="q01-model"><a class="q01-shot" href="../../../assets/images/books/book-008/models/body-pose.webp" target="_blank" rel="noopener"><img src="../../../assets/images/books/book-008/models/body-pose-thumb.webp" alt="RoboCo play screen — the Book-QUAD-01-ROLL_PITCH_YAW model" width="800" height="450" loading="lazy" decoding="async" /></a><div class="q01-model-body"><span class="q01-ch">CH15~18</span><h3>ROLL_PITCH_YAW</h3><p>Feet stay planted while the body shifts and tilts: x·y·z plus roll, pitch and yaw</p><p class="rk-video-meta"><code>q01_body_pose_start.py</code></p></div></article><article class="q01-model"><a class="q01-shot" href="../../../assets/images/books/book-008/models/balance.webp" target="_blank" rel="noopener"><img src="../../../assets/images/books/book-008/models/balance-thumb.webp" alt="RoboCo play screen — the Book-QUAD-01-BALANCE model" width="800" height="450" loading="lazy" decoding="async" /></a><div class="q01-model-body"><span class="q01-ch">CH17 · 20 (optional)</span><h3>BALANCE</h3><p>Balance on a tilting test platform with an IMU and PID; two Microcontrollers, robot and platform</p><p class="rk-video-meta"><code>q01_balance_test_start.py</code> · <code>q01_balance_test_platform_start.py</code></p></div></article></div>
+      <p class="rk-video-meta">Screens are the author's own RoboCo runs. What to watch in each exercise, which value to change, and what to compare it with are covered in the matching chapter.</p>
+      <div class="intro-cta"><a class="primary" href="./buy.html">Start the eight exercises with the book</a><a class="secondary" href="./learn/" target="_blank" rel="noopener">Watch each model run<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+    </section>
+
+    <section class="intro-section">
+      <h2>What you'll be able to do</h2>
+      <ol class="intro-number-list">
+        <li><strong>Walk a quadruped with the keyboard and pick its moves</strong>Run forward, back, turns in place, and side steps in WALK, plus nine performances in ACTION, and learn the difference between keys you hold and keys you press once.</li>
+        <li><strong>Read one leg's three joints and how all twelve servos connect</strong>Check the HX, HY, and KN axes and their directions, how the FL, FR, HL, and HR legs pair with Ports 2–13, and the left-right mirroring settings.</li>
+        <li><strong>Shape a pose by moving foot targets</strong>Change FOOT_X, FOOT_Y, and FOOT_Z one axis at a time, compare the IK angles with the position FK gives back, and filter out targets a leg can't reach.</li>
+        <li><strong>Change one value and compare fairly</strong>Vary body height, transition time, foot lift height, stride, and walking speed one at a time, and record distance, tilt, and number of falls.</li>
+        <li><strong>Finish and improve a walking mission</strong>Stand → walk → turn → walk → stop in a target zone, repeated under the same conditions; then use the failures to change one thing and raise the completion rate.</li>
+      </ol>
+    </section>
+
+    <section class="intro-section">
+      <h2>The robot: three-joint legs × 4 = a twelve-joint quadruped</h2>
+      <div class="q01-robot">
+        <img src="../../../assets/images/books/book-008/robot/quad01-robot.webp" alt="Render of the QUAD-01 quadruped: a yellow body, a black face panel with two light-blue eyes at the front, and four black legs" width="874" height="900" loading="lazy" />
+        <div>
+          <ul class="intro-list">
+            <li><strong>Four legs, twelve joints</strong>: each leg has HX (swings out to the side), HY (swings forward and back), and KN (the knee).</li>
+            <li><strong>FL, FR, HL, HR</strong>: front left, front right, hind left, hind right, named from the direction the robot's face points, not from the screen.</li>
+            <li><strong>A TextScreen on the body</strong> shows the current action, waiting state, and foot targets; the console logs lines such as <code>[INPUT]</code>, <code>[STATE]</code>, and <code>[JOINT]</code>.</li>
+            <li><strong>The BALANCE model</strong> carries an IMU that reads the body's roll, pitch, and yaw.</li>
+          </ul>
+        </div>
+      </div>
+      <p>This is the entry book for the QUAD track. You don't need any wheeled-robot experience: you start from scratch with this one quadruped and widen your control step by step, from one joint → one leg → four legs → coordinates → IK → posture → gait.</p>
+      <div class="rk-note"><strong>How to read RoboCo results</strong>: RoboCo is a game-based robot sandbox with a physics simulation. Distances, tilt, and falls are observations under simulated conditions. Use them to learn how to check what changes when you change a value, not as measurements of real hardware.</div>
+    </section>
+
+    <section class="intro-section">
+      <h2>5 PARTs · 25 chapters</h2>
+      <ol class="rk-flow" aria-label="QUAD-01 learning flow">
+        <li class="is-key"><span>Run the finished robot</span></li><li><span>Observe</span></li><li><span>Understand the structure</span></li><li><span>Change values and actions</span></li><li><span>Compare results</span></li><li><span>Find the cause of a failure</span></li><li class="is-key"><span>Finish the mission</span></li>
+      </ol>
+      <ul class="rk-parts">
+        <li><div class="part-tag">PART 1 · EXPERIENCE<span>Try it hands-on</span></div><p>No code yet: just WALK's direction keys and ACTION's number keys. First steps; stand, sit, and stretch; six direction keys and auto modes 1–3; walk, turn, and stop; free play. <span class="status-badge pending">CH01–05</span></p></li>
+        <li><div class="part-tag">PART 2 · UNDERSTAND<span>How twelve joints make one step</span></div><p>On one leg mounted on a stand, see the three degrees of freedom and joint axes; then map four legs to twelve ServoMotors, left-right mirroring, the control layers from servo to gait, and the coordinate frame. <span class="status-badge pending">CH06–10</span></p></li>
+        <li><div class="part-tag">PART 3 · CONTROL<span>Shape a pose by moving the feet</span></div><p>Move a foot target, let IK compute the leg angles, compare the computed and actual pose, catch unreachable targets in advance, and change the posture of all four legs and the body together. <span class="status-badge pending">CH11–15</span></p></li>
+        <li><div class="part-tag">PART 4 · EXPERIMENT<span>Find a steadier walk</span></div><p>Change body height, tilt and turn, transition speed, the foot paths of standing and moving legs, and stride, speed, and gait cycle, one at a time. The IMU and PID tilting-platform exercise is optional. <span class="status-badge pending">CH16–20</span></p></li>
+        <li><div class="part-tag">PART 5 · PROJECT<span>A walking mission</span></div><p>Build the gait cycle and leg order, walk forward and back, turn left and right, get a fallen robot walking again, then repeat the final mission and record its completion rate. <span class="status-badge pending">CH21–25</span></p></li>
+      </ul>
+      <figure class="rk-figure rk-webfig" id="q01-web-02"><a class="rk-zoom" href="../../../assets/images/books/book-008/web/Q01-WEB-02-en.webp" target="_blank" rel="noopener" aria-label="Q01-WEB-02 — open larger in a new tab"><img src="../../../assets/images/books/book-008/web/Q01-WEB-02-en.webp" alt="Roadmap. PART 1 Experience, PART 2 Understand, PART 3 Control, PART 4 Experiment, and PART 5 Project run left to right, with PART 5 highlighted. Below each is the practice model and chapters: WALK and ACTION CH01–05, LEG1 and LEG3 CH06–10, LEG2 and POSE CH11–15, WALK and BALANCE CH16–20, WALK CH21–25." width="1602" height="552" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Roadmap</span> Five PARTs, one quadruped, and the practice models each PART uses.<a class="rk-zoom-hint" href="../../../assets/images/books/book-008/web/Q01-WEB-02-en.webp" target="_blank" rel="noopener">Zoom ↗<span class="sr-only"> (open larger in a new tab)</span></a></figcaption></figure>
+      <div class="intro-cta"><a class="primary" href="./toc.html">See the full table of contents</a></div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Final mission: stand → walk → turn → walk → stop</h2>
+      <p>The last chapter comes back to the same <code>W</code>, <code>A</code>, <code>D</code>, and <code>X</code> keys you started with. You fill in a mission card with a start line and a target zone first, then run it several times under the same conditions and record whether the robot walked the whole way, stayed on its feet, and held its stop pose inside the zone. From those records you pick one problem, such as wobbling right after a turn, change one value, and compare again.</p>
+      <div class="rk-note"><strong>To be clear:</strong> this mission is not autonomous walking with sensors judging the destination. A person presses the keys in sequence, and a person judges success by watching the screen. Choosing a gait from sensor input comes in QUAD-02.</div>
+    </section>
+
+    <section class="intro-section rk-section-id" id="beyond">
+      <h2>One step beyond the book: extras you'll only find here</h2>
+      <p>The book covers only what you can check inside RoboCo. This section looks at the question that comes after you close it: <strong>how does this experience connect to real quadruped robots?</strong> Use it to judge how far the book will take you before you buy.</p>
+      <figure class="rk-figure rk-webfig" id="q01-web-06"><a class="rk-zoom" href="../../../assets/images/books/book-008/web/Q01-WEB-06-en.webp" target="_blank" rel="noopener" aria-label="Q01-WEB-06 — open larger in a new tab"><img src="../../../assets/images/books/book-008/web/Q01-WEB-06-en.webp" alt="Two-column comparison. Left panel, This book · RoboCo: 3 joints × 4 legs (12 ServoMotors), foot target → IK, diagonal-pair gait, IMU · PID test platform, keys for start · turn · stop. Right panel, Real robots · beyond: joint actuators (motor · gearbox · torque control), same IK + forces, gait chosen by terrain, state estimation · balance, sensing · learning (continues in QUAD-02). Dotted lines pair each row." width="1602" height="849" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Comparison map</span> What you see in RoboCo and what real quadrupeds add. The right column is not something this book reproduces.<a class="rk-zoom-hint" href="../../../assets/images/books/book-008/web/Q01-WEB-06-en.webp" target="_blank" rel="noopener">Zoom ↗<span class="sr-only"> (open larger in a new tab)</span></a></figcaption></figure>
+      <h3>1. Why a robot that walks on legs?</h3>
+      <p>Wheels are fast and efficient on flat floors. Where the ground breaks up or gets rough (stairs, curbs, gravel), legs that can lift a foot and set it down somewhere else have the advantage. That is why quadrupeds keep finding work in places built for people, such as facility inspection, patrols, and research platforms. The price is that a legged robot has to decide at every moment <em>which feet hold up the body</em>, so there is far more to control than on a wheeled robot. That is why this book starts at the twelve joints.</p>
+      <h3>2. What's the same as a real quadruped, and what's different</h3>
+      <ul class="intro-list">
+        <li><strong>The same skeleton</strong>: three joints per leg, IK that turns a foot target into joint angles, two diagonal pairs of legs taking turns to hold the body, and an IMU reading body tilt. The ideas you change by hand in this book show up in any description of a real quadruped.</li>
+        <li><strong>What real robots add</strong>: a motor and gearbox at every joint, control of force (torque) and not just angle, combining several sensors to estimate the body's state, choosing a gait from the terrain, and carrying a gait learned in simulation over to a real machine.</li>
+        <li><strong>What RoboCo gives you</strong>: falling doesn't break anything, and you can restart under the same conditions as often as you like. It is a good place to build the habit of changing one value and comparing results, over and over, at no cost.</li>
+      </ul>
+      <h3>3. A look inside the practice code</h3>
+      <p>The free ZIP <code>Book_Q01_Robot</code> contains eight start files and <code>Q01_Lib</code>, the author's teaching library (55 Python files). Its folders follow the same layers as the book.</p>
+      <div class="rk-table-wrap"><table class="faq-table">
+        <thead><tr><th>Folder</th><th>What it does</th><th>In the book</th></tr></thead>
+        <tbody>
+          <tr><th><code>core/</code></th><td>IK, servo commands, the Port table, key input, console log, TextScreen, IMU</td><td>Throughout PARTs 2 and 3</td></tr>
+          <tr><th><code>walk/</code> · <code>auto/</code></th><td>Gait (stride, phase speed), walk keys, auto modes 1–3</td><td>CH01, 03, 19–25</td></tr>
+          <tr><th><code>action/</code></th><td>Number-key performances and the screen state flow</td><td>CH02, 05, 18</td></tr>
+          <tr><th><code>leg1_joint/</code> · <code>leg2_ik/</code> · <code>leg3_combined/</code></th><td>One joint → foot coordinates → four-leg tests</td><td>CH06–14, 19, 21</td></tr>
+          <tr><th><code>body_pose/</code></th><td>Body x·y·z and roll, pitch, yaw</td><td>CH15–18</td></tr>
+          <tr><th><code>balance_test/</code></th><td>IMU filter, PID, the tilting platform and its link</td><td>CH17, 20</td></tr>
+        </tbody>
+      </table></div>
+      <p>The keys and default values are right there in the code. What the code doesn't contain is <strong>the order to run things in, what to watch, which value to change and by how much, what to compare it with, and how to read the result</strong>. That is the book's text and appendices.</p>
+      <h3>4. What this book doesn't cover</h3>
+      <p>Autonomous walking, where the robot sees obstacles with sensors and chooses its own gait, and learning-based decisions are in QUAD-02. Walking over to pick up and move objects with a robot arm is in QUAD-03. Real hardware issues such as wiring, power, heat, and communication delay aren't covered. QUAD-01 focuses on the ground all of those stand on: <strong>how twelve joint commands become one step</strong>.</p>
+      <div class="intro-cta"><a class="primary" href="./buy.html">Buy the book</a><a class="secondary" href="./sample.html">Read a sample</a></div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Who this book is for</h2>
+      <ul class="intro-list">
+        <li><strong>New to robots or code</strong>: PART 1 never opens the code; you just press keys to walk and perform. Math only shows up when it's needed, as a way to connect inputs and results.</li>
+        <li><strong>High school students</strong>: see quadruped walking with your own eyes, learn how joints, coordinates, and control relate, and write an inquiry report from one-variable experiments.</li>
+        <li><strong>University students and early majors</strong>: connect IK and FK for a three-joint leg, workspace and joint limits, gait cycle and leg order, and IMU/PID balance to what you see on screen and in the log.</li>
+        <li><strong>Makers and developers</strong>: follow <code>CONTROL PARAMETERS</code> in the start files and the <code>Q01_Lib/core</code> and <code>walk</code> code, and change the gait yourself.</li>
+        <li><strong>Teachers and training programs</strong>: run repeatable experiments and mission assessments with the same practice models and record tables.</li>
+      </ul>
+      <figure class="rk-figure rk-webfig" id="q01-web-04"><a class="rk-zoom" href="../../../assets/images/books/book-008/web/Q01-WEB-04-en.webp" target="_blank" rel="noopener" aria-label="Q01-WEB-04 — open larger in a new tab"><img src="../../../assets/images/books/book-008/web/Q01-WEB-04-en.webp" alt="Starting points by reader. New to robots and code: PART 1 from Chapter 1 (drive WALK and ACTION with keys only). Have used Python: focus on PARTs 3 and 4 (change CONTROL PARAMETERS one at a time). Robotics major or maker: IK (CH12–14) and gait (CH21–23), tracing Q01_Lib/core and walk. Teacher: course plans plus Appendix D (experiment sheet and mission checklist)." width="1602" height="609" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Rolestorming</span> Where should I start? First pages chosen from each reader's point of view.<a class="rk-zoom-hint" href="../../../assets/images/books/book-008/web/Q01-WEB-04-en.webp" target="_blank" rel="noopener">Zoom ↗<span class="sr-only"> (open larger in a new tab)</span></a></figcaption></figure>
+    </section>
+
+    <section class="intro-section">
+      <h2>Book + practice files + video companion</h2>
+      <div class="rk-card-grid">
+        <div class="rk-card is-strong"><span class="rk-card-label">BOOK</span><h3>The book</h3><p>Setup and first run; for all 25 chapters, the exercise order, what to watch, one-value experiments, comparison tables, and the order for finding a failure's cause; the final mission card; Appendices A–F (connections, key maps, IK limit sheet, experiment sheets, gait troubleshooting, terms and units).</p></div>
+        <div class="rk-card"><span class="rk-card-label">DIGITAL PACKAGE</span><h3>Practice files</h3><p>The code ZIP <code>v3.5.0</code> with eight start files and <code>Q01_Lib</code>, plus the guide to the seven Steam Workshop robot models, all on the <a href="./downloads/">practice files page</a> with checksums.</p></div>
+        <div class="rk-card"><span class="rk-card-label">WEB</span><h3>Video companion</h3><p>Motion a printed page can't show: runs of all seven practice models with what to watch, web-only challenges, versions, and errata.</p></div>
+      </div>
+      <figure class="rk-figure rk-webfig" id="q01-web-03"><a class="rk-zoom" href="../../../assets/images/books/book-008/web/Q01-WEB-03-en.webp" target="_blank" rel="noopener" aria-label="Q01-WEB-03 — open larger in a new tab"><img src="../../../assets/images/books/book-008/web/Q01-WEB-03-en.webp" alt="Two panels. Left, Open to all (book page · Workshop): seven Workshop robot models, practice code ZIP Book_Q01_Robot v3.5.0, README first run (WALK up to walking with W), seven run videos (what to watch only), version · errata. Right, The book (for readers, highlighted): exercise order · keys per chapter, what to watch in each chapter (25 chapters), one-value experiments · tables, order for finding a failure&#x27;s cause (Appendices A–F), final mission card · criteria." width="1602" height="810" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Role map</span> What is where: the ZIP gets you to the first run; order, observation, and interpretation are in the book.<a class="rk-zoom-hint" href="../../../assets/images/books/book-008/web/Q01-WEB-03-en.webp" target="_blank" rel="noopener">Zoom ↗<span class="sr-only"> (open larger in a new tab)</span></a></figcaption></figure>
+      <div class="intro-cta"><a class="primary" href="./buy.html">Buy the book</a><a class="secondary" href="./learn/" target="_blank" rel="noopener">Open the video companion<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+    </section>
+
+    <section class="intro-section">
+      <h2>What you need</h2>
+      <div class="rk-table-wrap"><table class="faq-table">
+        <thead><tr><th>Type</th><th>Item</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><th>Required</th><td>RoboCo on Steam</td><td>Load the robots in Sandbox and run them in Live Mode.</td></tr>
+          <tr><th>Required</th><td>Seven practice robot models</td><td>Subscribe on Steam Workshop; see the <a href="./downloads/#models">practice files page</a></td></tr>
+          <tr><th>Required</th><td>Practice code ZIP</td><td><code>Book_Q01_Robot_release_v3.5.0_en.zip</code> (English comments): <a href="./downloads/#code">download</a></td></tr>
+          <tr><th>Not needed</th><td>A separate Python install</td><td>Scripts run on RoboCo's built-in Python.</td></tr>
+          <tr><th>Optional</th><td>A code editor</td><td>For changing <code>CONTROL PARAMETERS</code> in the start files.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Check RoboCo's Steam page for current OS support, system requirements, languages, and price before you buy. The game build the exercises were checked on, and compatibility notes, are recorded under <a href="./downloads/#status">verification status on the practice files page</a>.</p>
+    </section>
+
+    <section class="intro-section rk-section-id" id="series">
+      <h2>Where QUAD-01 fits in the series</h2>
+      <p>QUAD-01 is the entry book for the quadruped track, and you can start it without reading any other volume. The series splits into a CORE path that builds the foundation (MOVE → SENSE/REACT → MANIPULATE) and a QUAD path that grows the quadruped (WALK → DECIDE → WORK). There's no required order for the six books.</p>
+      <div class="rk-table-wrap"><table class="faq-table">
+        <thead><tr><th>Book</th><th>Capability</th><th>What it covers</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><th><a href="../book-005/">CORE-01</a></th><td>MOVE / CONTROL</td><td>Driving a four-wheel robot with independent drive and steering</td><td>Published</td></tr>
+          <tr><th><a href="../../../ko/books/book-006/" hreflang="ko">CORE-02</a></th><td>SENSE / REACT</td><td>Sensor input, state changes, reactions, feedback</td><td>Coming soon</td></tr>
+          <tr><th><a href="../../../ko/books/book-007/" hreflang="ko">CORE-03</a></th><td>MANIPULATE</td><td>Picking up, moving, and placing with a mobile robot arm</td><td>Coming soon</td></tr>
+          <tr class="is-current"><th>QUAD-01</th><td>WALK</td><td>Joints, foot coordinates, IK, posture, and gait of a twelve-joint quadruped</td><td><strong>This book</strong> · Published</td></tr>
+          <tr><th><a href="../../../ko/books/book-009/" hreflang="ko">QUAD-02</a></th><td>DECIDE</td><td>Choosing actions from sensors and state; rule-based vs. learning-based</td><td>Coming soon</td></tr>
+          <tr><th><a href="../../../ko/books/book-010/" hreflang="ko">QUAD-03</a></th><td>WORK</td><td>Walking over to pick things up and move them</td><td>Coming soon</td></tr>
+        </tbody>
+      </table></div>
+      <p class="rk-video-meta">Pages for upcoming volumes are in Korean for now.</p>
+      <figure class="rk-figure rk-webfig" id="q01-web-05"><a class="rk-zoom" href="../../../assets/images/books/book-008/web/Q01-WEB-05-en.webp" target="_blank" rel="noopener" aria-label="Q01-WEB-05 — open larger in a new tab"><img src="../../../assets/images/books/book-008/web/Q01-WEB-05-en.webp" alt="Series map. Top panel, CORE track: CORE-01 MOVE / CONTROL (published), CORE-02 SENSE / REACT and CORE-03 MANIPULATE (coming). Bottom panel, QUAD track: QUAD-01 WALK (this book, highlighted), QUAD-02 DECIDE and QUAD-03 WORK (coming). Books in the same column cover matching ideas." width="1602" height="600" loading="lazy" decoding="async" /></a><figcaption><span class="rk-tech">Scenario map</span> Where to go after QUAD-01: sensing and deciding in QUAD-02, walking to work in QUAD-03.<a class="rk-zoom-hint" href="../../../assets/images/books/book-008/web/Q01-WEB-05-en.webp" target="_blank" rel="noopener">Zoom ↗<span class="sr-only"> (open larger in a new tab)</span></a></figcaption></figure>
+      <div class="intro-cta"><a class="primary" href="./course.html">Book sets by goal and course plans</a></div>
+    </section>
+
+    <section class="intro-section">
+      <div class="intro-author">
+        <h2>About the author, Ronnie Kim</h2>
+        <p>Ronnie Kim is a full-stack software engineer and senior SW/HW architect with more than 20 years in software development. Drawing on design and build work across back end and front end, he handles technical reviews, new feature design, technical decision-making, and AI and AX transformation projects.</p>
+        <p>Robotics has been his other long-running field. He has won awards at robotics competitions and has spent over 20 years studying robot structure and control, sensors, motors, actuators, and how software and hardware connect. Lately he researches the full structure of physical AI and robot systems, from inputs and sensors through state, decisions, control, actuators, and feedback, and turns it into hands-on learning material.</p>
+        <p>In teaching robotics, he favors <strong>running a finished robot first, observing it, changing control values, and comparing results</strong> over long stretches of theory or code.</p>
+        <p>Author channels: <a href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">YouTube<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">Naver Blog (Korean)<span class="new-tab-mark" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></p>
+        <p>Other books: <a href="../book-005/">Physical AI with RoboCo · CORE-01</a>, <a href="../book-004/">What Should Our Children Learn in the Age of AI?</a>, <a href="../book-001/">How Long Will Developers Still Be Needed?</a>, <a href="../book-002/">Arduino Environmental Sensors for Everyone</a></p>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <h2>Book details</h2>
+      <div class="rk-table-wrap"><table class="faq-table compact"><tbody>
+        <tr><th>Title</th><td>Learning Physical AI with RoboCo: Robot Structure and Gait Control (Korean edition)</td></tr>
+        <tr><th>Subtitle</th><td>Change a four-legged robot's gait and posture in RoboCo and see how walking works</td></tr>
+        <tr><th>Publisher</th><td>PUBPLE</td></tr>
+        <tr><th>Series</th><td>Physical AI with RoboCo · QUAD-01 (WALK)</td></tr>
+        <tr><th>Author</th><td>Ronnie Kim</td></tr>
+        <tr><th>Language</th><td>Korean (practice code also available with English comments)</td></tr>
+        <tr><th>Platform</th><td>RoboCo (Steam) · seven Steam Workshop practice models</td></tr>
+        <tr><th>Technical basis</th><td><code>Book_Q01_Robot</code> release v3.5.0 (Python code v3.4.9) · RoboCo Python API 0.3.1 docs</td></tr>
+        <tr><th>Format</th><td>Print · ebook. <a href="./buy.html">Where to buy</a></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="intro-final">
+      <h2>From one W key to a walking mission</h2>
+      <p>First you watch it walk. Then you split a step into layers and find out why. Finally you change one value, walk again under the same conditions, and compare. The same method carries straight on to a quadruped that decides with sensors and one that walks over to do a job.</p>
+      <div class="intro-cta">
+        <a class="primary" href="./buy.html">Buy the book</a>
+        <a class="secondary" href="./sample.html">Read a sample</a>
+        <a class="secondary" href="./toc.html">Table of contents</a>
+      </div>
+    </section>
+  </main>
+</div>
+<footer class="site-footer">
+  <p>RoboCo and related names are trademarks of their respective owners. This book and its practice files are not official RoboCo materials.</p>
+  <p>© Ronnie Kim Books. All rights reserved.</p>
+</footer>
+<script src="../../../assets/js/media/book-008.js"></script>
+<script src="../../../assets/js/book-media.js" data-book="book-008" data-root="../../../"></script>
+</body>
+</html>

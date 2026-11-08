@@ -1,0 +1,121 @@
+/* QUAD-01 (book-008) only — loaded after series-roboco.css on book-008 pages. */
+
+/* Home + official channels at the top of the sidebar */
+.book-sidebar .q01-home-links {
+  margin-bottom: 4px;
+}
+
+/* Seven practice models: screenshot cards */
+.q01-models {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0 10px;
+}
+
+.q01-model {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.q01-model a.q01-shot {
+  display: block;
+  line-height: 0;
+  background: #0f1115;
+}
+
+.q01-model img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.q01-model-body {
+  padding: 12px 14px 14px;
+}
+
+.q01-model-body h3 {
+  margin: 0 0 4px !important;
+  font-size: 16px;
+}
+
+.q01-model-body .q01-ch {
+  display: inline-block;
+  margin: 0 0 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fff1e6;
+  color: #7a3b00;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.q01-model-body p {
+  margin: 0 0 6px !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.q01-model-body code {
+  font-size: 12.5px;
+}
+
+/* Robot render beside text */
+.q01-robot {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.q01-robot img {
+  width: 100%;
+  height: auto;
+}
+
+/* Purchase strip used next to downloads */
+.q01-buystrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #fff7ef;
+  border: 1px solid #ffd2ad;
+}
+
+.q01-buystrip p {
+  margin: 0 !important;
+  font-weight: 700;
+}
+
+.q01-buystrip a {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 9px;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .q01-models {
+    grid-template-columns: 1fr;
+  }
+
+  .q01-robot {
+    grid-template-columns: 1fr;
+  }
+
+  .q01-robot img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

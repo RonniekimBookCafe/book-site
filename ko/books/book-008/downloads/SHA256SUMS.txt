@@ -1,0 +1,2 @@
+f8f09122a7b9df516400ce6bec4601ce7e232bf6e7e3a65eb6f270dc64322b24  /ko/books/book-008/downloads/Book_Q01_Robot_release_v3.5.0_kr.zip
+06954534149eb9df1d4578b5a9b3fe6aa14015192f501b5d6e9bd77e593e5e9f  /en/books/book-008/downloads/Book_Q01_Robot_release_v3.5.0_en.zip

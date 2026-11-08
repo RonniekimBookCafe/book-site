@@ -22,7 +22,10 @@ const pageText = {
       return "총 " + count + "권";
     },
     upcomingTitle: "출간 예정 · 피지컬 AI로 배우는 RoboCo 시리즈",
-    upcomingLead: "CORE-01에 이어 센서, 로봇팔, 4족 보행, 자율보행 AI, 이동 조작으로 이어지는 다섯 권을 준비하고 있습니다.",
+    channelsLabel: "공식 채널",
+    youtube: "공식 YouTube",
+    blog: "공식 네이버 블로그",
+    upcomingLead: "CORE-01과 QUAD-01에 이어 센서, 로봇팔, 자율보행 AI, 이동 조작으로 이어지는 네 권을 준비하고 있습니다.",
     empty: "검색 결과가 없습니다."
   },
 
@@ -49,7 +52,10 @@ const pageText = {
       return count + " book" + (count === 1 ? "" : "s");
     },
     upcomingTitle: "Coming soon · Physical AI with RoboCo series",
-    upcomingLead: "After CORE-01, five more volumes cover sensors, robot arms, quadruped walking, autonomous AI, and mobile manipulation (Korean pages).",
+    channelsLabel: "Official channels",
+    youtube: "YouTube",
+    blog: "Naver Blog (Korean)",
+    upcomingLead: "After CORE-01 and QUAD-01, four more volumes cover sensors, robot arms, autonomous AI, and mobile manipulation (Korean pages).",
     empty: "No books found."
   }
 };
@@ -231,6 +237,13 @@ function setLanguage(lang) {
 
   document.documentElement.lang = currentLanguage;
   siteSubtitle.textContent = selected.subtitle;
+
+  const channelsLabel = document.getElementById("channels-label");
+  if (channelsLabel) {
+    channelsLabel.textContent = selected.channelsLabel;
+    document.getElementById("channel-youtube").textContent = selected.youtube + " ↗";
+    document.getElementById("channel-blog").textContent = selected.blog + " ↗";
+  }
   sectionTitle.textContent = selected.sectionTitle;
 
   koButton.classList.toggle("active", currentLanguage === "ko");

@@ -28,7 +28,7 @@ sitemaps/books/book-NNN.xml        Per-book sitemap, listed in sitemap.xml
 | CORE-01 | book-005 | C01 | Published (ko + en pages) |
 | CORE-02 | book-006 | C02 | Upcoming — Korean placeholder pages |
 | CORE-03 | book-007 | C03 | Upcoming — Korean placeholder pages |
-| QUAD-01 | book-008 | Q01 | Upcoming — Korean placeholder pages |
+| QUAD-01 | book-008 | Q01 | Published (ko + en pages) |
 | QUAD-02 | book-009 | Q02 | Upcoming — Korean placeholder pages |
 | QUAD-03 | book-010 | Q03 | Upcoming — Korean placeholder pages |
 
@@ -93,6 +93,28 @@ When a video goes public: set its ID in `assets/js/media/book-005.js` (live imme
 site, also set it in `series_data.YOUTUBE` so the player is rendered statically and the `noindex` tag is dropped.
 
 ## Changelog
+
+- **v1.16 (2026-11-08)** — QUAD-01 (book-008) published, Korean and English pages.
+  - Book: 『피지컬 AI로 배우는 RoboCo 구조와 보행 제어』 / *Learning Physical AI with RoboCo: Robot Structure and Gait Control*
+    (title matches the approved cover and the v3.5.0 code package). Real cover applied (`cover-large/thumb-ko`, OG);
+    English cover/OG compose the same art with English text and a "Korean edition" label.
+  - Pages (ko/en): index, toc, sample, course, faq, buy, downloads/, learn/, `v/Q01-01-00`, `Q01-02-00`, `Q01-06-00`,
+    `Q01-11-00`, `Q01-14-00`, `Q01-15-00`, `Q01-17-00` (YouTube IDs from the author's list) and `v/Q01-25-00`
+    (final-mission address kept, video pending, `noindex`). Book-008 styles live in `assets/css/book-008.css` only.
+  - Sidebar on every book-008 page starts with **Home → official YouTube → official Naver blog**; the home page has
+    an official-channels bar under the header.
+  - Index page: first-run WALK video, "8 exercises" cards (seven Workshop models, author screenshots), outcomes,
+    five-layer control chain, and a web-only "beyond the book" section (real quadrupeds, code package map, what the
+    book does not cover). Practice-guide content stays in the book, per the v3.5.0 release strategy.
+  - Downloads: `Book_Q01_Robot_release_v3.5.0_kr.zip` (ko) and `…_en.zip` (en) as supplied (SHA-256 `f8f09122…` /
+    `06954534…`), `manifest.json`, `SHA256SUMS.txt`, Workshop model table (links "coming"), verification status.
+  - Web figures Q01-WEB-01…06 (ko/en WebP), drawn with roboco-figure-style `book_style.py` (BOOK=QUAD-01).
+    Sample figure: manuscript Q01-00-02 (ko/en).
+  - Home: book-008 moved to published (`publishedAt` 2026-11-08, badge 신간/New, English entry). Upcoming books
+    006/007/009/010 get English entries pointing to their Korean pages, so the "Coming soon" row shows every cover in
+    both languages.
+  - Not changed: other books' pages (CORE-01 series tables still list QUAD-01 as upcoming).
+  - To do: Workshop links for the seven models, tested RoboCo game build, store product URLs (now title searches).
 
 - **v1.15 (2026-10-14)**
   - CORE-01 (book-005): add permanent QR landing pages for `C01-W02`–`C01-W07` in both Korean and English

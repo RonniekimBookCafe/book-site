@@ -216,3 +216,34 @@
 .compact-book-card.is-upcoming .book-cover-thumb {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
+
+/* Official channels bar, directly under the home header */
+.channel-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.channel-bar span {
+  color: #6b7280;
+}
+
+.channel-bar a {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  text-decoration: none;
+}
+
+.channel-bar a:hover {
+  border-color: #111827;
+}
