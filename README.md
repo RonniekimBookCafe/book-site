@@ -94,6 +94,17 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.22 (2026-11-09)** — Home carousel and book formats.
+  - ① Featured new releases now slide left on their own: each slide stays 6 s, then moves in 0.7 s
+    (1/2 → 2/2 → 1/2 …; a clone of slide 1 keeps the last step moving left). Arrows still work in both directions.
+    It pauses while the pointer is over it, while it has keyboard focus, and while the tab is hidden; a pause/play
+    button sits next to the arrows (WCAG 2.2.2). With "reduce motion" turned on it starts paused and switches without
+    animation. Hidden slides are `inert`. Slide titles are `h2`; the page keeps one hidden `h1`.
+  - Format pills under covers — 종이책 / 전자책 (EN: Print / eBook) — on the home "new releases" row and on the book list
+    (grid and list views). Data: `formats` in `books-data.js`, taken from each book's buy page:
+    book-001, 004, 005, 008 print + eBook; book-002, 003 print. Upcoming books show none. Not shown in the dark series band.
+  - Colours: 종이책 `#1F5A4A` on `#E6F2EC` (6.98 : 1), 전자책 `#6B4E1F` on `#F6EEDC` (6.65 : 1).
+
 - **v1.21 (2026-11-09)** — Publisher-style redesign, phase 1 ("Paper & Ink").
   - Colour system: warm paper background `#F7F5F0`, ink text `#1B1A17` / `#57534E`, one brand colour Ink Blue `#1F3A8A`
     for links and main buttons, lines `#E5E0D6`. One dark area per page (`#15171C`). Series colours stay inside the

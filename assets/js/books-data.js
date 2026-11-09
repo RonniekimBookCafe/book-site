@@ -1,7 +1,10 @@
+/* formats: "paper" (종이책, incl. POD) / "ebook" (전자책) — shown under covers on the home page and the book list.
+   Set from each book's buy page; leave it out for books that are not on sale yet. */
 window.booksData = [
   {
     id: "book-001",
     category: "career",
+    formats: ["paper", "ebook"],
     publishedAt: "2026-06-12",
     featured: 2,
 
@@ -27,6 +30,7 @@ window.booksData = [
   {
     id: "book-002",
     category: "arduino",
+    formats: ["paper"],
     publishedAt: "2021-02-28",
     featured: 3,
 
@@ -52,6 +56,7 @@ window.booksData = [
   {
     id: "book-003",
     category: "education",
+    formats: ["paper"],
     publishedAt: "2023-06-30",
     featured: 4,
 
@@ -68,6 +73,7 @@ window.booksData = [
   {
     id: "book-004",
     category: "education",
+    formats: ["paper", "ebook"],
     publishedAt: "2026-08-03",
     featured: 0,
 
@@ -92,6 +98,7 @@ window.booksData = [
   {
     id: "book-005",
     category: "robotics",
+    formats: ["paper", "ebook"],
     publishedAt: "2026-10-08",
     featured: 0,
     series: "roboco",
@@ -186,6 +193,7 @@ window.booksData = [
   {
     id: "book-008",
     category: "robotics",
+    formats: ["paper", "ebook"],
     publishedAt: "2026-11-08",
     featured: 0,
     series: "roboco",

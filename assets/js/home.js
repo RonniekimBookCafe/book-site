@@ -3,7 +3,6 @@
 (function () {
   var RK = window.RK;
   var lang = "ko";
-  var slide = 0;
 
   var TEXT = {
     ko: {
@@ -15,6 +14,9 @@
       resLink: "실습 자료 →",
       prev: "이전 책",
       next: "다음 책",
+      pause: "자동 넘김 멈추기",
+      play: "자동 넘김 다시 시작",
+      carousel: "신간",
       newTitle: "새로 나온 책",
       newLead: "최근 출간한 책입니다.",
       more: "전체 보기 →",
@@ -50,6 +52,9 @@
       resLink: "Practice files →",
       prev: "Previous book",
       next: "Next book",
+      pause: "Pause slideshow",
+      play: "Play slideshow",
+      carousel: "New releases",
       newTitle: "New releases",
       newLead: "Recently published books.",
       more: "View all →",
@@ -98,7 +103,13 @@
     return rest.charAt(0).toUpperCase() + rest.slice(1);
   }
 
-  /* ① featured */
+  /* ① featured — a sliding carousel. Moves left every AUTO_MS; the last slide is followed by a clone of the first,
+     so 2/2 → 1/2 also slides left. Pauses on hover, keyboard focus, hidden tab, or the pause button;
+     with prefers-reduced-motion it starts paused and switches without animation. */
+  var AUTO_MS = 6000;
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var carousel = { n: 0, i: 0, timer: null, userPaused: reduceMotion, hover: false, focus: false, busy: false };
+
   function featured() {
     return RK.books(lang)
       .filter(function (b) { return b.spotlight && !RK.isUpcoming(b); })
@@ -106,39 +117,140 @@
       .slice(0, 3);
   }
 
-  function renderFeature() {
+  function slideHtml(b, k, n, clone) {
     var t = TEXT[lang];
-    var list = featured();
-    var box = $("feature");
-    if (!list.length) return;
-    slide = (slide + list.length) % list.length;
-    var b = list[slide];
     var d = b[lang];
     var s = b.spotlight[lang] || {};
-    var resLang = lang;
-    var pager = list.length > 1
-      ? '<div class="feature-pager"><button type="button" data-step="-1" aria-label="' + t.prev + '">‹</button><span>' +
-        (slide + 1) + " / " + list.length + '</span><button type="button" data-step="1" aria-label="' + t.next + '">›</button></div>'
-      : "";
-    box.innerHTML =
-      "<div>" +
+    var href = RK.at("./", d.link);
+    var label = clone ? "" : ' aria-label="' + (k + 1) + " / " + n + '"';
+    return '<div class="feature-slide" role="group" aria-roledescription="slide"' + label + (clone ? ' aria-hidden="true" inert' : "") + ">" +
+      '<div class="feature-grid"><div>' +
       '<p class="feature-eyebrow"><span class="pill">' + t.newBadge + "</span> " + RK.esc(b.seriesCode || "") + (s.capability ? " · " + RK.esc(s.capability) : "") + "</p>" +
-      '<h1 id="feature-title">' + RK.esc(s.title || d.title) + "</h1>" +
+      '<h2 class="feature-title">' + RK.esc(s.title || d.title) + "</h2>" +
       (s.lead ? '<p class="lead">' + RK.esc(s.lead) + "</p>" : "") +
       '<p class="desc">' + RK.esc(strip(d.description, s.lead)) + "</p>" +
       '<div class="feature-cta">' +
-      '<a class="btn" href="' + RK.at("./", d.link) + '">' + t.view + "</a>" +
-      '<a class="btn is-ghost" href="' + RK.at("./", d.link) + 'buy.html">' + t.buy + "</a>" +
-      (b.seriesCode ? '<a class="text-link" href="./' + resLang + "/downloads/#" + b.seriesCode + '">' + t.resLink + "</a>" : "") +
-      "</div>" + pager + "</div>" +
-      '<a class="feature-art" href="' + RK.at("./", d.link) + '"><img src="' + cover(b, d, true) + '" alt="' + RK.esc(d.alt) + '" width="420" height="622" /></a>';
-    box.querySelectorAll("[data-step]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        slide += Number(btn.getAttribute("data-step"));
-        renderFeature();
-      });
-    });
+      '<a class="btn" href="' + href + '">' + t.view + "</a>" +
+      '<a class="btn is-ghost" href="' + href + 'buy.html">' + t.buy + "</a>" +
+      (b.seriesCode ? '<a class="text-link" href="./' + lang + "/downloads/#" + b.seriesCode + '">' + t.resLink + "</a>" : "") +
+      "</div></div>" +
+      '<a class="feature-art" href="' + href + '"><img src="' + cover(b, d, true) + '" alt="' + RK.esc(d.alt) + '" width="420" height="622"' + (k ? ' loading="lazy"' : "") + " /></a>" +
+      "</div></div>";
   }
+
+  function playing() {
+    return carousel.n > 1 && !carousel.userPaused && !carousel.hover && !carousel.focus && !document.hidden;
+  }
+
+  function schedule() {
+    clearTimeout(carousel.timer);
+    if (playing()) carousel.timer = setTimeout(function () { move(1); }, AUTO_MS);
+  }
+
+  function place(animate) {
+    var track = $("feature");
+    track.style.transition = animate && !reduceMotion ? "" : "none";
+    track.style.transform = "translateX(" + (-100 * carousel.i) + "%)";
+    if (!animate || reduceMotion) void track.offsetWidth; // apply the jump before re-enabling transitions
+    var real = carousel.i % carousel.n;
+    track.querySelectorAll(".feature-slide").forEach(function (el, k) {
+      if (k === carousel.n) return; // clone stays inert
+      var off = k !== real;
+      el.inert = off;
+      if (off) el.setAttribute("aria-hidden", "true"); else el.removeAttribute("aria-hidden");
+    });
+    var count = $("feature-count");
+    if (count) count.textContent = (real + 1) + " / " + carousel.n;
+  }
+
+  function settle() {
+    carousel.busy = false;
+    if (carousel.i === carousel.n) { // reached the clone of slide 1: jump back without animation
+      carousel.i = 0;
+      place(false);
+      $("feature").style.transition = "";
+    }
+    schedule();
+  }
+
+  function move(step) {
+    if (carousel.n < 2 || carousel.busy) return;
+    clearTimeout(carousel.timer);
+    if (step < 0 && carousel.i === 0) { // going back from slide 1: jump to the clone, then slide right
+      carousel.i = carousel.n;
+      place(false);
+      $("feature").style.transition = "";
+    }
+    carousel.i += step;
+    carousel.busy = !reduceMotion;
+    place(true);
+    if (reduceMotion) settle();
+  }
+
+  function renderPauseButton() {
+    var t = TEXT[lang];
+    var btn = $("feature-toggle");
+    if (!btn) return;
+    btn.setAttribute("aria-label", carousel.userPaused ? t.play : t.pause);
+    btn.setAttribute("aria-pressed", carousel.userPaused ? "true" : "false");
+    btn.innerHTML = carousel.userPaused
+      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
+      : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg>';
+  }
+
+  function renderFeature() {
+    var t = TEXT[lang];
+    var list = featured();
+    if (!list.length) return;
+    clearTimeout(carousel.timer);
+    carousel.n = list.length;
+    carousel.i = 0;
+    carousel.busy = false;
+    var slides = list.map(function (b, k) { return slideHtml(b, k, list.length, false); });
+    if (list.length > 1) slides.push(slideHtml(list[0], 0, list.length, true));
+    $("feature").innerHTML = slides.join("");
+    $("feature-section").setAttribute("aria-label", t.carousel);
+
+    var pager = $("feature-pager");
+    if (list.length > 1) {
+      pager.innerHTML =
+        '<button type="button" data-step="-1" aria-label="' + t.prev + '">‹</button>' +
+        '<span id="feature-count" aria-live="off">1 / ' + list.length + "</span>" +
+        '<button type="button" data-step="1" aria-label="' + t.next + '">›</button>' +
+        '<button type="button" class="feature-toggle" id="feature-toggle"></button>';
+      pager.hidden = false;
+      pager.querySelectorAll("[data-step]").forEach(function (btn) {
+        btn.addEventListener("click", function () { move(Number(btn.getAttribute("data-step"))); });
+      });
+      $("feature-toggle").addEventListener("click", function () {
+        carousel.userPaused = !carousel.userPaused;
+        renderPauseButton();
+        schedule();
+      });
+      renderPauseButton();
+    } else {
+      pager.hidden = true;
+      pager.innerHTML = "";
+    }
+    place(false);
+    $("feature").style.transition = "";
+    schedule();
+  }
+
+  (function bindCarousel() {
+    var section = $("feature-section");
+    var track = $("feature");
+    track.addEventListener("transitionend", function (e) {
+      if (e.target === track && e.propertyName === "transform") settle();
+    });
+    section.addEventListener("mouseenter", function () { carousel.hover = true; schedule(); });
+    section.addEventListener("mouseleave", function () { carousel.hover = false; schedule(); });
+    section.addEventListener("focusin", function () { carousel.focus = true; schedule(); });
+    section.addEventListener("focusout", function (e) {
+      if (!section.contains(e.relatedTarget)) { carousel.focus = false; schedule(); }
+    });
+    document.addEventListener("visibilitychange", schedule);
+  })();
 
   /* ② new books */
   function card(b, opts) {
@@ -154,7 +266,7 @@
     return '<a class="bcard" href="' + RK.at("./", d.link) + '">' +
       '<span class="bcard-cover">' + badge + '<img src="' + cover(b, d) + '" alt="' + RK.esc(d.alt) + '" width="420" height="622" loading="lazy" /></span>' +
       code + '<span class="bcard-title">' + RK.esc(d.title) + "</span>" +
-      '<span class="bcard-meta">' + RK.esc(meta) + "</span></a>";
+      '<span class="bcard-meta">' + RK.esc(meta) + "</span>" + (opts && opts.series ? "" : RK.formatPills(b, lang)) + "</a>";
   }
 
   function renderNew() {
@@ -267,7 +379,6 @@
 
   function setLanguage(next) {
     lang = TEXT[next] ? next : "ko";
-    slide = 0;
     try { localStorage.setItem("siteLanguage", lang); } catch (e) { /* storage unavailable */ }
     renderChrome();
     renderFeature();

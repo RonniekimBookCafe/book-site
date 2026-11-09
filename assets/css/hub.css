@@ -224,7 +224,7 @@
   letter-spacing: 0.04em;
 }
 
-.feature h1 {
+.feature .feature-title {
   margin: 0 0 14px;
   color: var(--ink);
   font-size: 44px;
@@ -276,14 +276,38 @@
   box-shadow: 0 24px 40px rgba(27, 26, 23, 0.22), 0 2px 6px rgba(27, 26, 23, 0.12);
 }
 
+.feature-viewport {
+  overflow: hidden;
+}
+
+.feature-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+
+.feature-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 .feature-pager {
   display: flex;
   gap: 6px;
   align-items: center;
-  margin-top: 36px;
+  margin-top: 28px;
   color: var(--ink-2);
   font-size: 14px;
   font-variant-numeric: tabular-nums;
+}
+
+.feature-pager[hidden] {
+  display: none;
+}
+
+.feature-pager span {
+  min-width: 40px;
+  text-align: center;
 }
 
 .feature-pager button {
@@ -302,6 +326,22 @@
 
 .feature-pager button:hover {
   border-color: var(--ink);
+}
+
+.feature-pager .feature-toggle {
+  margin-left: 4px;
+}
+
+.feature-pager svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feature-track {
+    transition: none;
+  }
 }
 
 /* ---------- book card (home row + list grid) ---------- */
@@ -383,6 +423,36 @@
   color: var(--ink-3);
   font-size: 13px;
   font-weight: 500;
+}
+
+/* formats under a cover: 종이책 (green) / 전자책 (amber) — text 6.98 : 1 and 6.65 : 1 on their tints */
+.fmt-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.fmt {
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.fmt-paper {
+  background: #E6F2EC;
+  color: #1F5A4A;
+}
+
+.fmt-ebook {
+  background: #F6EEDC;
+  color: #6B4E1F;
+}
+
+.lrow .fmt-pills {
+  margin: 0 0 10px;
 }
 
 /* ---------- ③ series band (the one dark area) ---------- */
@@ -1543,7 +1613,7 @@
     gap: 32px;
   }
 
-  .feature h1 {
+  .feature .feature-title {
     font-size: 36px;
   }
 
@@ -1603,7 +1673,7 @@
     width: 170px;
   }
 
-  .feature h1 {
+  .feature .feature-title {
     font-size: 28px;
   }
 
@@ -1612,7 +1682,7 @@
   }
 
   .feature-pager {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 
   .sec {

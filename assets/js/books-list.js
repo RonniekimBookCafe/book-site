@@ -149,7 +149,8 @@
   function gridItem(b) {
     var d = b[lang];
     return '<a class="bcard" href="' + RK.at(root, d.link) + '">' + coverHtml(b) +
-      '<span class="bcard-title">' + RK.esc(d.title) + '</span><span class="bcard-meta">' + badge(b) + RK.esc(meta(b)) + "</span></a>";
+      '<span class="bcard-title">' + RK.esc(d.title) + '</span><span class="bcard-meta">' + badge(b) + RK.esc(meta(b)) + "</span>" +
+      RK.formatPills(b, lang) + "</a>";
   }
 
   function listItem(b) {
@@ -158,6 +159,7 @@
     return '<li class="lrow"><a class="bcard" href="' + href + '" tabindex="-1" aria-hidden="true">' + coverHtml(b) + "</a><div>" +
       '<h3><a href="' + href + '">' + RK.esc(d.title) + "</a></h3>" +
       '<p class="lmeta">' + badge(b) + RK.esc(meta(b)) + (b.seriesCode ? " · " + RK.esc(b.seriesCode) : "") + "</p>" +
+      RK.formatPills(b, lang) +
       '<p class="ldesc">' + RK.esc(d.description) + "</p>" + resourceBadges(b) + "</div></li>";
   }
 

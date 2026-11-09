@@ -21,6 +21,19 @@
     en: { robot: "Robot files", source: "Source code", sheets: "Record sheets", videos: "Videos" }
   };
 
+  var FORMATS = {
+    ko: { paper: "종이책", ebook: "전자책" },
+    en: { paper: "Print", ebook: "eBook" }
+  };
+
+  // Small format pills (종이책 / 전자책) under a cover; empty when the book has no formats yet.
+  function formatPills(b, lang) {
+    if (!b.formats || !b.formats.length) return "";
+    return '<span class="fmt-pills">' + b.formats.map(function (f) {
+      return '<span class="fmt fmt-' + f + '">' + FORMATS[lang][f] + "</span>";
+    }).join("") + "</span>";
+  }
+
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -79,6 +92,7 @@
     books: books,
     isUpcoming: isUpcoming,
     byNewest: byNewest,
-    resources: resources
+    resources: resources,
+    formatPills: formatPills
   };
 })();

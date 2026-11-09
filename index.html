@@ -21,8 +21,8 @@
   <meta name="twitter:description" content="새로 나온 책, RoboCo 시리즈, 분야별 도서, 로봇 파일과 소스 코드를 받는 자료실." />
   <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-ko.webp?v=1.18" />
 
-  <link rel="stylesheet" href="./assets/css/style.css?v=1.21" />
-  <link rel="stylesheet" href="./assets/css/hub.css?v=1.21" />
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.22" />
+  <link rel="stylesheet" href="./assets/css/hub.css?v=1.22" />
 </head>
 
 <body class="home">
@@ -45,18 +45,26 @@
   </header>
 
   <main>
-    <!-- ① featured new release -->
-    <section class="feature" aria-labelledby="feature-title">
+    <!-- ① featured new releases: slides left every 6 s, pauses on hover/focus, pause button (WCAG 2.2.2) -->
+    <h1 class="sr-only" id="page-title">Ronnie Kim Books</h1>
+    <section class="feature" aria-roledescription="carousel" aria-label="신간" id="feature-section">
       <div class="wrap">
-        <div class="feature-grid" id="feature">
-          <div>
-            <p class="feature-eyebrow"><span class="pill">신간</span> QUAD-01 · WALK</p>
-            <h1 id="feature-title">피지컬 AI로 배우는 RoboCo 구조와 보행 제어</h1>
-            <p class="lead">W 키 하나가 열두 관절의 한 걸음이 되기까지</p>
-            <div class="feature-cta"><a class="btn" href="./ko/books/book-008/">책 보기</a><a class="btn is-ghost" href="./ko/books/book-008/buy.html">구매하기</a></div>
+        <div class="feature-viewport">
+          <div class="feature-track" id="feature">
+            <div class="feature-slide">
+              <div class="feature-grid">
+                <div>
+                  <p class="feature-eyebrow"><span class="pill">신간</span> QUAD-01 · WALK</p>
+                  <h2 class="feature-title">피지컬 AI로 배우는 RoboCo 구조와 보행 제어</h2>
+                  <p class="lead">W 키 하나가 열두 관절의 한 걸음이 되기까지</p>
+                  <div class="feature-cta"><a class="btn" href="./ko/books/book-008/">책 보기</a><a class="btn is-ghost" href="./ko/books/book-008/buy.html">구매하기</a></div>
+                </div>
+                <a class="feature-art" href="./ko/books/book-008/"><img src="./assets/images/books/book-008/cover-large-ko.webp?v=1.18" alt="피지컬 AI로 배우는 RoboCo 구조와 보행 제어 책 표지" width="420" height="622" /></a>
+              </div>
+            </div>
           </div>
-          <a class="feature-art" href="./ko/books/book-008/"><img src="./assets/images/books/book-008/cover-large-ko.webp?v=1.18" alt="피지컬 AI로 배우는 RoboCo 구조와 보행 제어 책 표지" width="420" height="622" /></a>
         </div>
+        <div class="feature-pager" id="feature-pager" hidden></div>
       </div>
     </section>
 
@@ -152,9 +160,9 @@
     </div>
   </footer>
 
-  <script src="./assets/js/books-data.js?v=1.21"></script>
-  <script src="./assets/js/downloads-data.js?v=1.21"></script>
-  <script src="./assets/js/site-common.js?v=1.21"></script>
-  <script src="./assets/js/home.js?v=1.21"></script>
+  <script src="./assets/js/books-data.js?v=1.22"></script>
+  <script src="./assets/js/downloads-data.js?v=1.22"></script>
+  <script src="./assets/js/site-common.js?v=1.22"></script>
+  <script src="./assets/js/home.js?v=1.22"></script>
 </body>
 </html>
