@@ -94,6 +94,23 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.20 (2026-11-09)** — Download Center and a new home layout.
+  - New `/ko/downloads/` and `/en/downloads/`: one place for robot files, Korean source, and English source of the six
+    RoboCo books (CORE-01·02·03, QUAD-01·02·03) plus the coming robot projects (transforming robot, robot arm, drone,
+    hexapod, biped). Search, filters (all / ready now / series / projects), deep links by code (`#QUAD-01`), SHA-256
+    table, setup steps, terms. Works on mobile; a no-JavaScript fallback lists the files available now.
+  - Ready now: CORE-01 (robot files ZIP, `Book_C01_Robot_release_v1.6.3_kr/en.zip`, record sheets) and QUAD-01
+    (`Book_Q01_Robot_release_v3.5.0_kr/en.zip`). QUAD-01 robot files are Steam Workshop models; links still pending.
+  - **To add a robot or book**: put the files in the site, append an item to `assets/js/downloads-data.js`
+    (instructions at the top of the file), bump `?v=` on that script. The Download Center and the home panel update
+    from the same data.
+  - Home: top menu (books / downloads / YouTube / blog), hero with three actions, the QUAD-01 spotlight, a download
+    panel with direct buttons and the "coming next" list, category tiles with counts above the book list.
+    New files `assets/css/hub.css`, `assets/js/home-hub.js`, `assets/js/downloads.js`, `assets/js/downloads-data.js`.
+  - Every RoboCo book page sidebar (books 005–010, ko/en) starts with a Download Center card that opens that book's row;
+    the CORE-01 and QUAD-01 download pages also carry a banner. Stylesheets cache version 1.20; covers stay at 1.18.
+  - Sitemap: downloads pages added to `sitemaps/pages.xml`.
+
 - **v1.19 (2026-11-08)** — QUAD-01 video pages (`/ko|en/books/book-008/v/`) rewritten from the author's YouTube
   upload text (QUAD-01 v2.9, seven videos).
   - Page titles follow the chapter titles, e.g. "Q01-01-00 · QUAD-01 CH01 네 다리 로봇을 첫걸음부터 걷게 하기 (WALK)".

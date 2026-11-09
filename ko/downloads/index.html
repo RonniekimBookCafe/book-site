@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>실습 자료 다운로드 | 로봇 파일·소스 코드 | Ronnie Kim Books</title>
+  <meta name="description" content="『피지컬 AI로 배우는 RoboCo』 시리즈 CORE-01·02·03, QUAD-01·02·03의 로봇 파일, 한국어·영어 소스 코드를 한곳에서 내려받습니다. 변신 로봇·로봇팔·드론·6족·2족 보행 로봇 프로젝트도 이곳에 차례로 공개합니다." />
+  <link rel="canonical" href="https://ronniekimbooks.com/ko/downloads/" />
+  <link rel="alternate" hreflang="ko" href="https://ronniekimbooks.com/ko/downloads/" />
+  <link rel="alternate" hreflang="en" href="https://ronniekimbooks.com/en/downloads/" />
+  <link rel="alternate" hreflang="x-default" href="https://ronniekimbooks.com/en/downloads/" />
+  <link rel="stylesheet" href="../../assets/css/style.css?v=1.20" />
+  <link rel="stylesheet" href="../../assets/css/home.css?v=1.20" />
+  <link rel="stylesheet" href="../../assets/css/hub.css?v=1.20" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ronnie Kim Books" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="실습 자료 다운로드 · 로봇 파일과 소스 코드" />
+  <meta property="og:description" content="『피지컬 AI로 배우는 RoboCo』 시리즈 CORE-01·02·03, QUAD-01·02·03의 로봇 파일, 한국어·영어 소스 코드를 한곳에서 내려받습니다. 변신 로봇·로봇팔·드론·6족·2족 보행 로봇 프로젝트도 이곳에 차례로 공개합니다." />
+  <meta property="og:url" content="https://ronniekimbooks.com/ko/downloads/" />
+  <meta property="og:image" content="https://ronniekimbooks.com/assets/images/books/book-008/og-ko.webp?v=1.18" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body class="dl-page" data-lang="ko" data-root="../../">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-brand" href="../../">Ronnie Kim Books</a>
+    <nav class="topbar-nav" aria-label="사이트 메뉴"><a href="../../#books">책</a><a href="../../ko/downloads/" aria-current="page">실습 자료 다운로드</a><a href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener" class="ext">YouTube</a><a href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener" class="ext">블로그</a></nav>
+    <a class="topbar-lang" href="../../en/downloads/" hreflang="en" lang="en">English</a>
+  </div>
+</header>
+<section class="dl-hero">
+  <div class="dl-hero-inner">
+    <p class="dl-kicker">DOWNLOAD CENTER</p>
+    <h1>실습 자료 다운로드</h1>
+    <p class="dl-lead">책과 로봇 프로젝트에서 쓰는 로봇 파일, 한국어 소스, 영어 소스를 한곳에서 받습니다. 책 표지 왼쪽 위의 코드로 찾으면 가장 빠릅니다.</p>
+    <ul class="dl-stats" id="dl-stats"></ul>
+  </div>
+</section>
+<main class="dl-main">
+  <ol class="dl-howto"><li><strong>로봇 파일 받기</strong><span>ZIP을 풀고 RoboCo에서 로봇을 불러옵니다. Steam Workshop 모델은 구독하면 RoboCo에 나타납니다.</span></li><li><strong>소스 코드 받기</strong><span>책과 같은 언어의 소스 ZIP을 받아 RoboCo Scripts 폴더 바로 아래에 풉니다. 한국어·영어 소스는 주석과 README 언어만 다릅니다.</span></li><li><strong>책의 CHAPTER대로 실행</strong><span>Microcontroller에 시작 파일을 연결하고 책의 순서대로 실행합니다. 자세한 위치와 순서는 각 책의 설치 안내에 있습니다.</span></li></ol>
+  <div class="dl-tools">
+    <input type="search" id="dl-search" class="dl-search" placeholder="코드·책 제목·로봇 이름 검색 (예: QUAD-01, 드론)" aria-label="자료 검색" />
+    <div class="dl-filters" role="group" aria-label="자료 종류"><button type="button" class="dl-filter" data-filter="all" aria-pressed="true">전체</button><button type="button" class="dl-filter" data-filter="available" aria-pressed="false">지금 받기</button><button type="button" class="dl-filter" data-filter="roboco" aria-pressed="false">RoboCo 시리즈 6권</button><button type="button" class="dl-filter" data-filter="projects" aria-pressed="false">로봇 프로젝트</button></div>
+    <p class="book-count" id="dl-count" aria-live="polite" style="margin:0"></p>
+  </div>
+  <div id="dl-groups"></div>
+  <noscript><div class="dl-panel"><p>JavaScript가 꺼져 있어 지금 받을 수 있는 파일만 간단히 보여 줍니다.</p><ul><li><strong>CORE-01</strong> 피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어: <a href="../../ko/books/book-005/downloads/Book-CORE-01-Robot-Files.zip" download>로봇 파일 (151 KB)</a> · <a href="../../ko/books/book-005/downloads/Book_C01_Robot_release_v1.6.3_kr.zip" download>한국어 소스 (50 KB)</a> · <a href="../../en/books/book-005/downloads/Book_C01_Robot_release_v1.6.3_en.zip" download>영어 소스 (46 KB)</a></li><li><strong>QUAD-01</strong> 피지컬 AI로 배우는 RoboCo 구조와 보행 제어: <a href="../../ko/books/book-008/downloads/Book_Q01_Robot_release_v3.5.0_kr.zip" download>한국어 소스 (391 KB)</a> · <a href="../../en/books/book-008/downloads/Book_Q01_Robot_release_v3.5.0_en.zip" download>영어 소스 (116 KB)</a></li></ul></div></noscript>
+  <section class="dl-panel" id="verify">
+    <h2>파일 확인값 (SHA-256)</h2>
+    <p>받은 파일이 손상되지 않았는지 확인할 때 씁니다. 파일이 바뀌면 버전과 함께 이 값도 바뀝니다.</p>
+    <details><summary>확인값 보기</summary>
+      <table class="dl-hash-table"><thead><tr><th>파일</th><th>크기</th><th>SHA-256</th></tr></thead><tbody id="dl-hash-body"></tbody></table>
+    </details>
+  </section>
+  <section class="dl-panel" id="terms">
+    <h2>이용 안내</h2>
+    <ul>
+      <li>파일은 Steam용 RoboCo에서 씁니다. 별도의 시스템 Python 설치는 필요하지 않습니다.</li>
+      <li>소스 ZIP에 든 Educational Library(<code>C01_Lib</code>, <code>Q01_Lib</code> …)는 책의 실습을 위해 저자가 만든 코드이며 RoboCo 공식 API가 아닙니다.</li>
+      <li>코드만으로도 첫 실행은 할 수 있지만, 무엇을 관찰하고 어떤 값을 바꿔 비교하는지는 책에서 다룹니다.</li>
+      <li>RoboCo는 Filament Games가 만든 게임입니다. 이 파일들은 RoboCo 공식 예제나 공식 교재가 아닙니다. 사용과 재배포 조건은 각 책의 저작권 안내를 따릅니다.</li>
+    </ul>
+    <p>최종 갱신: 2026-11-09</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <section class="footer-channels" aria-labelledby="channels-label">
+    <p class="footer-channels-title" id="channels-label">공식 채널</p>
+    <div class="footer-channel-list">
+      <a class="footer-channel is-video" href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener">
+        <span class="fc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg></span>
+        <span class="fc-text"><strong>공식 YouTube</strong><small>실습 실행 영상 · 책 QR 영상</small></span>
+        <span class="fc-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="footer-channel is-blog" href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener">
+        <span class="fc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 4h10l4 4v12H5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 11h8M8 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span class="fc-text"><strong>공식 네이버 블로그</strong><small>집필 노트 · 업데이트 · 정오표 소식</small></span>
+        <span class="fc-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+  <p class="footer-copy">RoboCo는 Filament Games가 만든 게임이며, 이 페이지의 파일은 RoboCo 공식 자료가 아닙니다.</p>
+  <p class="footer-copy">© Ronnie Kim Books. All rights reserved.</p>
+</footer>
+<script src="../../assets/js/downloads-data.js?v=1.20"></script>
+<script src="../../assets/js/downloads.js?v=1.20"></script>
+</body>
+</html>

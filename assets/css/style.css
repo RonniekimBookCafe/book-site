@@ -332,3 +332,77 @@ textarea {
     display: block;
   }
 }
+
+/* ---------- v1.20: Download Center links on book pages ---------- */
+.book-sidebar .rk-sidehub {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 0 18px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #111827;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.book-sidebar .rk-sidehub:hover,
+.book-sidebar .rk-sidehub:focus-visible {
+  background: #0f3f8f;
+  text-decoration: none;
+}
+
+.rk-sidehub-icon {
+  display: grid;
+  flex: 0 0 34px;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #ffd91a;
+  color: #111827;
+}
+
+.rk-sidehub-text strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.rk-sidehub-text small {
+  display: block;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.rk-hubbanner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+  padding: 12px 16px;
+  border: 1px solid #111827;
+  border-radius: 12px;
+  background: #fffbe6;
+  color: #111827 !important;
+  font-weight: 700;
+}
+
+.rk-hubbanner a {
+  padding: 7px 12px;
+  border-radius: 9px;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.rk-hubbanner a:hover {
+  background: #0f3f8f;
+}

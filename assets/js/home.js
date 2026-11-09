@@ -1,6 +1,6 @@
 const pageText = {
   ko: {
-    subtitle: "출간 도서와 샘플 본문을 한국어로 확인하세요.",
+    subtitle: "책을 읽고, 실습 로봇 파일과 소스 코드를 받아 직접 실행해 보세요. 커리어·아두이노·교육·로봇·피지컬 AI 책을 한곳에 모았습니다.",
     sectionTitle: "출간 도서",
     searchPlaceholder: "책 제목 또는 설명 검색",
     allCategory: "전체 카테고리",
@@ -36,7 +36,7 @@ const pageText = {
   },
 
   en: {
-    subtitle: "Explore books and sample chapters in English.",
+    subtitle: "Read the books, then download the robot files and source code and run them yourself. Career, Arduino, education, and robotics & physical AI books in one place.",
     sectionTitle: "Published Books",
     searchPlaceholder: "Search by title or description",
     allCategory: "All Categories",
@@ -301,6 +301,9 @@ function setLanguage(lang) {
   updateToolText(currentLanguage);
   renderSpotlight();
   renderBooks();
+  if (typeof window.renderHomeHub === "function") {
+    window.renderHomeHub(currentLanguage);
+  }
 }
 
 koButton.addEventListener("click", function () {

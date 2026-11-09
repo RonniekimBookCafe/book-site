@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Ronnie Kim Books | Official Book Collection</title>
-  <meta name="description" content="Ronnie Kim Books 공식 도서 허브입니다. 한국어와 영어로 출간 도서, 목차, 샘플 본문, FAQ, 구매 링크를 확인하세요." />
+  <meta name="description" content="Ronnie Kim Books 공식 도서 허브입니다. 출간 도서와 샘플 본문, 구매 링크, 그리고 RoboCo 실습 로봇 파일·소스 코드 다운로드를 한곳에서 확인하세요." />
 
   <link rel="canonical" href="https://ronniekimbooks.com/" />
 
@@ -20,61 +20,83 @@
   <meta name="twitter:description" content="Explore Ronnie Kim Books in Korean and English, including book pages, sample chapters, FAQs, and purchase links." />
   <meta name="twitter:image" content="https://ronniekimbooks.com/assets/images/books/book-001/og-ko.webp" />
 
-  <link rel="stylesheet" href="./assets/css/style.css?v=1.18" />
-  <link rel="stylesheet" href="./assets/css/home.css?v=1.18" />
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.20" />
+  <link rel="stylesheet" href="./assets/css/home.css?v=1.20" />
+  <link rel="stylesheet" href="./assets/css/hub.css?v=1.20" />
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="language-switch" aria-label="Language selection">
-      <button type="button" id="lang-ko">한국어</button>
-      <button type="button" id="lang-en">English</button>
-    </nav>
-
-    <h1>Ronnie Kim Books</h1>
-    <p id="site-subtitle">출간 도서와 샘플 본문을 한국어로 확인하세요.</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="./">Ronnie Kim Books</a>
+      <nav class="topbar-nav" id="topnav" aria-label="Site menu">
+        <a href="#books" id="nav-books">책</a>
+        <a href="./ko/downloads/" id="nav-downloads">실습 자료 다운로드</a>
+        <a href="https://www.youtube.com/@ronniekim486" target="_blank" rel="noopener" class="ext" id="nav-youtube">YouTube</a>
+        <a href="https://blog.naver.com/ronniekim486" target="_blank" rel="noopener" class="ext" id="nav-blog">블로그</a>
+      </nav>
+      <nav class="language-switch" aria-label="Language selection">
+        <button type="button" id="lang-ko">한국어</button>
+        <button type="button" id="lang-en">English</button>
+      </nav>
+    </div>
   </header>
 
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="home-hero-inner">
+      <h1 id="hero-title">Ronnie Kim Books</h1>
+      <p class="hero-lead" id="site-subtitle">책을 읽고, 실습 파일을 받아 직접 실행해 보세요.</p>
+      <div class="hero-actions" id="hero-actions"></div>
+    </div>
+  </section>
 
 <main class="home-main">
   <section id="spotlight" class="spotlight" aria-labelledby="spotlight-title" hidden></section>
 
-  <h2 class="section-title" id="section-title">출간 도서</h2>
+  <section id="downloads-quick" class="home-section" aria-labelledby="dlq-title" hidden></section>
 
-  <section class="book-tools" aria-label="Book search and filter tools">
-    <input
-      type="search"
-      id="book-search"
-      class="book-search"
-      placeholder="책 제목 또는 설명 검색"
-      aria-label="Search books"
-    />
+  <section id="books" class="home-section" aria-labelledby="section-title">
+    <div class="home-section-head">
+      <h2 id="section-title">출간 도서</h2>
+      <p id="books-lead"></p>
+    </div>
+    <div class="cat-tiles" id="cat-tiles" role="group" aria-label="Categories"></div>
+    <section class="book-tools" aria-label="Book search and filter tools">
+      <input
+        type="search"
+        id="book-search"
+        class="book-search"
+        placeholder="책 제목 또는 설명 검색"
+        aria-label="Search books"
+      />
 
-    <select id="book-category" class="book-select" aria-label="Filter by category">
-      <option value="all">전체 카테고리</option>
-      <option value="career">커리어</option>
-      <option value="arduino">아두이노</option>
-      <option value="education">교육</option>
-      <option value="essay">에세이</option>
-      <option value="tech">기술</option>
-      <option value="robotics">로봇·피지컬 AI</option>
-    </select>
+      <select id="book-category" class="book-select" aria-label="Filter by category">
+        <option value="all">전체 카테고리</option>
+        <option value="career">커리어</option>
+        <option value="arduino">아두이노</option>
+        <option value="education">교육</option>
+        <option value="essay">에세이</option>
+        <option value="tech">기술</option>
+        <option value="robotics">로봇·피지컬 AI</option>
+      </select>
 
-    <select id="book-sort" class="book-select" aria-label="Sort books">
-      <option value="newest">최신순</option>
-      <option value="featured">추천순</option>
-      <option value="oldest">오래된순</option>
-      <option value="title">제목순</option>
-    </select>
+      <select id="book-sort" class="book-select" aria-label="Sort books">
+        <option value="newest">최신순</option>
+        <option value="featured">추천순</option>
+        <option value="oldest">오래된순</option>
+        <option value="title">제목순</option>
+      </select>
+    </section>
+
+    <p id="book-count" class="book-count"></p>
+
+    <section class="book-grid home-book-grid" id="book-grid"></section>
+
+    <p id="empty-message" class="empty-message" hidden>
+      검색 결과가 없습니다.
+    </p>
+
   </section>
-
-  <p id="book-count" class="book-count"></p>
-
-  <section class="book-grid home-book-grid" id="book-grid"></section>
-
-  <p id="empty-message" class="empty-message" hidden>
-    검색 결과가 없습니다.
-  </p>
 
   <section id="upcoming-section" class="upcoming-section" aria-labelledby="upcoming-title" hidden>
     <h2 class="section-title" id="upcoming-title">출간 예정 · 피지컬 AI로 배우는 RoboCo 시리즈</h2>
@@ -102,7 +124,9 @@
     <p class="footer-copy">© Ronnie Kim Books. All rights reserved.</p>
   </footer>
 
-  <script src="./assets/js/books-data.js?v=1.18"></script>
-  <script src="./assets/js/home.js?v=1.18"></script>
+  <script src="./assets/js/books-data.js?v=1.20"></script>
+  <script src="./assets/js/downloads-data.js?v=1.20"></script>
+  <script src="./assets/js/home-hub.js?v=1.20"></script>
+  <script src="./assets/js/home.js?v=1.20"></script>
 </body>
 </html>
