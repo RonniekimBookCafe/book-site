@@ -94,6 +94,9 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.24 (2026-11-09)** — Featured slides: each slide now holds 1.5 s before the 1 s right-to-left slide
+  (`HOLD_MS = 1500` in `assets/js/home.js`). Cache version 1.24 on the home, book list, and 자료실 pages.
+
 - **v1.23 (2026-11-09)** — Featured slides run on their own; formats on every book in the list.
   - ① Featured new releases: right-to-left slide like a marquee — each slide holds 1 s, then slides for 1 s
     (1/2 → 2/2 → 1/2 …). Play/pause button removed. It no longer starts paused when the OS "reduce motion"
