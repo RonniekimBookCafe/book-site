@@ -174,6 +174,17 @@
   letter-spacing: -0.02em;
 }
 
+/* v1.27: a short brand rule marks where each home section begins */
+.home .sec > .wrap > .sec-head h2::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 0 0 14px;
+  border-radius: 2px;
+  background: var(--brand);
+}
+
 .sec-head p {
   margin: 4px 0 0;
   color: var(--ink-2);
@@ -192,9 +203,17 @@
   color: var(--brand);
 }
 
-/* ---------- ① featured ---------- */
+/* ---------- ① featured ----------
+   v1.27: the featured area is its own full-width white band, closed by a hairline, so it reads as a separate
+   stage from the paper-coloured sections below it. The cover panel keeps its warm tone against the white. */
 .feature {
-  padding: 56px 0 64px;
+  padding: 56px 0 44px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.feature + .sec {
+  padding-top: 64px;
 }
 
 .feature-grid {
@@ -1640,7 +1659,11 @@
   }
 
   .feature {
-    padding: 32px 0 48px;
+    padding: 32px 0 32px;
+  }
+
+  .feature + .sec {
+    padding-top: 44px;
   }
 
   .feature-grid {

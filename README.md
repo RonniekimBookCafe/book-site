@@ -94,6 +94,14 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.27 (2026-11-09)** — home: featured band and timing.
+  - Featured carousel holds each slide 1.8 s (`HOLD_MS = 1800` in `assets/js/home.js`); the slide itself still takes 1 s.
+  - The featured area is now a full-width white band (`.feature` background `--surface`) closed by a 1px `--line`
+    hairline; the sections below stay on the paper colour, so the two areas no longer run together.
+    `.feature + .sec` gets 64px (mobile 44px) top padding.
+  - Home section titles (`.home .sec .sec-head h2`) get a short 28×3px brand rule above them to mark each section start.
+  - Cache keys → `?v=1.27` (index.html and the books/자료실/contact/privacy pages).
+
 - **v1.26 (2026-11-09)** — 1:1 문의 연결.
   - `assets/js/contact-config.js`: `endpoint` set to the deployed Apps Script web app
     (`https://script.google.com/macros/s/AKfycbyVShOHhHvQ9I37oofl1Dn6VW-1pxVgyyBz_lCEX1JNpR20H5ZX1wR9mMlMPklnFMQT/exec`).

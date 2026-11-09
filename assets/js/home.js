@@ -103,7 +103,7 @@
      .feature-track transition). The last slide is followed by a clone of the first, so 2/2 → 1/2 also moves left.
      No play/pause button; it only waits while the pointer is over it or a link inside it has keyboard focus,
      so the buttons can be clicked, and while the tab is hidden. */
-  var HOLD_MS = 1500;
+  var HOLD_MS = 1800;
   var carousel = { n: 0, i: 0, timer: null, hover: false, focus: false, busy: false };
 
   function featured() {
