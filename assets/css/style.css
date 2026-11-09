@@ -479,3 +479,23 @@ textarea {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
+
+/* ---------- v1.25: '이 책에 대해 문의하기' in book sidebars ---------- */
+.book-sidebar .rk-sideask {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: -8px 0 18px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.book-sidebar .rk-sideask:hover,
+.book-sidebar .rk-sideask:focus-visible {
+  background: var(--brand-tint);
+  text-decoration: none;
+}

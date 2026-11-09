@@ -94,6 +94,29 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.26 (2026-11-09)** — 1:1 문의 연결.
+  - `assets/js/contact-config.js`: `endpoint` set to the deployed Apps Script web app
+    (`https://script.google.com/macros/s/AKfycbyVShOHhHvQ9I37oofl1Dn6VW-1pxVgyyBz_lCEX1JNpR20H5ZX1wR9mMlMPklnFMQT/exec`).
+    The "준비 중" notice is gone and the send button is on.
+  - Cache keys: contact/books/자료실/privacy pages and `index.html` → `?v=1.26`.
+
+- **v1.25 (2026-11-09)** — 1:1 문의 (Contact) with Google Apps Script mail delivery.
+  - Top menu `홈 · 책 · 자료실 · 1:1 문의` (EN: Contact) on the home, book list, 자료실, contact, and privacy pages;
+    footer links to 1:1 문의 and 개인정보 처리방침.
+  - New `/ko/contact/`, `/en/contact/`: "check first" cards (FAQ, 자료실, blog), form with topic, book (prefilled by
+    `?book=book-NNN`, topic by `?type=`), name, reply email, subject, practice setup (version, chapter, OS, log — shown
+    for "실습 파일·코드 오류"), message (3,000 chars), consent notice, hidden honeypot field. `assets/js/contact.js`.
+  - Delivery: the form POSTs JSON (text/plain, no CORS preflight) to a Google Apps Script web app that e-mails
+    ronniekim486@gmail.com from the author's Gmail with Reply-To set to the reader. Server checks: required fields,
+    3-second minimum, honeypot, 60 s per-email cooldown, 20 per 10 min, daily mail quota. Script and setup guide are
+    shipped separately (`RonnieKimBooks_1on1_AppsScript_v1.25.zip`), not in the site.
+  - `assets/js/contact-config.js`: put the web app `/exec` URL in `endpoint` (and bump `?v=` on the two contact pages).
+    While it is empty the page shows "준비 중" and the send button is off.
+  - New `/ko/privacy/`, `/en/privacy/` (privacy policy: items, purpose, 1-year retention, storage in the author's Google
+    account, rights, browser storage and outside services). Author e-mail shown as HTML entities.
+  - Every book page sidebar (books 001–010, ko/en) gets "이 책에 대해 문의하기 / Ask about this book" → contact with the
+    book preselected. Stylesheets cache 1.25. Sitemap: contact and privacy pages.
+
 - **v1.24 (2026-11-09)** — Featured slides: each slide now holds 1.5 s before the 1 s right-to-left slide
   (`HOLD_MS = 1500` in `assets/js/home.js`). Cache version 1.24 on the home, book list, and 자료실 pages.
 

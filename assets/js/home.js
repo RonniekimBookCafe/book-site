@@ -7,7 +7,7 @@
   var TEXT = {
     ko: {
       title: "Ronnie Kim Books | 책과 실습 자료",
-      nav: { home: "홈", books: "책", res: "자료실", search: "책 검색" },
+      nav: { home: "홈", books: "책", res: "자료실", contact: "1:1 문의", privacy: "개인정보 처리방침", search: "책 검색" },
       newBadge: "신간",
       view: "책 보기",
       buy: "구매하기",
@@ -43,7 +43,7 @@
     },
     en: {
       title: "Ronnie Kim Books | Books and practice files",
-      nav: { home: "Home", books: "Books", res: "Resources", search: "Search books" },
+      nav: { home: "Home", books: "Books", res: "Resources", contact: "Contact", privacy: "Privacy policy", search: "Search books" },
       newBadge: "New",
       view: "View book",
       buy: "Buy",
@@ -322,6 +322,8 @@
     setText("nav-res", t.nav.res);
     $("nav-books").href = "./" + lang + "/books/";
     $("nav-res").href = "./" + lang + "/downloads/";
+    setText("nav-contact", t.nav.contact);
+    $("nav-contact").href = "./" + lang + "/contact/";
     $("nav-search").href = "./" + lang + "/books/#q";
     $("nav-search").setAttribute("aria-label", t.nav.search);
     $("lang-ko").classList.toggle("active", lang === "ko");
@@ -355,6 +357,10 @@
     setText("foot-res", t.nav.res);
     $("foot-books").href = "./" + lang + "/books/";
     $("foot-res").href = "./" + lang + "/downloads/";
+    setText("foot-contact", t.nav.contact);
+    $("foot-contact").href = "./" + lang + "/contact/";
+    setText("foot-privacy", t.nav.privacy);
+    $("foot-privacy").href = "./" + lang + "/privacy/";
     setText("foot-ch-title", t.footCh);
     setText("foot-blog", t.footBlog);
     setText("foot-note", t.footNote);
