@@ -14,8 +14,6 @@
       resLink: "실습 자료 →",
       prev: "이전 책",
       next: "다음 책",
-      pause: "자동 넘김 멈추기",
-      play: "자동 넘김 다시 시작",
       carousel: "신간",
       newTitle: "새로 나온 책",
       newLead: "최근 출간한 책입니다.",
@@ -52,8 +50,6 @@
       resLink: "Practice files →",
       prev: "Previous book",
       next: "Next book",
-      pause: "Pause slideshow",
-      play: "Play slideshow",
       carousel: "New releases",
       newTitle: "New releases",
       newLead: "Recently published books.",
@@ -103,12 +99,12 @@
     return rest.charAt(0).toUpperCase() + rest.slice(1);
   }
 
-  /* ① featured — a sliding carousel. Moves left every AUTO_MS; the last slide is followed by a clone of the first,
-     so 2/2 → 1/2 also slides left. Pauses on hover, keyboard focus, hidden tab, or the pause button;
-     with prefers-reduced-motion it starts paused and switches without animation. */
-  var AUTO_MS = 6000;
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var carousel = { n: 0, i: 0, timer: null, userPaused: reduceMotion, hover: false, focus: false, busy: false };
+  /* ① featured — slides right-to-left on its own: each slide holds HOLD_MS, then moves for SLIDE_MS (set in hub.css,
+     .feature-track transition). The last slide is followed by a clone of the first, so 2/2 → 1/2 also moves left.
+     No play/pause button; it only waits while the pointer is over it or a link inside it has keyboard focus,
+     so the buttons can be clicked, and while the tab is hidden. */
+  var HOLD_MS = 1000;
+  var carousel = { n: 0, i: 0, timer: null, hover: false, focus: false, busy: false };
 
   function featured() {
     return RK.books(lang)
@@ -139,19 +135,19 @@
   }
 
   function playing() {
-    return carousel.n > 1 && !carousel.userPaused && !carousel.hover && !carousel.focus && !document.hidden;
+    return carousel.n > 1 && !carousel.hover && !carousel.focus && !document.hidden;
   }
 
   function schedule() {
     clearTimeout(carousel.timer);
-    if (playing()) carousel.timer = setTimeout(function () { move(1); }, AUTO_MS);
+    if (playing()) carousel.timer = setTimeout(function () { move(1); }, HOLD_MS);
   }
 
   function place(animate) {
     var track = $("feature");
-    track.style.transition = animate && !reduceMotion ? "" : "none";
+    track.style.transition = animate ? "" : "none";
     track.style.transform = "translateX(" + (-100 * carousel.i) + "%)";
-    if (!animate || reduceMotion) void track.offsetWidth; // apply the jump before re-enabling transitions
+    if (!animate) void track.offsetWidth; // apply the jump before re-enabling transitions
     var real = carousel.i % carousel.n;
     track.querySelectorAll(".feature-slide").forEach(function (el, k) {
       if (k === carousel.n) return; // clone stays inert
@@ -182,20 +178,8 @@
       $("feature").style.transition = "";
     }
     carousel.i += step;
-    carousel.busy = !reduceMotion;
+    carousel.busy = true;
     place(true);
-    if (reduceMotion) settle();
-  }
-
-  function renderPauseButton() {
-    var t = TEXT[lang];
-    var btn = $("feature-toggle");
-    if (!btn) return;
-    btn.setAttribute("aria-label", carousel.userPaused ? t.play : t.pause);
-    btn.setAttribute("aria-pressed", carousel.userPaused ? "true" : "false");
-    btn.innerHTML = carousel.userPaused
-      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
-      : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg>';
   }
 
   function renderFeature() {
@@ -216,18 +200,11 @@
       pager.innerHTML =
         '<button type="button" data-step="-1" aria-label="' + t.prev + '">‹</button>' +
         '<span id="feature-count" aria-live="off">1 / ' + list.length + "</span>" +
-        '<button type="button" data-step="1" aria-label="' + t.next + '">›</button>' +
-        '<button type="button" class="feature-toggle" id="feature-toggle"></button>';
+        '<button type="button" data-step="1" aria-label="' + t.next + '">›</button>';
       pager.hidden = false;
       pager.querySelectorAll("[data-step]").forEach(function (btn) {
         btn.addEventListener("click", function () { move(Number(btn.getAttribute("data-step"))); });
       });
-      $("feature-toggle").addEventListener("click", function () {
-        carousel.userPaused = !carousel.userPaused;
-        renderPauseButton();
-        schedule();
-      });
-      renderPauseButton();
     } else {
       pager.hidden = true;
       pager.innerHTML = "";
@@ -245,7 +222,13 @@
     });
     section.addEventListener("mouseenter", function () { carousel.hover = true; schedule(); });
     section.addEventListener("mouseleave", function () { carousel.hover = false; schedule(); });
-    section.addEventListener("focusin", function () { carousel.focus = true; schedule(); });
+    section.addEventListener("focusin", function (e) {
+      // keyboard focus only (a mouse click on an arrow should not stop the slides)
+      var kb = true;
+      try { kb = e.target.matches(":focus-visible"); } catch (err) { /* older browsers */ }
+      carousel.focus = kb;
+      schedule();
+    });
     section.addEventListener("focusout", function (e) {
       if (!section.contains(e.relatedTarget)) { carousel.focus = false; schedule(); }
     });

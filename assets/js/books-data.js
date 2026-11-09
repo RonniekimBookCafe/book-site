@@ -1,5 +1,6 @@
 /* formats: "paper" (종이책, incl. POD) / "ebook" (전자책) — shown under covers on the home page and the book list.
-   Set from each book's buy page; leave it out for books that are not on sale yet. */
+   Published books: from each book's buy page. Upcoming RoboCo books: the planned formats (POD print + eBook),
+   shown next to their "출간 예정 / Coming soon" label. */
 window.booksData = [
   {
     id: "book-001",
@@ -133,6 +134,7 @@ window.booksData = [
   {
     id: "book-006",
     category: "robotics",
+    formats: ["paper", "ebook"], // planned: POD + eBook like CORE-01 / QUAD-01
     publishedAt: "",
     status: "upcoming",
     featured: 6,
@@ -163,6 +165,7 @@ window.booksData = [
   {
     id: "book-007",
     category: "robotics",
+    formats: ["paper", "ebook"], // planned: POD + eBook like CORE-01 / QUAD-01
     publishedAt: "",
     status: "upcoming",
     featured: 7,
@@ -230,6 +233,7 @@ window.booksData = [
   {
     id: "book-009",
     category: "robotics",
+    formats: ["paper", "ebook"], // planned: POD + eBook like CORE-01 / QUAD-01
     publishedAt: "",
     status: "upcoming",
     featured: 9,
@@ -260,6 +264,7 @@ window.booksData = [
   {
     id: "book-010",
     category: "robotics",
+    formats: ["paper", "ebook"], // planned: POD + eBook like CORE-01 / QUAD-01
     publishedAt: "",
     status: "upcoming",
     featured: 10,

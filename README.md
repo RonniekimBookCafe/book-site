@@ -94,6 +94,15 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.23 (2026-11-09)** — Featured slides run on their own; formats on every book in the list.
+  - ① Featured new releases: right-to-left slide like a marquee — each slide holds 1 s, then slides for 1 s
+    (1/2 → 2/2 → 1/2 …). Play/pause button removed. It no longer starts paused when the OS "reduce motion"
+    setting is on (that was why it looked stopped). It only waits while the pointer is over it or a link inside it has
+    keyboard focus, so its buttons can be clicked; clicking an arrow with the mouse does not stop it.
+    Timing: `HOLD_MS` in `assets/js/home.js`, slide duration in `.feature-track` (`assets/css/hub.css`).
+  - Book list (책): 종이책 / 전자책 pills now on every book, including the four upcoming RoboCo books (planned POD print
+    + eBook, shown next to "출간 예정").
+
 - **v1.22 (2026-11-09)** — Home carousel and book formats.
   - ① Featured new releases now slide left on their own: each slide stays 6 s, then moves in 0.7 s
     (1/2 → 2/2 → 1/2 …; a clone of slide 1 keeps the last step moving left). Arrows still work in both directions.
