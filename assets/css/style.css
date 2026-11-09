@@ -1,14 +1,32 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+/* v1.21 "Paper & Ink" design tokens — warm paper background, ink text, one brand colour (Ink Blue).
+   Series colours (yellow, cyan, orange, violet, red) are used only inside the series band and on each book's own pages. */
 :root {
-  --color-primary: #111827;
-  --color-accent: #0f3f8f;
-  --color-text: #1f2937;
-  --color-muted: #374151;
-  --color-soft: #f9fafb;
-  --color-soft-2: #f3f4f6;
-  --color-border: #e5e7eb;
-  --color-subtle: #6b7280;
-  --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.04);
-  --shadow-cover: 0 10px 24px rgba(0, 0, 0, 0.12);
+  --paper: #F7F5F0;
+  --surface: #FFFFFF;
+  --line: #E5E0D6;
+  --ink: #1B1A17;
+  --ink-2: #57534E;
+  --ink-3: #78716C;
+  --brand: #1F3A8A;
+  --brand-hover: #172C6B;
+  --brand-tint: #EEF1F8;
+  --night: #15171C;
+  --alert: #B91C1C;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+  /* legacy names, remapped onto the tokens above */
+  --color-primary: var(--ink);
+  --color-accent: var(--brand);
+  --color-text: var(--ink);
+  --color-muted: var(--ink-2);
+  --color-soft: #FAF8F4;
+  --color-soft-2: #F1EEE7;
+  --color-border: var(--line);
+  --color-subtle: var(--ink-3);
+  --shadow-card: 0 1px 2px rgba(27, 26, 23, 0.04);
+  --shadow-cover: 0 10px 24px rgba(27, 26, 23, 0.14);
 }
 
 *,
@@ -23,9 +41,9 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, "Noto Sans KR", sans-serif;
-  background: #f7f8fa;
-  color: #222;
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
   line-height: 1.7;
 }
 
@@ -46,7 +64,7 @@ textarea {
 }
 
 .site-header {
-  background: var(--color-primary);
+  background: var(--night);
   color: #ffffff;
   padding: 48px 24px;
   text-align: center;
@@ -65,7 +83,7 @@ textarea {
 }
 
 .book-header {
-  background: var(--color-primary);
+  background: var(--night);
   color: #ffffff;
   padding: 40px 24px;
 }
@@ -134,7 +152,7 @@ textarea {
   display: inline-block;
   margin-top: 12px;
   padding: 10px 16px;
-  background: var(--color-primary);
+  background: var(--brand);
   color: #ffffff;
   text-decoration: none;
   border-radius: 8px;
@@ -340,16 +358,18 @@ textarea {
   align-items: center;
   margin: 0 0 18px;
   padding: 12px;
+  border: 1px solid var(--line);
   border-radius: 12px;
-  background: #111827;
-  color: #ffffff;
+  background: var(--surface);
+  color: var(--ink);
   text-decoration: none;
-  transition: background 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .book-sidebar .rk-sidehub:hover,
 .book-sidebar .rk-sidehub:focus-visible {
-  background: #0f3f8f;
+  border-color: var(--brand);
+  background: var(--brand-tint);
   text-decoration: none;
 }
 
@@ -360,8 +380,8 @@ textarea {
   width: 34px;
   height: 34px;
   border-radius: 9px;
-  background: #ffd91a;
-  color: #111827;
+  background: var(--brand);
+  color: #ffffff;
 }
 
 .rk-sidehub-text strong {
@@ -372,7 +392,7 @@ textarea {
 
 .rk-sidehub-text small {
   display: block;
-  color: #cbd5e1;
+  color: var(--ink-2);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
@@ -386,17 +406,17 @@ textarea {
   justify-content: space-between;
   margin: 16px 0;
   padding: 12px 16px;
-  border: 1px solid #111827;
+  border: 1px solid var(--line);
   border-radius: 12px;
-  background: #fffbe6;
-  color: #111827 !important;
+  background: var(--brand-tint);
+  color: var(--ink) !important;
   font-weight: 700;
 }
 
 .rk-hubbanner a {
   padding: 7px 12px;
   border-radius: 9px;
-  background: #111827;
+  background: var(--brand);
   color: #ffffff;
   font-weight: 800;
   text-decoration: none;
@@ -404,5 +424,58 @@ textarea {
 }
 
 .rk-hubbanner a:hover {
-  background: #0f3f8f;
+  background: var(--brand-hover);
+}
+
+
+/* ---------- v1.21: shared button + numbers ---------- */
+.btn {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 11px 18px;
+  border: 1px solid var(--brand);
+  border-radius: 10px;
+  background: var(--brand);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  border-color: var(--brand-hover);
+  background: var(--brand-hover);
+}
+
+.btn.is-ghost {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.btn.is-ghost:hover {
+  border-color: var(--ink);
+  background: var(--surface);
+}
+
+.text-link {
+  color: var(--brand);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }

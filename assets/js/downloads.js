@@ -1,4 +1,4 @@
-/* Ronnie Kim Books — Download Center renderer (v1.20). Data: assets/js/downloads-data.js */
+/* Ronnie Kim Books — 자료실 (Resources) renderer (v1.20, v1.21). Data: assets/js/downloads-data.js */
 (function () {
   var data = window.downloadsData;
   var icons = window.downloadIcons || {};
@@ -204,6 +204,9 @@
     });
   });
   searchEl.addEventListener("input", render);
+  // ?q= from the home page search box
+  var q0 = new URLSearchParams(location.search).get("q");
+  if (q0) searchEl.value = q0;
 
   renderStats();
   render();

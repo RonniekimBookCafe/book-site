@@ -1,13 +1,14 @@
 /*
- * Ronnie Kim Books — Download Center data (v1.20)
- * Used by /ko/downloads/, /en/downloads/ (assets/js/downloads.js) and the home page quick panel (assets/js/home-hub.js).
+ * Ronnie Kim Books — 자료실 (Resources) data (v1.20, v1.21)
+ * Used by /ko|en/downloads/ (assets/js/downloads.js), the home page resources strip (assets/js/home.js),
+ * and the resource badges on /ko|en/books/ (assets/js/books-list.js).
  *
  * Add a new robot or book:
  *   1. Put the files in the site (for a book: ko/books/book-NNN/downloads/ and en/books/book-NNN/downloads/;
  *      for a project robot: downloads/projects/<code>/).
  *   2. Append an item below. Paths are relative to the site root (no leading "./").
  *   3. status: "available" (files ready) · "coming" (book page exists, files not yet) · "planned" (announced only).
- *      page = book page, guide = the book's own install/setup page (optional).
+ *      page = book page, guide = the book's own install/setup page, videos = the book's video page (all optional).
  *   4. A file entry may be:
  *        { href: "path/to/file.zip", bytes: 12345, sha256: "..." }      → Download button
  *        { workshop: "https://steamcommunity.com/..." }                  → Steam Workshop link
@@ -81,6 +82,7 @@ window.downloadsData = {
       ],
       page: { ko: "ko/books/book-005/", en: "en/books/book-005/" },
       guide: { ko: "ko/books/book-005/downloads/", en: "en/books/book-005/downloads/" },
+      videos: { ko: "ko/books/book-005/learn/", en: "en/books/book-005/learn/" },
       preview: "assets/images/books/book-005/robot/robot-controls.webp"
     },
     {
@@ -138,6 +140,7 @@ window.downloadsData = {
       },
       page: { ko: "ko/books/book-008/", en: "en/books/book-008/" },
       guide: { ko: "ko/books/book-008/downloads/", en: "en/books/book-008/downloads/" },
+      videos: { ko: "ko/books/book-008/learn/", en: "en/books/book-008/learn/" },
       preview: "assets/images/books/book-008/robot/quad01-robot.webp"
     },
     {

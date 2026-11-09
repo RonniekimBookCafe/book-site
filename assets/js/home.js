@@ -1,328 +1,287 @@
-const pageText = {
-  ko: {
-    subtitle: "책을 읽고, 실습 로봇 파일과 소스 코드를 받아 직접 실행해 보세요. 커리어·아두이노·교육·로봇·피지컬 AI 책을 한곳에 모았습니다.",
-    sectionTitle: "출간 도서",
-    searchPlaceholder: "책 제목 또는 설명 검색",
-    allCategory: "전체 카테고리",
-    categories: {
-      career: "커리어",
-      arduino: "아두이노",
-      education: "교육",
-      essay: "에세이",
-      tech: "기술",
-      robotics: "로봇·피지컬 AI"
+/* Ronnie Kim Books — home page (v1.21): ① featured ② new books ③ series band ④ categories ⑤ resources.
+   Data: books-data.js, downloads-data.js. Helpers: site-common.js. Language: ko / en, remembered in localStorage. */
+(function () {
+  var RK = window.RK;
+  var lang = "ko";
+  var slide = 0;
+
+  var TEXT = {
+    ko: {
+      title: "Ronnie Kim Books | 책과 실습 자료",
+      nav: { home: "홈", books: "책", res: "자료실", search: "책 검색" },
+      newBadge: "신간",
+      view: "책 보기",
+      buy: "구매하기",
+      resLink: "실습 자료 →",
+      prev: "이전 책",
+      next: "다음 책",
+      newTitle: "새로 나온 책",
+      newLead: "최근 출간한 책입니다.",
+      more: "전체 보기 →",
+      seriesTitle: "피지컬 AI로 배우는 RoboCo",
+      seriesLead: "완성된 로봇을 먼저 움직이고, 값을 바꿔 결과를 비교하는 실습 시리즈",
+      seriesMore: "시리즈 보기 →",
+      published: "출간",
+      upcoming: "출간 예정",
+      catTitle: "분야별로 찾기",
+      catLead: "관심 있는 분야의 책을 모아 봅니다.",
+      count: function (n, u) { return n + "권" + (u ? " · 출간 예정 " + u + "권" : ""); },
+      allBooks: "전체 책 보기 →",
+      allCount: function (n) { return "출간 " + n + "권"; },
+      resTitle: "자료실",
+      resLead: "책에서 쓰는 로봇 파일과 한국어·영어 소스 코드를 받습니다.",
+      resLabel: "자료 검색",
+      resPh: "책 제목·코드로 자료 찾기 (예: QUAD-01)",
+      resGo: "찾기",
+      resListTitle: "지금 받을 수 있는 자료",
+      resMore: function (n) { return "준비 중인 자료 " + n + "건은 자료실에서 확인할 수 있습니다."; },
+      footAbout: "AI·로봇·개발·교육 분야의 책과, 책에서 쓰는 실습 자료를 만듭니다.",
+      footNav: "둘러보기",
+      footCh: "공식 채널",
+      footBlog: "네이버 블로그",
+      footNote: "RoboCo는 Filament Games가 만든 게임입니다. 이 사이트의 책과 실습 자료는 RoboCo 공식 자료가 아닙니다."
     },
-    sort: {
-      newest: "최신순",
-      featured: "추천순",
-      oldest: "오래된순",
-      title: "제목순"
-    },
-    countText: function (count) {
-      return "총 " + count + "권";
-    },
-    upcomingTitle: "출간 예정 · 피지컬 AI로 배우는 RoboCo 시리즈",
-    channelsLabel: "공식 채널",
-    youtube: "공식 YouTube",
-    youtubeDesc: "실습 실행 영상 · 책 QR 영상",
-    blog: "공식 네이버 블로그",
-    blogDesc: "집필 노트 · 업데이트 · 정오표 소식",
-    spotlightBadge: "신간",
-    spotlightView: "책 보기",
-    spotlightBuy: "구매하기",
-    spotlightVideo: "걷는 영상 보기",
-    upcomingLead: "CORE-01과 QUAD-01에 이어 센서, 로봇팔, 자율보행 AI, 이동 조작으로 이어지는 네 권을 준비하고 있습니다.",
-    empty: "검색 결과가 없습니다."
-  },
-
-  en: {
-    subtitle: "Read the books, then download the robot files and source code and run them yourself. Career, Arduino, education, and robotics & physical AI books in one place.",
-    sectionTitle: "Published Books",
-    searchPlaceholder: "Search by title or description",
-    allCategory: "All Categories",
-    categories: {
-      career: "Career",
-      arduino: "Arduino",
-      education: "Education",
-      essay: "Essay",
-      tech: "Technology",
-      robotics: "Robotics & Physical AI"
-    },
-    sort: {
-      newest: "Newest",
-      featured: "Featured",
-      oldest: "Oldest",
-      title: "Title"
-    },
-    countText: function (count) {
-      return count + " book" + (count === 1 ? "" : "s");
-    },
-    upcomingTitle: "Coming soon · Physical AI with RoboCo series",
-    channelsLabel: "Official channels",
-    youtube: "YouTube",
-    youtubeDesc: "Practice run videos · videos from the book's QR codes",
-    blog: "Naver Blog (Korean)",
-    blogDesc: "Writing notes, updates, and errata news",
-    spotlightBadge: "New release",
-    spotlightView: "View book",
-    spotlightBuy: "Buy",
-    spotlightVideo: "Watch it walk",
-    upcomingLead: "After CORE-01 and QUAD-01, four more volumes cover sensors, robot arms, autonomous AI, and mobile manipulation (Korean pages).",
-    empty: "No books found."
-  }
-};
-
-let currentLanguage = "ko";
-
-const koButton = document.getElementById("lang-ko");
-const enButton = document.getElementById("lang-en");
-
-const siteSubtitle = document.getElementById("site-subtitle");
-const sectionTitle = document.getElementById("section-title");
-const bookGrid = document.getElementById("book-grid");
-const upcomingSection = document.getElementById("upcoming-section");
-const upcomingGrid = document.getElementById("upcoming-grid");
-const upcomingTitle = document.getElementById("upcoming-title");
-const upcomingLead = document.getElementById("upcoming-lead");
-
-const bookSearch = document.getElementById("book-search");
-const bookCategory = document.getElementById("book-category");
-const bookSort = document.getElementById("book-sort");
-const bookCount = document.getElementById("book-count");
-const emptyMessage = document.getElementById("empty-message");
-
-function getBooksData() {
-  return Array.isArray(window.booksData) ? window.booksData : [];
-}
-
-function updateToolText(lang) {
-  const text = pageText[lang] || pageText.ko;
-
-  bookSearch.placeholder = text.searchPlaceholder;
-
-  bookCategory.innerHTML = `
-    <option value="all">${text.allCategory}</option>
-    <option value="career">${text.categories.career}</option>
-    <option value="arduino">${text.categories.arduino}</option>
-    <option value="education">${text.categories.education}</option>
-    <option value="essay">${text.categories.essay}</option>
-    <option value="tech">${text.categories.tech}</option>
-    <option value="robotics">${text.categories.robotics}</option>
-  `;
-
-  const selectedSort = bookSort.value || "newest";
-
-  bookSort.innerHTML = `
-    <option value="newest">${text.sort.newest}</option>
-    <option value="featured">${text.sort.featured}</option>
-    <option value="oldest">${text.sort.oldest}</option>
-    <option value="title">${text.sort.title}</option>
-  `;
-
-  bookSort.value = selectedSort;
-
-  emptyMessage.textContent = text.empty;
-}
-
-function getFilteredBooks() {
-  const keyword = bookSearch.value.trim().toLowerCase();
-  const category = bookCategory.value;
-  const sort = bookSort.value;
-
-  const result = getBooksData().filter(function (book) 
-{
-    const data = book[currentLanguage];
-
-    if (!data) {
-      return false;
+    en: {
+      title: "Ronnie Kim Books | Books and practice files",
+      nav: { home: "Home", books: "Books", res: "Resources", search: "Search books" },
+      newBadge: "New",
+      view: "View book",
+      buy: "Buy",
+      resLink: "Practice files →",
+      prev: "Previous book",
+      next: "Next book",
+      newTitle: "New releases",
+      newLead: "Recently published books.",
+      more: "View all →",
+      seriesTitle: "Physical AI with RoboCo",
+      seriesLead: "Run a finished robot first, then change one value and compare the result.",
+      seriesMore: "View series →",
+      published: "Published",
+      upcoming: "Coming soon",
+      catTitle: "Browse by subject",
+      catLead: "Books grouped by subject.",
+      count: function (n, u) { return n + (n === 1 ? " book" : " books") + (u ? " · " + u + " coming" : ""); },
+      allBooks: "All books →",
+      allCount: function (n) { return n + " published"; },
+      resTitle: "Resources",
+      resLead: "Robot files and Korean and English source code used in the books.",
+      resLabel: "Search resources",
+      resPh: "Find files by title or code (e.g. QUAD-01)",
+      resGo: "Search",
+      resListTitle: "Available now",
+      resMore: function (n) { return n + " more items are on the way; see Resources."; },
+      footAbout: "Books on AI, robotics, software careers, and education, with the practice files they use.",
+      footNav: "Explore",
+      footCh: "Official channels",
+      footBlog: "Naver Blog (Korean)",
+      footNote: "RoboCo is a game made by Filament Games. The books and practice files on this site are not official RoboCo materials."
     }
+  };
 
-    const matchesKeyword =
-      !keyword ||
-      data.title.toLowerCase().includes(keyword) ||
-      data.description.toLowerCase().includes(keyword);
-
-    const matchesCategory =
-      category === "all" || book.category === category;
-
-    return matchesKeyword && matchesCategory;
-  });
-
-  // Upcoming books have no publishedAt yet; treat them as the newest.
-  function sortTime(book) {
-    const time = book.publishedAt ? new Date(book.publishedAt).getTime() : NaN;
-    return isNaN(time) ? Number.MAX_SAFE_INTEGER : time;
+  function $(id) {
+    return document.getElementById(id);
   }
 
-  result.sort(function (a, b) {
-    const titleA = a[currentLanguage].title;
-    const titleB = b[currentLanguage].title;
+  function setText(id, value) {
+    var el = $(id);
+    if (el) el.textContent = value;
+  }
 
-    if (sort === "newest") {
-      return sortTime(b) - sortTime(a);
-    }
+  function cover(book, d, large) {
+    return RK.at("./", (large && d.coverLarge) || d.cover);
+  }
 
-    if (sort === "oldest") {
-      return sortTime(a) - sortTime(b);
-    }
+  function strip(desc, lead) {
+    // Avoid repeating the lead line at the start of the description.
+    if (!lead || desc.indexOf(lead) !== 0) return desc;
+    var rest = desc.slice(lead.length).replace(/^[\s.:,;—-]+/, "");
+    return rest.charAt(0).toUpperCase() + rest.slice(1);
+  }
 
-    if (sort === "title") {
-      return titleA.localeCompare(titleB);
-    }
+  /* ① featured */
+  function featured() {
+    return RK.books(lang)
+      .filter(function (b) { return b.spotlight && !RK.isUpcoming(b); })
+      .sort(RK.byNewest)
+      .slice(0, 3);
+  }
 
-    return a.featured - b.featured;
-  });
-
-  return result;
-}
-
-function createCard(book) {
-  const data = book[currentLanguage];
-
-  const article = document.createElement("article");
-  article.className = "book-card compact-book-card" + (book.status === "upcoming" ? " is-upcoming" : "");
-
-  const badge = data.badge
-    ? `<span class="book-status-badge${book.status === "upcoming" ? "" : " is-new"}">${data.badge}</span>`
-    : "";
-
-  article.innerHTML = `
-    ${badge}
-    <a class="book-cover-link" href="${data.link}">
-      <img
-        class="book-cover-thumb"
-        src="${data.cover}"
-        alt="${data.alt}"
-        loading="lazy"
-      />
-    </a>
-
-    <h3>${data.title}</h3>
-    <p>${data.description}</p>
-    <a class="book-card-button" href="${data.link}">${data.button}</a>
-  `;
-
-  return article;
-}
-
-function renderBooks() {
-  const books = getFilteredBooks();
-  const text = pageText[currentLanguage] || pageText.ko;
-
-  const published = books.filter(function (book) {
-    return book.status !== "upcoming";
-  });
-
-  // Upcoming books keep series order (CORE-02 → QUAD-03) in their own row.
-  const upcoming = books
-    .filter(function (book) {
-      return book.status === "upcoming";
-    })
-    .sort(function (a, b) {
-      return (a.seriesOrder || 0) - (b.seriesOrder || 0);
-    });
-
-  bookGrid.innerHTML = "";
-  bookCount.textContent = text.countText(published.length);
-  emptyMessage.hidden = books.length !== 0;
-
-  published.forEach(function (book) {
-    bookGrid.appendChild(createCard(book));
-  });
-
-  if (upcomingSection) {
-    upcomingGrid.innerHTML = "";
-    upcomingTitle.textContent = text.upcomingTitle;
-    upcomingLead.textContent = text.upcomingLead;
-    upcomingSection.hidden = upcoming.length === 0;
-
-    upcoming.forEach(function (book) {
-      upcomingGrid.appendChild(createCard(book));
+  function renderFeature() {
+    var t = TEXT[lang];
+    var list = featured();
+    var box = $("feature");
+    if (!list.length) return;
+    slide = (slide + list.length) % list.length;
+    var b = list[slide];
+    var d = b[lang];
+    var s = b.spotlight[lang] || {};
+    var resLang = lang;
+    var pager = list.length > 1
+      ? '<div class="feature-pager"><button type="button" data-step="-1" aria-label="' + t.prev + '">‹</button><span>' +
+        (slide + 1) + " / " + list.length + '</span><button type="button" data-step="1" aria-label="' + t.next + '">›</button></div>'
+      : "";
+    box.innerHTML =
+      "<div>" +
+      '<p class="feature-eyebrow"><span class="pill">' + t.newBadge + "</span> " + RK.esc(b.seriesCode || "") + (s.capability ? " · " + RK.esc(s.capability) : "") + "</p>" +
+      '<h1 id="feature-title">' + RK.esc(s.title || d.title) + "</h1>" +
+      (s.lead ? '<p class="lead">' + RK.esc(s.lead) + "</p>" : "") +
+      '<p class="desc">' + RK.esc(strip(d.description, s.lead)) + "</p>" +
+      '<div class="feature-cta">' +
+      '<a class="btn" href="' + RK.at("./", d.link) + '">' + t.view + "</a>" +
+      '<a class="btn is-ghost" href="' + RK.at("./", d.link) + 'buy.html">' + t.buy + "</a>" +
+      (b.seriesCode ? '<a class="text-link" href="./' + resLang + "/downloads/#" + b.seriesCode + '">' + t.resLink + "</a>" : "") +
+      "</div>" + pager + "</div>" +
+      '<a class="feature-art" href="' + RK.at("./", d.link) + '"><img src="' + cover(b, d, true) + '" alt="' + RK.esc(d.alt) + '" width="420" height="622" /></a>';
+    box.querySelectorAll("[data-step]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        slide += Number(btn.getAttribute("data-step"));
+        renderFeature();
+      });
     });
   }
-}
 
-
-// New-release spotlight: books with `spotlight` data are shown first, above the book grid.
-function renderSpotlight() {
-  const section = document.getElementById("spotlight");
-  if (!section) return;
-  const text = pageText[currentLanguage] || pageText.ko;
-  const book = getBooksData().find(function (b) {
-    return b.spotlight && b[currentLanguage];
-  });
-  if (!book) {
-    section.hidden = true;
-    return;
+  /* ② new books */
+  function card(b, opts) {
+    var d = b[lang];
+    var t = TEXT[lang];
+    var meta = opts && opts.series
+      ? (RK.isUpcoming(b) ? t.upcoming : t.published)
+      : RK.CATS[lang][b.category] + (b.publishedAt ? " · " + RK.ym(b.publishedAt) : "");
+    var badge = "";
+    var code = opts && opts.series
+      ? '<span class="series-code" style="--sc:' + (RK.SERIES_COLOR[b.seriesCode] || "#9CA3AF") + '">' + RK.esc(b.seriesCode) + "</span>"
+      : "";
+    return '<a class="bcard" href="' + RK.at("./", d.link) + '">' +
+      '<span class="bcard-cover">' + badge + '<img src="' + cover(b, d) + '" alt="' + RK.esc(d.alt) + '" width="420" height="622" loading="lazy" /></span>' +
+      code + '<span class="bcard-title">' + RK.esc(d.title) + "</span>" +
+      '<span class="bcard-meta">' + RK.esc(meta) + "</span></a>";
   }
-  const data = book[currentLanguage];
-  const extra = book.spotlight[currentLanguage] || {};
-  section.style.setProperty("--spot", book.spotlight.color || "#ff8a34");
-  section.innerHTML = `
-    <a class="spotlight-cover" href="${data.link}"><img src="${data.coverLarge || data.cover}" alt="${data.alt}" width="420" height="622" /></a>
-    <div>
-      <p class="spotlight-badges"><span class="is-new">${text.spotlightBadge}</span><span class="is-code">${book.seriesCode} · ${extra.capability || ""}</span></p>
-      <h2 id="spotlight-title">${extra.title || data.title}</h2>
-      <p class="spotlight-lead">${extra.lead || ""}</p>
-      <p class="spotlight-desc">${data.description}</p>
-      <div class="spotlight-cta">
-        <a class="primary" href="${data.link}buy.html">${text.spotlightBuy}</a>
-        <a href="${data.link}">${text.spotlightView}</a>
-        <a href="${data.link}learn/">${text.spotlightVideo} ↗</a>
-      </div>
-    </div>
-  `;
-  section.hidden = false;
-}
 
-function setLanguage(lang) {
-  currentLanguage = pageText[lang] ? lang : "ko";
-
-  const selected = pageText[currentLanguage];
-
-  document.documentElement.lang = currentLanguage;
-  siteSubtitle.textContent = selected.subtitle;
-
-  const channelsLabel = document.getElementById("channels-label");
-  if (channelsLabel) {
-    channelsLabel.textContent = selected.channelsLabel;
-    document.getElementById("channel-youtube").textContent = selected.youtube;
-    document.getElementById("channel-youtube-desc").textContent = selected.youtubeDesc;
-    document.getElementById("channel-blog").textContent = selected.blog;
-    document.getElementById("channel-blog-desc").textContent = selected.blogDesc;
+  function renderNew() {
+    var list = RK.books(lang).filter(function (b) { return !RK.isUpcoming(b); }).sort(RK.byNewest).slice(0, 5);
+    $("new-row").innerHTML = list.map(function (b) { return card(b); }).join("");
   }
-  sectionTitle.textContent = selected.sectionTitle;
 
-  koButton.classList.toggle("active", currentLanguage === "ko");
-  enButton.classList.toggle("active", currentLanguage === "en");
-
-  localStorage.setItem("siteLanguage", currentLanguage);
-
-  updateToolText(currentLanguage);
-  renderSpotlight();
-  renderBooks();
-  if (typeof window.renderHomeHub === "function") {
-    window.renderHomeHub(currentLanguage);
+  /* ③ series band */
+  function renderSeries() {
+    var list = RK.books(lang)
+      .filter(function (b) { return b.series === "roboco"; })
+      .sort(function (a, b) { return (a.seriesOrder || 0) - (b.seriesOrder || 0); });
+    $("series-row").innerHTML = list.map(function (b) { return card(b, { series: true }); }).join("");
   }
-}
 
-koButton.addEventListener("click", function () {
-  setLanguage("ko");
-});
+  /* ④ categories (bento): widest tile = the category with the most books */
+  function renderBento() {
+    var t = TEXT[lang];
+    var all = RK.books(lang);
+    var stats = {};
+    all.forEach(function (b) {
+      var s = stats[b.category] || (stats[b.category] = { n: 0, u: 0, covers: [] });
+      if (RK.isUpcoming(b)) s.u++; else s.n++;
+      if (s.covers.length < 3) s.covers.push(b);
+    });
+    var cats = RK.CAT_ORDER.filter(function (c) { return stats[c]; })
+      .sort(function (a, b) { return (stats[b].n + stats[b].u) - (stats[a].n + stats[a].u); });
+    var published = all.filter(function (b) { return !RK.isUpcoming(b); }).length;
+    var html = cats.map(function (c, i) {
+      var s = stats[c];
+      var covers = s.covers.slice(0, i === 0 ? 3 : 2).map(function (b) {
+        return '<img src="' + cover(b, b[lang]) + '" alt="" width="420" height="622" loading="lazy" />';
+      }).join("");
+      return '<a class="tile' + (i === 0 ? " is-wide" : "") + '" href="./' + lang + "/books/?cat=" + c + '">' +
+        "<div><h3>" + RK.esc(RK.CATS[lang][c]) + '</h3><p class="count">' + t.count(s.n, s.u) + "</p></div>" +
+        '<div class="tile-covers">' + covers + "</div></a>";
+    }).join("");
+    html += '<a class="tile is-all" href="./' + lang + '/books/"><div><h3>' + t.allBooks + '</h3><p class="count">' + t.allCount(published) + "</p></div></a>";
+    $("bento").innerHTML = html;
+  }
 
-enButton.addEventListener("click", function () {
-  setLanguage("en");
-});
+  /* ⑤ resources */
+  function renderResources() {
+    var t = TEXT[lang];
+    var data = window.downloadsData;
+    if (!data) return;
+    var hub = "./" + lang + "/downloads/";
+    $("res-form").setAttribute("action", hub);
+    var ready = data.items.filter(function (i) { return i.status === "available"; });
+    var later = data.items.length - ready.length;
+    $("res-list").innerHTML = ready.map(function (i) {
+      var d = i[lang] || i.ko;
+      var kinds = [];
+      var f = i.files || {};
+      if (f.robot && (f.robot.href || f.robot.workshop)) kinds.push(RK.KINDS[lang].robot);
+      if ((f.ko && f.ko.href) || (f.en && f.en.href)) kinds.push((lang === "ko" ? "소스 " : "Source ") + (i.version || ""));
+      if (i.extras && i.extras.length) kinds.push(RK.KINDS[lang].sheets);
+      return '<li><a href="' + hub + "#" + i.code + '"><span class="res-code">' + RK.esc(i.code) + '</span><span class="res-name">' +
+        RK.esc(d.name) + '</span><span class="res-kinds">' + RK.esc(kinds.join(" · ")) + "</span></a></li>";
+    }).join("");
+    setText("res-more", later ? t.resMore(later) : "");
+  }
 
-bookSearch.addEventListener("input", renderBooks);
-bookCategory.addEventListener("change", renderBooks);
-bookSort.addEventListener("change", renderBooks);
+  function renderChrome() {
+    var t = TEXT[lang];
+    document.documentElement.lang = lang;
+    document.title = t.title;
+    setText("nav-home", t.nav.home);
+    setText("nav-books", t.nav.books);
+    setText("nav-res", t.nav.res);
+    $("nav-books").href = "./" + lang + "/books/";
+    $("nav-res").href = "./" + lang + "/downloads/";
+    $("nav-search").href = "./" + lang + "/books/#q";
+    $("nav-search").setAttribute("aria-label", t.nav.search);
+    $("lang-ko").classList.toggle("active", lang === "ko");
+    $("lang-en").classList.toggle("active", lang === "en");
+    $("lang-ko").setAttribute("aria-pressed", lang === "ko");
+    $("lang-en").setAttribute("aria-pressed", lang === "en");
 
-const savedLanguage = localStorage.getItem("siteLanguage");
-const browserLanguage = navigator.language || navigator.userLanguage;
+    setText("new-title", t.newTitle);
+    setText("new-lead", t.newLead);
+    setText("new-more", t.more);
+    $("new-more").href = "./" + lang + "/books/";
+    setText("series-title", t.seriesTitle);
+    setText("series-lead", t.seriesLead);
+    setText("series-more", t.seriesMore);
+    $("series-more").href = "./" + lang + "/books/?series=roboco";
+    setText("cat-title", t.catTitle);
+    setText("cat-lead", t.catLead);
+    setText("cat-more", t.more);
+    $("cat-more").href = "./" + lang + "/books/";
+    setText("res-title", t.resTitle);
+    setText("res-lead", t.resLead);
+    setText("res-q-label", t.resLabel);
+    $("res-q").placeholder = t.resPh;
+    setText("res-submit", t.resGo);
+    setText("res-list-title", t.resListTitle);
 
-const initialLanguage =
-  savedLanguage ||
-  (browserLanguage && browserLanguage.toLowerCase().startsWith("ko") ? "ko" : "en");
+    setText("foot-about", t.footAbout);
+    setText("foot-nav-title", t.footNav);
+    setText("foot-home", t.nav.home);
+    setText("foot-books", t.nav.books);
+    setText("foot-res", t.nav.res);
+    $("foot-books").href = "./" + lang + "/books/";
+    $("foot-res").href = "./" + lang + "/downloads/";
+    setText("foot-ch-title", t.footCh);
+    setText("foot-blog", t.footBlog);
+    setText("foot-note", t.footNote);
+  }
 
-setLanguage(initialLanguage);
+  function setLanguage(next) {
+    lang = TEXT[next] ? next : "ko";
+    slide = 0;
+    try { localStorage.setItem("siteLanguage", lang); } catch (e) { /* storage unavailable */ }
+    renderChrome();
+    renderFeature();
+    renderNew();
+    renderSeries();
+    renderBento();
+    renderResources();
+  }
+
+  $("lang-ko").addEventListener("click", function () { setLanguage("ko"); });
+  $("lang-en").addEventListener("click", function () { setLanguage("en"); });
+
+  var saved = null;
+  try { saved = localStorage.getItem("siteLanguage"); } catch (e) { /* storage unavailable */ }
+  var browser = (navigator.language || "").toLowerCase();
+  setLanguage(saved || (browser.indexOf("ko") === 0 ? "ko" : "en"));
+})();

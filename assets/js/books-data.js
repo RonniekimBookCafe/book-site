@@ -97,6 +97,11 @@ window.booksData = [
     series: "roboco",
     seriesCode: "CORE-01",
     seriesOrder: 1,
+    spotlight: {
+      color: "#FFD91A",
+      ko: { capability: "MOVE / CONTROL", lead: "키보드 조종부터 스크립트 주행까지, 직접 움직이고 바꾸는 4륜 로봇" },
+      en: { capability: "MOVE / CONTROL", title: "Physical AI with RoboCo: Robot Structure and Python Control", lead: "From keyboard driving to script control" }
+    },
 
     ko: {
       title: "피지컬 AI로 배우는 RoboCo 로봇 구조와 Python 제어",

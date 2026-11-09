@@ -9,7 +9,7 @@
   --rk-yellow: #ffd91a;
   --rk-yellow-soft: #fff7cc;
   --rk-accent: #0f3f8f;
-  --rk-line: #e5e7eb;
+  --rk-line: #E5E0D6;
 }
 
 /* ---------- header: language link + series line ---------- */
@@ -51,7 +51,7 @@
   font-weight: 800;
   letter-spacing: 0.02em;
   background: rgba(255, 255, 255, 0.1);
-  color: #e5e7eb;
+  color: #E5E0D6;
 }
 
 .series-chip.code {
@@ -68,7 +68,7 @@
   font-weight: 800;
   line-height: 1.4;
   vertical-align: middle;
-  background: #e5e7eb;
+  background: #E5E0D6;
   color: #374151;
 }
 
@@ -85,9 +85,9 @@
 }
 
 .status-badge.pending {
-  background: #f3f4f6;
+  background: #F1EEE7;
   color: #4b5563;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E5E0D6;
 }
 
 .intro-status {
@@ -186,7 +186,7 @@
 
 .rk-flow li span {
   padding: 8px 12px;
-  background: #f9fafb;
+  background: #FAF8F4;
   border: 1px solid var(--rk-line);
   border-radius: 10px;
 }
@@ -238,7 +238,7 @@
   margin: 20px 0;
   padding: 18px 20px;
   background: #111827;
-  color: #e5e7eb;
+  color: #E5E0D6;
   border-radius: 12px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -259,7 +259,7 @@
 
 .content-card :not(pre) > code {
   padding: 1px 6px;
-  background: #f3f4f6;
+  background: #F1EEE7;
   border-radius: 5px;
   font-size: 0.92em;
   font-family: "D2Coding", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
@@ -302,7 +302,7 @@
   gap: 10px;
   padding: 20px;
   text-align: center;
-  color: #e5e7eb;
+  color: #E5E0D6;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
@@ -366,7 +366,7 @@
 }
 
 .rk-card.is-strong {
-  background: #f9fafb;
+  background: #FAF8F4;
 }
 
 /* Digital Package items */
@@ -382,7 +382,7 @@
   gap: 6px 16px;
   align-items: start;
   padding: 16px 18px;
-  background: #f9fafb;
+  background: #FAF8F4;
   border: 1px solid var(--rk-line);
   border-radius: 12px;
 }
@@ -440,7 +440,7 @@
 .rk-note {
   margin: 22px 0;
   padding: 16px 18px;
-  background: #f3f4f6;
+  background: #F1EEE7;
   border-radius: 12px;
   font-size: 15px;
   line-height: 1.75;
@@ -599,7 +599,7 @@
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 22px 22px;
-  color: #e5e7eb;
+  color: #E5E0D6;
   text-align: center;
   padding: 10px;
 }
@@ -683,7 +683,7 @@
   padding: 14px;
   border: 1px solid var(--rk-line);
   border-radius: 12px;
-  background: #f9fafb;
+  background: #FAF8F4;
 }
 
 .rk-key kbd {
@@ -857,8 +857,8 @@
   margin: 2px 2px 2px 0;
   padding: 3px 9px;
   border-radius: 6px;
-  border-left: 5px solid var(--chip, #e5e7eb);
-  background: #f3f4f6;
+  border-left: 5px solid var(--chip, #E5E0D6);
+  background: #F1EEE7;
   color: #111827 !important;
   font-size: 13.5px;
   font-weight: 800;
@@ -904,7 +904,7 @@
   gap: 6px;
   padding: 16px;
   border: 1px solid var(--rk-line);
-  border-top: 6px solid var(--chip, #e5e7eb);
+  border-top: 6px solid var(--chip, #E5E0D6);
   border-radius: 12px;
   background: #ffffff;
   color: #111827;
@@ -912,7 +912,7 @@
 }
 
 .rk-trackcard:hover {
-  background: #f9fafb;
+  background: #FAF8F4;
 }
 
 .rk-trackcard.is-current {
@@ -1095,7 +1095,7 @@ html[lang="en"] .rk-course.is-current .rk-course-title::after {
   padding: 12px;
   border: 1px solid var(--rk-line);
   border-radius: 14px;
-  background: linear-gradient(180deg, #f3f4f6, #ffffff);
+  background: linear-gradient(180deg, #F1EEE7, #ffffff);
   text-align: center;
 }
 
@@ -1140,7 +1140,7 @@ html[lang="en"] .rk-course.is-current .rk-course-title::after {
   padding: 12px 14px;
   border: 1px solid var(--rk-line);
   border-radius: 12px;
-  background: #f9fafb;
+  background: #FAF8F4;
   color: #111827;
   text-decoration: none;
 }
@@ -1200,7 +1200,7 @@ html[lang="en"] .rk-course.is-current .rk-course-title::after {
   padding: 12px 14px;
   border: 1px solid var(--rk-line);
   border-radius: 12px;
-  background: #f9fafb;
+  background: #FAF8F4;
 }
 
 .rk-steps li::before {
@@ -1242,7 +1242,7 @@ html[lang="en"] .rk-course.is-current .rk-course-title::after {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  background: #f3f4f6;
+  background: #F1EEE7;
 }
 
 .rk-dlcard h3 {
@@ -1275,7 +1275,7 @@ html[lang="en"] .rk-course.is-current .rk-course-title::after {
   padding: 14px 16px;
   border: 1px solid var(--rk-line);
   border-radius: 12px;
-  background: #f9fafb;
+  background: #FAF8F4;
   font-size: 15px;
 }
 

@@ -94,6 +94,26 @@ site, also set it in `series_data.YOUTUBE` so the player is rendered statically 
 
 ## Changelog
 
+- **v1.21 (2026-11-09)** — Publisher-style redesign, phase 1 ("Paper & Ink").
+  - Colour system: warm paper background `#F7F5F0`, ink text `#1B1A17` / `#57534E`, one brand colour Ink Blue `#1F3A8A`
+    for links and main buttons, lines `#E5E0D6`. One dark area per page (`#15171C`). Series colours stay inside the
+    home series band and each book's own pages. Tokens at the top of `assets/css/style.css`; legacy variable names are
+    mapped onto them, and the cool greys in the other stylesheets were warmed. Font: Pretendard (CDN) with system fallbacks.
+  - Top menu on the home, book list, and 자료실 pages: 홈 · 책 · 자료실 + search + KO/EN. YouTube and blog moved to the footer.
+  - Home rebuilt in five sections: ① featured new release (CORE-01 / QUAD-01, manual arrows, no autoplay)
+    ② new releases (5 covers) ③ RoboCo series band ④ subjects (bento tiles with counts) ⑤ 자료실 search + files ready now.
+    Files: `index.html`, `assets/js/home.js`, `assets/js/site-common.js`, `assets/css/hub.css`
+    (removed `home.css`, `home-hub.js`).
+  - New book list `/ko/books/`, `/en/books/`: subject tiles with counts, search, series, status, sort, grid/list view,
+    24 per page, filters kept in the URL (`?cat=&series=&status=&sort=&view=&q=&page=`), resource badges
+    (robot files · source · record sheets · videos) in list view. `assets/js/books-list.js`.
+  - Download center renamed **자료실 / Resources** (URLs unchanged), light header, `?q=` search from the home page.
+    Book-page sidebar card and banners renamed to match.
+  - "← 전체 책 목록 / All Books" links on book pages now open the book list. Stylesheet cache version 1.21 on every page.
+  - Sitemap: book list pages added to `sitemaps/pages.xml`.
+  - Plan document: `claude/홈페이지_v1.21_출판사형_개편기획_컬러·IA·100권대응.md` (project). Phase 2 (books.json, white book
+    headers, series page, wider 자료실 columns) is not in this release.
+
 - **v1.20 (2026-11-09)** — Download Center and a new home layout.
   - New `/ko/downloads/` and `/en/downloads/`: one place for robot files, Korean source, and English source of the six
     RoboCo books (CORE-01·02·03, QUAD-01·02·03) plus the coming robot projects (transforming robot, robot arm, drone,

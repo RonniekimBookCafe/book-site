@@ -12,7 +12,7 @@
       align-items: center;
       margin-bottom: 46px;
       padding-bottom: 38px;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid #E5E0D6;
     }
 
     .intro-cover {
@@ -66,15 +66,15 @@
     }
 
     .intro-cta .secondary {
-      background: #f3f4f6;
+      background: #F1EEE7;
       color: #111827;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #E5E0D6;
     }
 
     .intro-section {
       margin-top: 52px;
       padding-top: 42px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #E5E0D6;
     }
 
     .intro-section:first-of-type {
@@ -109,7 +109,7 @@
     .intro-highlight {
       margin: 28px 0;
       padding: 24px 26px;
-      background: #f9fafb;
+      background: #FAF8F4;
       border-left: 5px solid #0f3f8f;
       border-radius: 0 14px 14px 0;
     }
@@ -130,8 +130,8 @@
 
     .intro-quote {
       padding: 24px 26px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D6;
       border-radius: 16px;
     }
 
@@ -161,7 +161,7 @@
     .intro-card {
       padding: 24px;
       background: #ffffff;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #E5E0D6;
       border-radius: 16px;
     }
 
@@ -208,8 +208,8 @@
       counter-increment: intro-counter;
       position: relative;
       padding: 22px 22px 22px 66px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D6;
       border-radius: 16px;
       color: #1f2937;
       line-height: 1.8;
@@ -242,8 +242,8 @@
 
     .intro-author {
       padding: 30px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D6;
       border-radius: 18px;
     }
 
@@ -267,7 +267,7 @@
     }
 
     .intro-final p {
-      color: #e5e7eb;
+      color: #E5E0D6;
       font-size: 17px;
       line-height: 1.9;
     }
@@ -312,8 +312,8 @@
 .toc-intro {
       margin-bottom: 32px;
       padding: 20px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D6;
       border-radius: 14px;
       color: #374151;
     }
@@ -321,7 +321,7 @@
     .toc-part {
       margin-top: 48px;
       padding-top: 32px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #E5E0D6;
     }
 
     .toc-part:first-of-type {
@@ -461,8 +461,8 @@
 .sample-hero {
       margin-bottom: 42px;
       padding: 34px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D6;
       border-radius: 18px;
     }
 
@@ -492,7 +492,7 @@
     .sample-section {
       margin-top: 48px;
       padding-top: 36px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #E5E0D6;
     }
 
     .sample-section:first-of-type {
@@ -539,7 +539,7 @@
     .sample-quote {
       margin: 28px 0;
       padding: 22px 24px;
-      background: #f3f4f6;
+      background: #F1EEE7;
       border-left: 5px solid #0f3f8f;
       border-radius: 0 12px 12px 0;
       color: #1f2937;
@@ -550,7 +550,7 @@
     .sample-box {
       margin: 28px 0;
       padding: 24px 26px;
-      background: #f9fafb;
+      background: #FAF8F4;
       border-left: 5px solid #0f3f8f;
       border-radius: 0 12px 12px 0;
     }
@@ -578,13 +578,13 @@
       margin-top: 42px;
       padding: 22px 24px;
       background: #111827;
-      color: #f9fafb;
+      color: #FAF8F4;
       border-radius: 14px;
     }
 
     .sample-note p {
       margin: 0;
-      color: #f9fafb;
+      color: #FAF8F4;
       font-size: 16px;
       line-height: 1.8;
     }
@@ -610,9 +610,9 @@
     }
 
     .sample-cta .secondary {
-      background: #f3f4f6;
+      background: #F1EEE7;
       color: #111827;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #E5E0D6;
     }
 
     @media (max-width: 800px) {
@@ -647,8 +647,8 @@
     .faq-intro {
       margin-bottom: 42px;
       padding: 28px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D6;
       border-radius: 18px;
     }
 
@@ -679,7 +679,7 @@
       padding: 9px 13px;
       border-radius: 999px;
       background: #ffffff;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #E5E0D6;
       color: #111827;
       text-decoration: none;
       font-size: 14px;
@@ -689,7 +689,7 @@
     .faq-category {
       margin-top: 52px;
       padding-top: 38px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #E5E0D6;
     }
 
     .faq-category:first-of-type {
@@ -710,7 +710,7 @@
       margin: 0 0 22px;
       padding: 26px 28px;
       background: #ffffff;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #E5E0D6;
       border-radius: 18px;
     }
 
@@ -749,7 +749,7 @@
     .faq-point {
       margin: 18px 0;
       padding: 18px 20px;
-      background: #f9fafb;
+      background: #FAF8F4;
       border-left: 5px solid #0f3f8f;
       border-radius: 0 12px 12px 0;
     }
@@ -769,7 +769,7 @@
 
     .faq-table th,
     .faq-table td {
-      border: 1px solid #e5e7eb;
+      border: 1px solid #E5E0D6;
       padding: 12px 14px;
       text-align: left;
       vertical-align: top;
@@ -777,7 +777,7 @@
     }
 
     .faq-table th {
-      background: #f3f4f6;
+      background: #F1EEE7;
       color: #111827;
       font-weight: 900;
     }
@@ -803,7 +803,7 @@
 
     .faq-final p {
       margin: 12px 0;
-      color: #e5e7eb;
+      color: #E5E0D6;
       font-size: 17px;
       line-height: 1.85;
     }
@@ -868,8 +868,8 @@
 .buy-page-intro {
       margin-bottom: 30px;
       padding: 24px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D6;
       border-radius: 16px;
     }
 
@@ -882,7 +882,7 @@
     .buy-section {
       margin-top: 34px;
       padding-top: 28px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #E5E0D6;
     }
 
     .buy-section:first-of-type {
@@ -905,7 +905,7 @@
     .buy-card {
       display: block;
       padding: 18px 20px;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #E5E0D6;
       border-radius: 14px;
       background: #ffffff;
       text-decoration: none;
@@ -914,7 +914,7 @@
     }
 
     .buy-card:hover {
-      background: #f9fafb;
+      background: #FAF8F4;
       border-color: #cbd5e1;
     }
 
@@ -951,25 +951,25 @@
     }
 
     .buy-badge.pending {
-      background: #e5e7eb;
+      background: #E5E0D6;
       color: #374151;
     }
 
     .buy-card.pending {
       cursor: default;
-      background: #f9fafb;
+      background: #FAF8F4;
       color: #6b7280;
     }
 
     .buy-card.pending:hover {
-      border-color: #e5e7eb;
-      background: #f9fafb;
+      border-color: #E5E0D6;
+      background: #FAF8F4;
     }
 
     .buy-note {
       margin-top: 28px;
       padding: 20px;
-      background: #f3f4f6;
+      background: #F1EEE7;
       border-radius: 14px;
       color: #374151;
       line-height: 1.8;
